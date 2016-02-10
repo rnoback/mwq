@@ -1,0 +1,15 @@
+@mixin five-up-desktop{
+	@include media($desktop) {
+		@include span-columns(5); 
+		@include omega(3n);
+	} 
+
+	@include media($tablet){
+		@include span-columns(4);
+		@include omega(2n);
+	}
+	@include media($mobile){
+		@include span-columns(2);
+		@include omega(2n);
+	}
+}
