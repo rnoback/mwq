@@ -29,7 +29,7 @@
 
     <!-- Favicon
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="icon" type="image/png" href="images/favicon.ico">
     
 </head>
 <body>
@@ -38,14 +38,21 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   
 
-    <div class="row box-row">
+    <h1>HTML Ipsum Presents</h1>
+    <header>
+        <div class="device-background">
+            <div class="device-text">
+                <h4>Text about App or Device</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, recusandae? Deserunt repellendus.</p>
+            </div>
+            <div class="device">
+                <div class="screen"></div>
+            </div>
+        </div>
+    </header>
+    <div class="container" ng-view>
 
-        <section id="box-container" ng-view>
-        </section>
-
-        
-    </div>
-    <section id="background-container"></section>
+    </div> <!-- End container -->
 
     <!-- build:js js/lib.js -->
     <!-- bower:js -->
@@ -65,10 +72,10 @@
     <script src="/src/js/_vendor/Sortable.js"></script>
     <script src="/src/js/_vendor/angularjs-dropdown-multiselect.js"></script>
     <script src="/src/js/_vendor/ng-sortable.js"></script>
+    <script src="/src/js/controllers/homeCtrl.js"></script>
     <script src="/src/js/services/currencyValuesFactory.js"></script>
     <script src="/src/js/services/formatNumberFactory.js"></script>
     <script src="/src/js/services/unitSelector.js"></script>
-    <script src="/src/js/controllers/homeCtrl.js"></script>
     <!-- endinject -->
     
     <!-- inject:templates:js -->

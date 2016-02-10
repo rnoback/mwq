@@ -375,7 +375,7 @@ body:before {
   height: 100%;
   left: 0;
   margin: 0 auto;
-  max-width: 100%;
+  max-width: 960px;
   opacity: 0.2;
   pointer-events: none;
   position: fixed;
@@ -595,7 +595,7 @@ img {
   height: auto; }
 
 div.container {
-  max-width: 100%;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto; }
   div.container::after {
