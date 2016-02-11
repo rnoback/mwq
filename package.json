@@ -3,25 +3,6 @@
   "version": "1.0.0",
   "description": "Quiz for Muziek Werkt",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rnoback/mwq.git"
-  },
-  "author": "Noback",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rnoback/mwq/issues"
-  },
-  "scripts": {
-    "init": "npm install",
-    "install": "bower install",
-    "start": "node src/server/app.js"
-  },
   "dependencies": {
     "body-parser": "^1.8.2",
     "compression": "^1.1.0",
@@ -62,5 +43,19 @@
     "jshint-stylish": "^2.0.1",
     "wiredep": "^2.2.2",
     "yargs": "^3.29.0"
+  },
+  "scripts": {
+    "init": "npm install",
+    "install": "bower install",
+    "start": "node src/server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rnoback/mwq.git"
+  },
+  "author": "Noback",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rnoback/mwq/issues"
   }
 }

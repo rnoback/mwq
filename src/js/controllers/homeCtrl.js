@@ -7,7 +7,11 @@
         ['$scope', '$filter', 
         function($scope, $filter) {
 
-            console.log("Home MWQ Controller");
+            //var box = $('.test-sheet');
+           TweenMax.to($('.slide'), 2, {x: -700, ease:Expo.easeInOut});
+
+           console.log("Home MWQ Controller");
+
 
         }]);
 }());
