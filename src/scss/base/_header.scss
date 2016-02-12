@@ -1,16 +1,21 @@
 header{
-	.header__bar{
-		background: $white;
 
+	.header__bar{
+		z-index: 99;
+		position: fixed;
+		top:0;
+		background: $white;
 		width: 100%;
-		height: 50px;
+		height: 60px;
 		padding: 10px 20px;
+		
+
 		.header__bar__logo{
 			
 			float: left;
 			svg{
 				width: auto;
-				height: 30px;
+				height: 40px;
 			}
 		}
 		.header__bar__hamburger{
@@ -20,23 +25,23 @@ header{
 
 			#nav-toggle { position: absolute; right: 0; top: 0; }
 
-			#nav-toggle { cursor: pointer; padding: 13px 26px 12px 0px; }
+			#nav-toggle { cursor: pointer; padding: 18px 30px 12px 0px; }
 
 			#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
 			  cursor: pointer;
-			  border-radius: 1px;
-			  height: 4px;
-			  width: 26px;
+			  border-radius: 4px;
+			  height: 5px;
+			  width: 30px;
 			  background: $green;
 			  position: absolute;
 			  display: block;
 			  content: '';
 			}
 			#nav-toggle span:before {
-			  top: -7px; 
+			  top: -9px; 
 			}
 			#nav-toggle span:after {
-			  bottom: -7px;
+			  bottom: -9px;
 			}
 
 			#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {

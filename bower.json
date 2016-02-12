@@ -20,6 +20,7 @@
     "jquery": "~2.1.4",
     "lodash": "~4.0.1",
     "normalize-css": "normalize.css#~3.0.3",
-    "gsap": "^1.18.2"
+    "gsap": "^1.18.2",
+    "flexslider": "^2.6.0"
   }
 }

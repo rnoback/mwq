@@ -8,11 +8,44 @@ html{
 	}
 }
 div.container {
-  @include outer-container();
-  max-width: 960px;
+	
+	@include outer-container();
+	max-width: 960px;
 
-  .slide{
-  	background: $white;
-  	margin-bottom: 40px;
-  }
+	
+
+	.main{
+		margin: 20px;
+		position: relative;
+		
+		top: 60px;
+		bottom: 35px;
+
+		.main__block{
+			background: $white;
+
+			.main__title{
+				font-family: $base-font-family;
+				font-size: 30px;
+				color: $green;
+				text-align: center;
+				padding: 15px;
+				font-weight: normal;
+			}
+			.main-quiz-vis{
+				position:relative;
+				width: 95%;
+				margin: 0 auto;
+				display: block;
+				bottom: -10px;
+			}
+			p{
+				padding: 20px;
+				font-size: 14px;
+			}
+		}
+		.main__block.mint{
+			background: $light-green;
+		}
+	}
 }
