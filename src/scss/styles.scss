@@ -16,8 +16,9 @@
 @import "base/base";
 @import "mixins/mixin-master";
 
+
 body{
-	background: $light-gray;
+	background: $white;
 
 }
 img{
@@ -155,3 +156,4 @@ div.container {
     }
   }
 }
+

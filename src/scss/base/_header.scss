@@ -1,0 +1,62 @@
+header{
+	.header__bar{
+		background: $white;
+
+		width: 100%;
+		height: 50px;
+		padding: 10px 20px;
+		.header__bar__logo{
+			
+			float: left;
+			svg{
+				width: auto;
+				height: 30px;
+			}
+		}
+		.header__bar__hamburger{
+			position: relative;
+			padding: 10px 20px;
+
+
+			#nav-toggle { position: absolute; right: 0; top: 0; }
+
+			#nav-toggle { cursor: pointer; padding: 13px 26px 12px 0px; }
+
+			#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+			  cursor: pointer;
+			  border-radius: 1px;
+			  height: 4px;
+			  width: 26px;
+			  background: $green;
+			  position: absolute;
+			  display: block;
+			  content: '';
+			}
+			#nav-toggle span:before {
+			  top: -7px; 
+			}
+			#nav-toggle span:after {
+			  bottom: -7px;
+			}
+
+			#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+			  transition: all 500ms ease-in-out;
+			}
+			#nav-toggle.active span {
+			  background-color: transparent;
+			}
+			#nav-toggle.active span:before, #nav-toggle.active span:after {
+			  top: 0;
+			}
+			#nav-toggle.active span:before {
+			  transform: rotate(45deg);
+			}
+			#nav-toggle.active span:after {
+			  transform: rotate(-45deg);
+			}
+			@include media($desktop) {
+				display:none;
+			}
+		}
+	}
+}

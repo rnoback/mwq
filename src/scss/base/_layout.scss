@@ -1,0 +1,18 @@
+html{
+	body{
+		background: url(../images/bg/bg5.jpg) no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+}
+div.container {
+  @include outer-container();
+  max-width: 960px;
+
+  .slide{
+  	background: $white;
+  	margin-bottom: 40px;
+  }
+}

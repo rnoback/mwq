@@ -1,6 +1,11 @@
+@include font-face('breeserif','../fonts/breeserif-regular-webfont');
+@include font-face('textA','../fonts/texta-webfont');
+@include font-face('textABold','../fonts/texta-black-webfont');
+
 // Typography
-$base-font-family: $helvetica;
-$heading-font-family: $base-font-family;
+$heading-font: 'textA', Helvetica, Arial, sans-serif;
+$heading-font-bold: 'textABold', Helvetica, Arial, sans-serif;
+$base-font-family: 'breeserif', Helvetica, Arial, sans-serif;
 
 // Font Sizes
 $base-font-size: 1em;
@@ -16,14 +21,17 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
-$blue: #477dca;
+$white: #fff;
+$black: #000;
+$orange: #f6901e;
+$green: #3db791;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
 
 // Font Colors
 $base-font-color: $dark-gray;
-$action-color: $blue;
+$action-color: $orange;
 
 // Border
 $base-border-color: $light-gray;

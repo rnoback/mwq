@@ -1,0 +1,43 @@
+#main-nav{
+
+	float: right;
+	li{
+		float:left;
+		margin-left: 1em;
+		a{
+			color: $black;
+			font-family: $heading-font-bold;
+			font-size: 13px;
+			text-transform: uppercase;
+		}
+	}
+	@include media($mobile) {
+		display:none;
+	}
+}
+#main-nav-mobile{
+	li{
+		height: 50px;
+		width: 100%;
+		background: $green;
+		margin-top: 1px;
+		a{
+			font-family: $heading-font-bold;
+			text-transform: uppercase;
+			font-size: 13px;
+			color: #fff;
+			height: 50px !important;
+			width: 100%;
+			height: inherit;
+			background: $green;
+			padding: 17px;
+			display: block;
+		}
+		a:hover{
+			background: $action-color;
+		}
+	}
+	@include media($desktop) {
+		display:none;
+	}
+}

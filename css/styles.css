@@ -375,7 +375,7 @@ body:before {
   height: 100%;
   left: 0;
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 700px;
   opacity: 0.2;
   pointer-events: none;
   position: fixed;
@@ -398,17 +398,35 @@ body:before {
       background-image: -webkit-linear-gradient(right, transparent 0, red 0, red 21.42857%, transparent 21.42857%, transparent 26.19048%, red 26.19048%, red 47.61905%, transparent 47.61905%, transparent 52.38095%, red 52.38095%, red 73.80952%, transparent 73.80952%, transparent 78.57143%, red 78.57143%, red 100%, transparent 100%);
       background-image: linear-gradient(to left, transparent 0, red 0, red 21.42857%, transparent 21.42857%, transparent 26.19048%, red 26.19048%, red 47.61905%, transparent 47.61905%, transparent 52.38095%, red 52.38095%, red 73.80952%, transparent 73.80952%, transparent 78.57143%, red 78.57143%, red 100%, transparent 100%); } }
 
+@font-face {
+  font-family: "breeserif";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/breeserif-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/breeserif-regular-webfont.woff2") format("woff2"), url("../fonts/breeserif-regular-webfont.woff") format("woff"), url("../fonts/breeserif-regular-webfont.ttf") format("truetype"), url("../fonts/breeserif-regular-webfont.svg#breeserif") format("svg"); }
+
+@font-face {
+  font-family: "textA";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/texta-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/texta-webfont.woff2") format("woff2"), url("../fonts/texta-webfont.woff") format("woff"), url("../fonts/texta-webfont.ttf") format("truetype"), url("../fonts/texta-webfont.svg#textA") format("svg"); }
+
+@font-face {
+  font-family: "textABold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/texta-black-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/texta-black-webfont.woff2") format("woff2"), url("../fonts/texta-black-webfont.woff") format("woff"), url("../fonts/texta-black-webfont.ttf") format("truetype"), url("../fonts/texta-black-webfont.svg#textABold") format("svg"); }
+
 button, input[type="button"], input[type="reset"], input[type="submit"] {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: #477dca;
+  background-color: #f6901e;
   border: 0;
   border-radius: 3px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-family: "breeserif", Helvetica, Arial, sans-serif;
   font-size: 1em;
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
@@ -424,13 +442,13 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
   vertical-align: middle;
   white-space: nowrap; }
   button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus {
-    background-color: #3964a2;
+    background-color: #c57318;
     color: #fff; }
   button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled {
     cursor: not-allowed;
     opacity: 0.5; }
     button:disabled:hover, input[type="button"]:disabled:hover, input[type="reset"]:disabled:hover, input[type="submit"]:disabled:hover {
-      background-color: #477dca; }
+      background-color: #f6901e; }
 
 fieldset {
   background-color: #f7f7f7;
@@ -442,7 +460,7 @@ input,
 label,
 select {
   display: block;
-  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-family: "breeserif", Helvetica, Arial, sans-serif;
   font-size: 1em; }
 
 label {
@@ -460,7 +478,7 @@ select[multiple=multiple] {
   border-radius: 3px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
-  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-family: "breeserif", Helvetica, Arial, sans-serif;
   font-size: 1em;
   margin-bottom: 0.75em;
   padding: 0.5em;
@@ -472,8 +490,8 @@ select[multiple=multiple] {
     border-color: #b1b1b1; }
   input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus,
   select[multiple=multiple]:focus {
-    border-color: #477dca;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(55, 112, 192, 0.7);
+    border-color: #f6901e;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(241, 132, 10, 0.7);
     outline: none; }
   input[type="color"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="email"]:disabled, input[type="month"]:disabled, input[type="number"]:disabled, input[type="password"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="text"]:disabled, input[type="time"]:disabled, input[type="url"]:disabled, input[type="week"]:disabled, input:not([type]):disabled, textarea:disabled,
   select[multiple=multiple]:disabled {
@@ -547,7 +565,7 @@ th {
 
 body {
   color: #333;
-  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-family: "breeserif", Helvetica, Arial, sans-serif;
   -webkit-font-feature-settings: "kern", "liga", "pnum";
           font-feature-settings: "kern", "liga", "pnum";
   font-size: 1em;
@@ -559,7 +577,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-family: "textABold", Helvetica, Arial, sans-serif;
   font-size: 1em;
   line-height: 1.2;
   margin: 0 0 0.75em; }
@@ -568,12 +586,12 @@ p {
   margin: 0 0 0.75em; }
 
 a {
-  color: #477dca;
+  color: #f6901e;
   text-decoration: none;
   -webkit-transition: color 150ms ease;
   transition: color 150ms ease; }
   a:active, a:focus, a:hover {
-    color: #355e98; }
+    color: #b96c17; }
 
 hr {
   border-bottom: 1px solid #ddd;
@@ -587,15 +605,133 @@ picture {
   margin: 0;
   max-width: 100%; }
 
+html, body {
+  position: relative;
+  height: 100%; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+.hide {
+  display: none !important; }
+
+.wrapper {
+  height: inherit; }
+
+html body {
+  background: url(../images/bg/bg5.jpg) no-repeat center center fixed;
+  background-size: cover; }
+
+div.container {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 960px; }
+  div.container::after {
+    clear: both;
+    content: "";
+    display: table; }
+  div.container .slide {
+    background: #fff;
+    margin-bottom: 40px; }
+
+header .header__bar {
+  background: #fff;
+  width: 100%;
+  height: 50px;
+  padding: 10px 20px; }
+  header .header__bar .header__bar__logo {
+    float: left; }
+    header .header__bar .header__bar__logo svg {
+      width: auto;
+      height: 30px; }
+  header .header__bar .header__bar__hamburger {
+    position: relative;
+    padding: 10px 20px; }
+    header .header__bar .header__bar__hamburger #nav-toggle {
+      position: absolute;
+      right: 0;
+      top: 0; }
+    header .header__bar .header__bar__hamburger #nav-toggle {
+      cursor: pointer;
+      padding: 13px 26px 12px 0px; }
+    header .header__bar .header__bar__hamburger #nav-toggle span, header .header__bar .header__bar__hamburger #nav-toggle span:before, header .header__bar .header__bar__hamburger #nav-toggle span:after {
+      cursor: pointer;
+      border-radius: 1px;
+      height: 4px;
+      width: 26px;
+      background: #3db791;
+      position: absolute;
+      display: block;
+      content: ''; }
+    header .header__bar .header__bar__hamburger #nav-toggle span:before {
+      top: -7px; }
+    header .header__bar .header__bar__hamburger #nav-toggle span:after {
+      bottom: -7px; }
+    header .header__bar .header__bar__hamburger #nav-toggle span, header .header__bar .header__bar__hamburger #nav-toggle span:before, header .header__bar .header__bar__hamburger #nav-toggle span:after {
+      -webkit-transition: all 500ms ease-in-out;
+      transition: all 500ms ease-in-out; }
+    header .header__bar .header__bar__hamburger #nav-toggle.active span {
+      background-color: transparent; }
+    header .header__bar .header__bar__hamburger #nav-toggle.active span:before, header .header__bar .header__bar__hamburger #nav-toggle.active span:after {
+      top: 0; }
+    header .header__bar .header__bar__hamburger #nav-toggle.active span:before {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg); }
+    header .header__bar .header__bar__hamburger #nav-toggle.active span:after {
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg); }
+    @media screen and (min-width: 43.75em) {
+      header .header__bar .header__bar__hamburger {
+        display: none; } }
+
+#main-nav {
+  float: right; }
+  #main-nav li {
+    float: left;
+    margin-left: 1em; }
+    #main-nav li a {
+      color: #000;
+      font-family: "textABold", Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      text-transform: uppercase; }
+  @media screen and (max-width: 24.9375em) {
+    #main-nav {
+      display: none; } }
+
+#main-nav-mobile li {
+  height: 50px;
+  width: 100%;
+  background: #3db791;
+  margin-top: 1px; }
+  #main-nav-mobile li a {
+    font-family: "textABold", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #fff;
+    height: 50px !important;
+    width: 100%;
+    height: inherit;
+    background: #3db791;
+    padding: 17px;
+    display: block; }
+  #main-nav-mobile li a:hover {
+    background: #f6901e; }
+
+@media screen and (min-width: 43.75em) {
+  #main-nav-mobile {
+    display: none; } }
+
 body {
-  background: #ddd; }
+  background: #fff; }
 
 img {
   max-width: 100%;
   height: auto; }
 
 div.container {
-  max-width: 960px;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto; }
   div.container::after {
