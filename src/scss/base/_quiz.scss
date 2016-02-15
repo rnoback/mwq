@@ -2,17 +2,15 @@
 	background: $white;
 	@include clearfix;
 	@include media($desktop) {
-		position: absolute;
-		margin-top: 50%;
-		top: 50%;
-		-webkit-transform: translateY(-50%);
-		-ms-transform: translateY(-50%);
-		transform: translateY(-50%);
+		width: 100%;
 	}
 	.block{
 		
 		background: $white;
-		
+		.block__text{
+			padding: 40px 20px 0;
+			@include font-size(12);
+		}
 
 		.quiz__sheet--title{
 			font-family: $base-font-family;
@@ -37,7 +35,7 @@
 		}
 		.main-quiz-vis{
 			position:relative;
-			width: 95%;
+			width: 92%;
 			margin: 0 auto;
 			display: block;
 			bottom: -10px;
@@ -54,7 +52,7 @@
 		}
 		button.pill-btn{
 			display: block;
-			@include font-size(12);
+			
 		}
 		button.quiz__nav--start{
 			margin: 2em auto;
