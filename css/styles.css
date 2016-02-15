@@ -1,5 +1,5 @@
 /*!
- *  Unit Converter
+ *  Muziek Werkt
  *  style.scss
  *	Copyright 2015 - noback.com
  *
@@ -422,16 +422,18 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
           appearance: none;
   background-color: #f6901e;
   border: 0;
-  border-radius: 3px;
+  border-radius: 1.6em;
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: "breeserif", Helvetica, Arial, sans-serif;
-  font-size: 1em;
+  font-family: "textABold", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
-  font-weight: 600;
-  line-height: 1;
-  padding: 0.75em 1.5em;
+  font-weight: normal;
+  line-height: 2;
+  padding: 0.75em 2.6em;
   text-decoration: none;
   -webkit-transition: background-color 150ms ease;
   transition: background-color 150ms ease;
@@ -636,15 +638,21 @@ div.container {
     margin: 20px;
     position: relative;
     top: 60px;
-    bottom: 35px; }
+    bottom: 35px;
+    background: transparent; }
+    div.container .main::after {
+      clear: both;
+      content: "";
+      display: table; }
     div.container .main .main__block {
       background: #fff; }
       div.container .main .main__block .main__title {
         font-family: "breeserif", Helvetica, Arial, sans-serif;
-        font-size: 30px;
+        font-size: 24px;
+        font-size: 1.5rem;
         color: #3db791;
         text-align: center;
-        padding: 15px;
+        padding: 19px;
         font-weight: normal; }
       div.container .main .main__block .main-quiz-vis {
         position: relative;
@@ -654,9 +662,19 @@ div.container {
         bottom: -10px; }
       div.container .main .main__block p {
         padding: 20px;
-        font-size: 14px; }
+        font-size: 13px;
+        font-size: 0.8125rem; }
+      div.container .main .main__block p:first-child {
+        padding-top: 40px; }
+      div.container .main .main__block p:last-child {
+        padding-bottom: 40px; }
+      div.container .main .main__block button.pill-btn {
+        display: block;
+        margin: 2em auto; }
     div.container .main .main__block.mint {
       background: #D2EADD; }
+  div.container .main.bg-filled {
+    background: #fff; }
 
 header .header__bar {
   z-index: 99;
@@ -665,7 +683,7 @@ header .header__bar {
   background: #fff;
   width: 100%;
   height: 60px;
-  padding: 10px 20px; }
+  padding: 10px 24px; }
   header .header__bar .header__bar__logo {
     float: left; }
     header .header__bar .header__bar__logo svg {
@@ -742,6 +760,7 @@ header .header__bar {
       font-family: "textABold", Helvetica, Arial, sans-serif;
       text-transform: uppercase;
       font-size: 13px;
+      font-size: 0.8125rem;
       color: #fff;
       width: 100%;
       height: inherit;
@@ -760,7 +779,36 @@ footer .footer__bar {
   background: #fff;
   width: 100%;
   height: 35px;
-  padding: 10px 20px; }
+  padding: 8px 20px 10px; }
+  footer .footer__bar ul.quiz-paging {
+    text-align: center; }
+    footer .footer__bar ul.quiz-paging li {
+      display: inline;
+      margin: 0 3px; }
+      footer .footer__bar ul.quiz-paging li a {
+        background: #333;
+        display: inline-block;
+        overflow: hidden;
+        width: 12px;
+        height: 0;
+        padding-top: 12px;
+        text-align: center;
+        border-radius: 30px;
+        background-clip: padding-box; }
+      footer .footer__bar ul.quiz-paging li a:after {
+        content: '';
+        display: inline-block;
+        margin-top: 2px;
+        overflow: hidden;
+        height: 0;
+        width: 4px;
+        padding-top: 4px;
+        border-radius: 20px;
+        -moz-border-radius: 20px;
+        -webkit-border-radius: 20px;
+        border: 100px solid red; }
+      footer .footer__bar ul.quiz-paging li a:hover {
+        background: #3db791; }
 
 body {
   background: #fff; }

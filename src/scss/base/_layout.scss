@@ -15,21 +15,23 @@ div.container {
 	
 
 	.main{
+		@include clearfix;
 		margin: 20px;
 		position: relative;
 		
 		top: 60px;
 		bottom: 35px;
+		background: transparent;
 
 		.main__block{
 			background: $white;
 
 			.main__title{
 				font-family: $base-font-family;
-				font-size: 30px;
+				@include font-size(24);
 				color: $green;
 				text-align: center;
-				padding: 15px;
+				padding: 19px;
 				font-weight: normal;
 			}
 			.main-quiz-vis{
@@ -41,11 +43,25 @@ div.container {
 			}
 			p{
 				padding: 20px;
-				font-size: 14px;
+				@include font-size(13);
 			}
+			p:first-child{
+				padding-top: 40px;
+			}
+			p:last-child{
+				padding-bottom: 40px;
+			}
+			button.pill-btn{
+				display: block;
+				margin: 2em auto;
+			}
+
 		}
 		.main__block.mint{
 			background: $light-green;
 		}
+	}
+	.main.bg-filled{
+		background: $white;
 	}
 }

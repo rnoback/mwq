@@ -20,6 +20,11 @@ mwqApp.config(function ($routeProvider) {
         templateUrl: 'html/pages/home.html',
         controller: 'homeController'
     })
+
+    .when('/quiz', {
+        templateUrl: 'html/pages/quiz.html',
+        controller: 'quizController'
+    })
     /*
     .when('/area', {
         templateUrl: 'html/pages/default.html',
