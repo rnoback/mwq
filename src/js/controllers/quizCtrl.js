@@ -13,6 +13,10 @@
            console.log("Quiz MWQ Controller !!");
            $scope.mobNavVisible = false;
 
+
+           
+
+
            // hamburger toggle
            $( "#nav-toggle" ).on( "click", function(evt) {
                 // /$this = $(evt.target);

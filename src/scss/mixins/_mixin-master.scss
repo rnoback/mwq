@@ -19,8 +19,9 @@
     font-size: ($sizeValue/16) + rem;
 }
 
-@mixin vertical-align($position: relative) {
-  position: $position;
+@mixin vertical-align($position: absolute) {
+  position: absolute;
+  margin-top: 50%;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);

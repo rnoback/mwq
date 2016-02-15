@@ -39,7 +39,7 @@ footer{
 					-webkit-border-radius: 20px;
 					border: 100px solid red;
 				}
-				a:hover{
+				a.active{
 					background: $green;
 				}
 			}
