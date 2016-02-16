@@ -1,11 +1,9 @@
 
 .quiz{
 	background: $white;
-	max-width: 960px;
+	max-width: 600px;
 	@include clearfix;
-	@include media($desktop) {
-		    
-	}
+	
 	.block{
 		
 		background: $white;

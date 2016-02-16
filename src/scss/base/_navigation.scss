@@ -2,7 +2,7 @@
 	float: right;
 	li{
 		float:left;
-		margin-left: 1em;
+		margin: 7px 0 7px 20px;
 		a{
 			color: $black;
 			font-family: $heading-font-bold;
@@ -18,10 +18,8 @@
 	}
 }
 #main-nav-mobile{
-
 	top: -180px;
 	position: fixed;
-	
 	width: 100%;
 	z-index:98;
 	li{

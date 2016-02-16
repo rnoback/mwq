@@ -121,9 +121,7 @@ mwqApp.config(function ($routeProvider) {
          $( "#nav-toggle" ).removeClass( "active" );
     });
 
-	function resizeBg() {
-					
-	}
+	
 
     
 	//theWindow.resize(resizeBg).trigger("resize");

@@ -10,7 +10,6 @@ html{
 div.container {
 	
 	@include outer-container();
-	max-width: 960px;
 	position: relative;
 	/*
 	top: 50%;
@@ -31,4 +30,7 @@ div.container {
     vertical-align: middle;
     text-align: center;
     padding: 80px 20px 55px;
+    @include media($desktop) {
+		padding: 80px 0 55px;  
+	}
 }
