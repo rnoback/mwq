@@ -9,7 +9,7 @@
 
             //var box = $('.test-sheet');
             //TweenMax.to($('.slide'), 2, {x: -700, ease:Expo.easeInOut});
-            var displayPortWidth = $(window).width();
+            /*var displayPortWidth = $(window).width();
            
             var s1 = $('.s1');
             var s2 = $('.s2');
@@ -46,7 +46,12 @@
                 //$('.main').scrollTop();
                 $(window).scrollTop(0);
             });
-
+            */
+            var id = setInterval(function(){
+                var displayPortHeight = $(window).height();
+                $('.fill-height-vcenter').height(displayPortHeight);
+            }, 100);
+            
 
         }]);
 }());

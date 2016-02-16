@@ -1,8 +1,10 @@
+
 .quiz{
 	background: $white;
+	max-width: 960px;
 	@include clearfix;
 	@include media($desktop) {
-		width: 100%;
+		    
 	}
 	.block{
 		
@@ -10,6 +12,7 @@
 		.block__text{
 			padding: 40px 20px 0;
 			@include font-size(12);
+			text-align: left;
 		}
 
 		.quiz__sheet--title{

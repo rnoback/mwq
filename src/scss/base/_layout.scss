@@ -17,20 +17,18 @@ div.container {
 	-webkit-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
-	*/
-	.main{
-		position: relative;
-		
-		margin: 0px 20px 55px 20px;
+*/
+	
 
-		
-		top: 80px;
-		bottom: 35px;
-		background: transparent;
-		
-		@include media($desktop) {
-			margin: 0 0 55px 0;
-		}
-	}
+}
 
+.fill-height-vcenter{
+	display: table;
+    width: 100%;
+}
+.fill-height-vcenter-inner {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 80px 20px 55px;
 }
