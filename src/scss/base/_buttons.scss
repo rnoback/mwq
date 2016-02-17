@@ -23,6 +23,7 @@
   &:focus {
     background-color: shade($action-color, 20%);
     color: #fff;
+    outline:0;
   }
 
   &:disabled {

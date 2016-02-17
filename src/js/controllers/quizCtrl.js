@@ -10,10 +10,11 @@
             var pageContainer = $('.pages');
             $scope.speed = 0.75;
 
-            $scope.arr = [];
-            $scope.arr = pageContainer.find('.page');
+            $scope.arrPages = [];
+            // Get all pages in array
+            $scope.arrPages = pageContainer.find('.page');
 
-            $scope.maxPages = $scope.arr.length;
+            $scope.maxPages = $scope.arrPages.length;
             $scope.pageWidth = pageContainer.width();
 
 
@@ -22,51 +23,48 @@
 
             $scope.slideInNext = function (){
 
-                TweenMax.from( $($scope.arr[$scope.count]), $scope.speed, 
-                    {x: $globalService.viewportWidth, opacity:0, ease:Expo.easeInOut});
+                TweenMax.fromTo( $($scope.arrPages[$scope.count]), $scope.speed, 
+                    {x:$globalService.viewportWidth, opacity:0}, {x: 0, opacity:1, ease:Expo.easeInOut});
             }
             $scope.slideInPrev = function (){
-                $scope.posOutX = $scope.calcOutX();
 
-                console.log($scope.posOutX);
-
-                TweenMax.to( $($scope.arr[$scope.count]), $scope.speed, 
-                    {x: $scope.posOutX, opacity:0, ease:Expo.easeInOut});
+                TweenMax.fromTo( $($scope.arrPages[$scope.count]), $scope.speed, 
+                    {x:-$scope.pageWidth, opacity:0}, {x: 0, opacity:1, ease:Expo.easeInOut});
             }
 
             $scope.slideOutPrev = function (){
                 $scope.posOutX = $scope.calcOutX();
-                TweenMax.to( $($scope.arr[$scope.count]), $scope.speed, 
-                    {x: $scope.posOutX, opacity:0, onComplete:$scope.prevPage, ease:Expo.easeInOut});
+                TweenMax.fromTo( $($scope.arrPages[$scope.count]), $scope.speed, 
+                    {x: 0, opacity:1}, {x: $scope.posOutX, opacity:0, onComplete:$scope.prevPage, ease:Expo.easeInOut});
             }
 
             $scope.slideOutNext = function (){
                 $scope.posOutX = $scope.calcOutX();
-                TweenMax.to( $($scope.arr[$scope.count]), $scope.speed, 
-                    {x: -($scope.posOutX), opacity:1, onComplete:$scope.nextPage, ease:Expo.easeInOut});
+                TweenMax.fromTo( $($scope.arrPages[$scope.count]), $scope.speed, 
+                   {x: 0, opacity:1}, {x: -($scope.posOutX), opacity:0, onComplete:$scope.nextPage, ease:Expo.easeInOut});
             }
 
             $scope.nextPage = function (){
 
-                $($scope.arr[$scope.count]).addClass("hide");
+                $($scope.arrPages[$scope.count]).addClass("hide");
 
                 if($scope.count < $scope.maxPages){
                     $scope.count++;
                 }
-
-                $($scope.arr[$scope.count]).removeClass("hide");
+                //Make next page visible
+                $($scope.arrPages[$scope.count]).removeClass("hide");
                 $scope.slideInNext();
 
             }
 
             $scope.prevPage = function (){
 
-                $($scope.arr[$scope.count]).addClass("hide");
+                $($scope.arrPages[$scope.count]).addClass("hide");
                 if($scope.count > 0){
                     $scope.count--;
                 }
-
-                $($scope.arr[$scope.count]).removeClass("hide");
+                //Make previous page visible
+                $($scope.arrPages[$scope.count]).removeClass("hide");
                 $scope.slideInPrev();
 
             }
@@ -88,7 +86,7 @@
                 return ($globalService.viewportWidth / 2 + $scope.pageWidth / 2);
             }
             $scope.centerPoint = function(){
-                return ($globalService.viewportWidth / 2 + $scope.pageWidth / 2) / 2;
+                return ($scope.pageWidth - $globalService.viewportWidth) / 2;
             }
 
 
