@@ -7,76 +7,68 @@
         ['$scope', '$filter', 'globalService',
         function($scope, $filter, $globalService) {
 
-            //var box = $('.test-sheet');
-            //TweenMax.to($('.slide'), 2, {x: -700, ease:Expo.easeInOut});
-            /*var displayPortWidth = $(window).width();
-           
-            var s1 = $('.s1');
-            var s2 = $('.s2');
-
-
-            var slideOut = function (element){
-                var displayPortWidth = $(window).width();
-                var elementWidth = -($('.main').width() + 20);
-
-                console.log("displayPortWidth "+ displayPortWidth);
-                console.log("elementWidth "+ elementWidth);
-
-                TweenMax.to(element, 1.25, {x: elementWidth, opacity:0, onComplete:slideIn, ease:Expo.easeInOut});
-            }
-
-            var slideIn = function (element){
-                s1.addClass('hide');
-                s2.removeClass('hide');
-                
-                $(window).scrollTop(0);
-               // TweenMax.to(s2, 1.25, {x: -displayPortWidth, opacity:1, ease:Expo.easeInOut});
-            }
-
-            console.log("Quiz MWQ Controller !!");
-
-            $('.quiz__nav--start').on('click', function(evt){
-                
-                slideOut(s1);
-            });
-
-            $('.quiz__nav--prev').on('click', function(evt){
-                $('.s1').removeClass('hide');
-                $('.s2').addClass('hide');
-                //$('.main').scrollTop();
-                $(window).scrollTop(0);
-            });
-            */
-            var page = $('.pages');
+            var pageContainer = $('.pages');
+            $scope.speed = 0.75;
 
             $scope.arr = [];
-            $scope.arr = page.find('.page');
+            $scope.arr = pageContainer.find('.page');
 
             $scope.maxPages = $scope.arr.length;
-            $scope.pageWidth = page.width();
-
+            $scope.pageWidth = pageContainer.width();
 
 
             $scope.count = 0;
 
-            $scope.slideIn = function (){
-                console.log("slideIN");
+
+            $scope.slideInNext = function (){
+
+                TweenMax.from( $($scope.arr[$scope.count]), $scope.speed, 
+                    {x: $globalService.viewportWidth, opacity:0, ease:Expo.easeInOut});
+            }
+            $scope.slideInPrev = function (){
+                $scope.posOutX = $scope.calcOutX();
+
+                console.log($scope.posOutX);
+
+                TweenMax.to( $($scope.arr[$scope.count]), $scope.speed, 
+                    {x: $scope.posOutX, opacity:0, ease:Expo.easeInOut});
             }
 
-            $scope.slideOut = function (){
+            $scope.slideOutPrev = function (){
                 $scope.posOutX = $scope.calcOutX();
-                TweenMax.to($scope.arr[$scope.count], 1.5, 
+                TweenMax.to( $($scope.arr[$scope.count]), $scope.speed, 
+                    {x: $scope.posOutX, opacity:0, onComplete:$scope.prevPage, ease:Expo.easeInOut});
+            }
+
+            $scope.slideOutNext = function (){
+                $scope.posOutX = $scope.calcOutX();
+                TweenMax.to( $($scope.arr[$scope.count]), $scope.speed, 
                     {x: -($scope.posOutX), opacity:1, onComplete:$scope.nextPage, ease:Expo.easeInOut});
             }
 
             $scope.nextPage = function (){
 
                 $($scope.arr[$scope.count]).addClass("hide");
+
                 if($scope.count < $scope.maxPages){
                     $scope.count++;
                 }
+
                 $($scope.arr[$scope.count]).removeClass("hide");
-                //$scope.arr[$scope.count].className .display = 'block';
+                $scope.slideInNext();
+
+            }
+
+            $scope.prevPage = function (){
+
+                $($scope.arr[$scope.count]).addClass("hide");
+                if($scope.count > 0){
+                    $scope.count--;
+                }
+
+                $($scope.arr[$scope.count]).removeClass("hide");
+                $scope.slideInPrev();
+
             }
 
 
@@ -93,20 +85,36 @@
             $('.fill-height-vcenter').height( $globalService.viewportHeight );
 
             $scope.calcOutX = function(){
-                return ($globalService.viewportWidth / 2 + $scope.pageWidth / 2) + 10;
+                return ($globalService.viewportWidth / 2 + $scope.pageWidth / 2);
+            }
+            $scope.centerPoint = function(){
+                return ($globalService.viewportWidth / 2 + $scope.pageWidth / 2) / 2;
             }
 
 
             //Events
              $('.quiz__nav--start').on('click', function(evt){
                 
-                $scope.slideOut();
+                $scope.slideOutNext();
             });
 
+            $('.quiz__nav--next').on('click', function(evt){
+                
+                $scope.slideOutNext();
+            });
+
+            $('.quiz__nav--prev').on('click', function(evt){
+                
+                $scope.slideOutPrev();
+            });
+
+             
+
             $(window).on('resize', function(){
-                $scope.setViewportHeight()
+                $scope.setViewportHeight();
+                $('.fill-height-vcenter').height( $globalService.viewportHeight );
                 $scope.setViewportWidth();
-                $scope.pageWidth = page.width();
+                $scope.pageWidth = pageContainer.width();
             });
 
         }]);

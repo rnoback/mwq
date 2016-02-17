@@ -607,6 +607,12 @@ picture {
   margin: 0;
   max-width: 100%; }
 
+html {
+  overflow-x: hidden; }
+  html body {
+    background: url(../images/bg/bg5.jpg) no-repeat center center fixed;
+    background-size: cover; }
+
 html, body {
   position: relative;
   height: 100%; }
@@ -620,10 +626,6 @@ img {
 
 .wrapper {
   height: inherit; }
-
-html body {
-  background: url(../images/bg/bg5.jpg) no-repeat center center fixed;
-  background-size: cover; }
 
 div.container {
   max-width: 600px;

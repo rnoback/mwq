@@ -1,12 +1,5 @@
-html{
-	body{
-		background: url(../images/bg/bg5.jpg) no-repeat center center fixed; 
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-	}
-}
+
+
 div.container {
 	
 	@include outer-container();
@@ -18,8 +11,8 @@ div.container {
 	transform: translateY(-50%);
 */
 	
-
 }
+
 
 .fill-height-vcenter{
 	display: table;
