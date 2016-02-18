@@ -17,7 +17,7 @@ $tablet: new-breakpoint(min-width em($first-breakpoint-value) max-width em($seco
 $mobile: new-breakpoint(max-width em($first-breakpoint-value - 1) 4);
 
 
-$visual-grid: true;
+$visual-grid: false;
 $visual-grid-color: red;
 $visual-grid-index: back;
 $visual-grid-opacity: 0.2;

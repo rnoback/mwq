@@ -7,6 +7,19 @@
         ['$scope', '$filter', 'globalService',
         function($scope, $filter, $globalService) {
 
+            //QUIZ CALCULATION
+
+            $('.q__item').on('click', function(evt){
+                evt.preventDefault();
+                var target = $( evt.target );
+                               
+                var answer = target.parent().data('answer');
+                var question = target.parent().parent().data('question'); 
+                console.log("answer "+answer);
+                console.log("question "+question);
+            });
+
+            // QUIZ FUNCTIONALITY
             var pageContainer = $('.pages');
             $scope.speed = 0.75;
 
@@ -16,7 +29,6 @@
 
             $scope.maxPages = $scope.arrPages.length;
             $scope.pageWidth = pageContainer.width();
-
 
             $scope.count = 0;
 
@@ -54,6 +66,7 @@
                 //Make next page visible
                 $($scope.arrPages[$scope.count]).removeClass("hide");
                 $scope.slideInNext();
+                $(window).scrollTop(0);
 
             }
 
@@ -66,6 +79,7 @@
                 //Make previous page visible
                 $($scope.arrPages[$scope.count]).removeClass("hide");
                 $scope.slideInPrev();
+                $(window).scrollTop(0);
 
             }
 

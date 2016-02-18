@@ -27,3 +27,11 @@ div.container {
 		padding: 80px 0 55px;  
 	}
 }
+
+
+
+.pages{
+	@include media($mobile) {
+		overflow-x: hidden; 
+	}
+}

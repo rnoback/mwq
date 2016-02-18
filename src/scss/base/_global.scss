@@ -6,7 +6,6 @@ html{
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		background-size: cover;
-
 	}
 }
 html, body{
@@ -14,15 +13,19 @@ html, body{
     height: 100%;
 }
 
+
 img{
     max-width: 100%;
     height: auto;
 }
 
 a > svg, a > span {
-	pointer-events: none;
+	//pointer-events: none;
 }
 
 .hide {
     display: none !important;
+}
+.wrapper{
+	height: inherit;
 }
