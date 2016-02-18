@@ -2,7 +2,7 @@
 
 div.container {
 	
-	@include outer-container();
+	//@include outer-container();
 	position: relative;
 	/*
 	top: 50%;
@@ -10,6 +10,10 @@ div.container {
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 */
+ 	overflow:hidden;
+ 	width: 100%;
+	max-width: 100% !important;
+
 	
 }
 
@@ -32,6 +36,9 @@ div.container {
 
 .pages{
 	@include media($mobile) {
+		overflow-x: hidden; 
+	}
+	@include media($tablet){
 		overflow-x: hidden; 
 	}
 }

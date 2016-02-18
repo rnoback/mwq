@@ -9,12 +9,23 @@
 
             //QUIZ CALCULATION
 
+
+
+
             $('.q__item').on('click', function(evt){
                 evt.preventDefault();
+                
                 var target = $( evt.target );
-                               
-                var answer = target.parent().data('answer');
-                var question = target.parent().parent().data('question'); 
+                var item = target.parent();
+                var container = target.parent().parent();
+               
+                container.find('.q__item').removeClass('active');
+
+                var answer = item.data('answer');
+                var question = container.data('question'); 
+                item.addClass('active');
+                $scope.slideOutNext();
+
                 console.log("answer "+answer);
                 console.log("question "+question);
             });
@@ -59,15 +70,18 @@
             $scope.nextPage = function (){
 
                 $($scope.arrPages[$scope.count]).addClass("hide");
-
+                $($scope.arrPages[$scope.count]).find('.quiz__nav--next').show();
+                
                 if($scope.count < $scope.maxPages){
                     $scope.count++;
                 }
                 //Make next page visible
+                
                 $($scope.arrPages[$scope.count]).removeClass("hide");
+               
+                
                 $scope.slideInNext();
                 $(window).scrollTop(0);
-
             }
 
             $scope.prevPage = function (){
@@ -83,6 +97,10 @@
 
             }
 
+            var id = setInterval(function(){
+                var d = $(window).scrollTop();
+                console.log(d);
+            }, 500);
 
 
             $scope.setViewportWidth = function(){

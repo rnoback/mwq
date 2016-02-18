@@ -1,6 +1,8 @@
 .quiz{
 	background: $white;
 	max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 	@include clearfix;
 	
 	.block {
@@ -83,6 +85,7 @@
 			}
 		}
 		button.quiz__nav--next{
+			display:none;
 			float: right;
 			margin: 20px 20px 20px 0;
 			span{
@@ -111,6 +114,9 @@
 				background: $orange;
 				opacity: 0;
 				transition: opacity $base-duration $base-timing;
+			}
+			.q__image--image{
+				display: block;
 			}
 			.q__item--text{
 				position: relative;
@@ -191,12 +197,12 @@
 				@include omega(1n);
 			}
 
-			&:hover{
+			&:hover, &.active{
 				background: $orange;
 				.q__item--text{
 					color: $white;
 				}
-			}
+			}	
 		}	
 	}
 	.block.mint{

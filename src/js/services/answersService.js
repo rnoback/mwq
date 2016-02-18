@@ -21,19 +21,7 @@
         this.club_dance = [];
         this.kids_hits = [];
 
-        this.1a = {
-        	klassiek = true,
-        	easy_jazz = true,
-        	easy_listening = true,
-        	soul = true,
-        	lounge = true,
-        	latin = true,
-        	urban = true,
-        	nederpop = true,
-        	pop_ballads = true,
-        	singer_songwriter = true,
-        	pop_classice = true,
-        } 
+        
 
     }]);
 }());
