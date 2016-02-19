@@ -9,9 +9,7 @@
 
             //QUIZ CALCULATION
 
-
-
-
+            // Answer event
             $('.q__item').on('click', function(evt){
                 evt.preventDefault();
                 
@@ -30,6 +28,24 @@
                 console.log("question "+question);
             });
 
+
+            // Footer dot paging
+            $scope.setupDotPaging = function(maxPages, curPage){
+                var dotContainer = $('footer').find('.quiz-paging');
+                var dotMarkup = "<li><span></span></li>";
+                var dotMarkupActive = "<li><span class='active'></span></li>";
+                var dotMarkupAdd = "";
+                for (var i=0; i<maxPages; i++ ){
+                    if(i===curPage){
+                        dotMarkupAdd += dotMarkupActive;
+                    }else{
+                        dotMarkupAdd += dotMarkup;
+                    }
+                }
+                dotContainer.html(dotMarkupAdd);
+            }
+
+
             // QUIZ FUNCTIONALITY
             var pageContainer = $('.pages');
             $scope.speed = 0.75;
@@ -43,6 +59,7 @@
 
             $scope.count = 0;
 
+            $scope.setupDotPaging($scope.maxPages, $scope.count);
 
             $scope.slideInNext = function (){
 
@@ -82,6 +99,8 @@
                 
                 $scope.slideInNext();
                 $(window).scrollTop(0);
+                // Dot paging
+                $scope.setupDotPaging($scope.maxPages, $scope.count);
             }
 
             $scope.prevPage = function (){
@@ -95,6 +114,8 @@
                 $scope.slideInPrev();
                 $(window).scrollTop(0);
 
+                // Dot paging
+                $scope.setupDotPaging($scope.maxPages, $scope.count);
             }
 
             $scope.setViewportWidth = function(){
@@ -140,6 +161,10 @@
                 $scope.setViewportWidth();
                 $scope.pageWidth = pageContainer.width();
             });
+
+            
+            // Make quiz visible
+            TweenMax.to( $('.quiz'), 1, {opacity:1, ease:Strong.easeInOut});
 
         }]);
 }());

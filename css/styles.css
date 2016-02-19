@@ -774,7 +774,8 @@ footer {
           background: #3db791; }
 
 .quiz {
-  background: #fff; }
+  background: #fff;
+  opacity: 0; }
   .quiz::after {
     clear: both;
     content: "";
