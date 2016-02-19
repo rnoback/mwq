@@ -576,6 +576,10 @@ picture {
   margin: 0;
   max-width: 100%; }
 
+html {
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll; }
+
 html, body {
   position: relative;
   height: 100%; }
@@ -624,13 +628,10 @@ div.container {
     .fill-height-vcenter-inner {
       padding: 80px 0 55px; } }
 
-@media screen and (max-width: 28.0625em) {
-  .pages {
-    overflow-x: hidden; } }
-
-@media screen and (min-width: 28.125em) and (max-width: 43.75em) {
-  .pages {
-    overflow-x: hidden; } }
+.container_inner {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto; }
 
 header .header__bar {
   z-index: 99;
@@ -773,10 +774,7 @@ footer {
           background: #3db791; }
 
 .quiz {
-  background: #fff;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto; }
+  background: #fff; }
   .quiz::after {
     clear: both;
     content: "";

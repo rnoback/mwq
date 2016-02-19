@@ -97,12 +97,6 @@
 
             }
 
-            var id = setInterval(function(){
-                var d = $(window).scrollTop();
-                console.log(d);
-            }, 500);
-
-
             $scope.setViewportWidth = function(){
                 $globalService.viewportWidth =  $(window).width();
             }
