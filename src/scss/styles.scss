@@ -61,7 +61,11 @@ div.container {
 	}
 }
 
+.section-c{
+  padding-top: 80px;
+}
 .section-c .card{
+
 	@include five-up-desktop;
 }
 

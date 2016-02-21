@@ -9,10 +9,16 @@
 			font-family: $heading-font-bold;
 			@include font-size(12);
 			text-transform: uppercase;
+
+			&:hover{
+				color:$green;
+			}
+
+			&.active{
+				color:$green;
+			}
 		}
-		a:hover{
-			color:$green;
-		}
+		
 	}
 	@include media($mobile) {
 		display:none;
