@@ -1,9 +1,104 @@
 .main-page{
+	.flexslider{
+		margin:0;
+		padding:0;
+		border:0;
+		img{
+			display: block;
+		}
+	}
 	.block{
 		background: $white;
 		margin-bottom: 20px;
+		padding: 20px;
+		@include clearfix;
+		.block__title, .block__subtitle{
+			color: $green;
+			text-transform: uppercase;
+			text-align: left;
+			font-size: 20px;
+			margin:0;
+		}
+		.block__subtitle{
+			margin-top:20px;
+		}
+		.block__text{
+			font-family: $base-font-family;
+			font-size: 14px;
+			text-align: left;
+			margin:0;
+			& a{
+				color: $green;
+				&:hover{
+					color: $action-color;
+				}
+			}
+			& a.blocklink--more{
+				display:inline-block;
+				font-weight: bold; 
+
+			}
+		}
+		.block__text--more{
+			display: none;
+		}
+		.pill-btn {
+			margin: 10px 0 0;
+			float: left;
+		}
+		&:last-child{
+			margin:0;
+		}
+
+		ul{
+			li{
+				margin: 20px 0;
+				@include clearfix;
+				font-size: 14px;
+
+				span.label{
+					color:$green;
+					font-family: $heading-font-bold;	
+					text-transform: uppercase;
+					float: left;
+					display: block;
+					width: 18%;
+				}
+				span.value{
+					display: block;
+					float: left;
+					width: 82%;
+				}
+			}
+		}
+	}
+
+	.block.extra-info{
+		h1.block__title{
+			color: $dark-gray;
+			font-size: 30px;
+		}
+		.block__text{
+			& a.blocklink--more{
+				margin-top: 20px;
+
+			}
+		}
+		.block__text--more{
+			display: block;
+
+			
+		}
 	}
 	.block.green{
 		background: $green;
+		.block__title{
+			color: $white;
+			font-size: 18px;
+		}
+		.block__text{
+			color: $white;
+		}
 	}
+
 }

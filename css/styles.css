@@ -743,7 +743,8 @@ footer {
   position: fixed;
   bottom: 0;
   z-index: 99;
-  width: 100%; }
+  width: 100%;
+  display: none; }
   footer .footer__bar {
     background: #fff;
     width: 100%;
@@ -779,16 +780,87 @@ footer {
         footer .footer__bar ul.quiz-paging li span.active {
           background: #3db791; }
 
+.main-page .flexslider {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+  .main-page .flexslider img {
+    display: block; }
+
 .main-page .block {
   background: #fff;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  padding: 20px; }
+  .main-page .block::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .main-page .block .block__title, .main-page .block .block__subtitle {
+    color: #3db791;
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 20px;
+    margin: 0; }
+  .main-page .block .block__subtitle {
+    margin-top: 20px; }
+  .main-page .block .block__text {
+    font-family: "breeserif", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    text-align: left;
+    margin: 0; }
+    .main-page .block .block__text a {
+      color: #3db791; }
+      .main-page .block .block__text a:hover {
+        color: #f6901e; }
+    .main-page .block .block__text a.blocklink--more {
+      display: inline-block;
+      font-weight: bold; }
+  .main-page .block .block__text--more {
+    display: none; }
+  .main-page .block .pill-btn {
+    margin: 10px 0 0;
+    float: left; }
+  .main-page .block:last-child {
+    margin: 0; }
+  .main-page .block ul li {
+    margin: 20px 0;
+    font-size: 14px; }
+    .main-page .block ul li::after {
+      clear: both;
+      content: "";
+      display: table; }
+    .main-page .block ul li span.label {
+      color: #3db791;
+      font-family: "textABold", Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+      float: left;
+      display: block;
+      width: 18%; }
+    .main-page .block ul li span.value {
+      display: block;
+      float: left;
+      width: 82%; }
+
+.main-page .block.extra-info h1.block__title {
+  color: #414141;
+  font-size: 30px; }
+
+.main-page .block.extra-info .block__text a.blocklink--more {
+  margin-top: 20px; }
+
+.main-page .block.extra-info .block__text--more {
+  display: block; }
 
 .main-page .block.green {
   background: #3db791; }
+  .main-page .block.green .block__title {
+    color: #fff;
+    font-size: 18px; }
+  .main-page .block.green .block__text {
+    color: #fff; }
 
 .quiz {
-  background: #fff;
-  opacity: 0; }
+  background: #fff; }
   .quiz::after {
     clear: both;
     content: "";

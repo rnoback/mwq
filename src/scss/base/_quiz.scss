@@ -1,7 +1,5 @@
 .quiz{
 	background: $white;
-	opacity: 0;
-
 	@include clearfix;
 	
 	.block {

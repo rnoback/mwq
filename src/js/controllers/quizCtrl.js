@@ -164,7 +164,10 @@
 
             
             // Make quiz visible
-            TweenMax.to( $('.quiz'), 1, {opacity:1, ease:Strong.easeInOut});
+            TweenMax.fromTo( $('.quiz'), 1, {opacity:0}, {opacity:1, ease:Strong.easeInOut});
+
+            $('footer').show();
+            TweenMax.fromTo( $('footer'), .75, {bottom:-35}, {delay: 0.5, bottom:0, ease:Strong.easeInOut});
 
         }]);
 }());

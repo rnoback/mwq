@@ -3,7 +3,7 @@
     'use strict';
     var mwqApp = angular.module('mwqApp');
     
-    mwqApp.controller('homeController', 
+    mwqApp.controller('infoController', 
         ['$scope', '$filter', 'globalService',
         function($scope, $filter, $globalService) {
 
@@ -63,7 +63,7 @@
 
              });
 
-            // Make quiz visible
+             // Make quiz visible
             TweenMax.fromTo( $('.main-page'), 1, {opacity:0}, {opacity:1, ease:Strong.easeInOut});
             TweenMax.fromTo( $('footer'), .75, {bottom:0}, {bottom:-35, ease:Strong.easeInOut});
         }]);
