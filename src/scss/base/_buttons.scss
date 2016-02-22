@@ -7,12 +7,12 @@
   cursor: pointer;
   display: inline-block;
   font-family: $heading-font-bold;
-  @include font-size(10);
+  @include font-size(12);
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
   line-height: 2;
-  padding: $small-spacing 1em;
+  padding: $small-spacing 1.6em;
   text-decoration: none;
   transition: background-color $base-duration $base-timing;
   user-select: none;

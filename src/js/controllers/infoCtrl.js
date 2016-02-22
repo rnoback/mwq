@@ -4,8 +4,8 @@
     var mwqApp = angular.module('mwqApp');
     
     mwqApp.controller('infoController', 
-        ['$scope', '$filter', 'globalService',
-        function($scope, $filter, $globalService) {
+        ['$scope', '$filter', 'globalService', 'carouselService',
+        function($scope, $filter, $globalService, $carouselService) {
 
             //var box = $('.test-sheet');
            //TweenMax.to($('.slide'), 2, {x: -700, ease:Expo.easeInOut});
@@ -66,5 +66,8 @@
              // Make quiz visible
             TweenMax.fromTo( $('.main-page'), 1, {opacity:0}, {opacity:1, ease:Strong.easeInOut});
             TweenMax.fromTo( $('footer'), .75, {bottom:0}, {bottom:-35, ease:Strong.easeInOut});
+
+            // Start afbeelding carousel
+            $carouselService.startCarousel();
         }]);
 }());
