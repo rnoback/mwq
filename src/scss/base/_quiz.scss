@@ -7,8 +7,9 @@
 		padding: 20px 20px 0 20px;
 		@include clearfix;
 		text-align: left;
+		position:relative;
 		.block__text{
-			margin: 20px 0 0;
+			//margin: 20px 0 0;
 			@include font-size(14);
 			text-align: left;
 			@include media($tablet) {
@@ -52,13 +53,16 @@
 			bottom: -10px;
 		}
 		p {
-			@include font-size(14);
+			@include font-size(13);
 			&:first-child{
 				padding-top: 40px;
 			}
 			&:last-child{
-				padding-bottom: 40px;
+				//padding-bottom: 40px;
 			}	
+			@include media($desktop) {
+				@include font-size(14);
+			}
 		}
 		
 		
@@ -238,6 +242,7 @@
 		background: transparent;
 		.block{
 			margin-bottom: 20px;
+			padding: 20px;
 			.quiz__sheet--title{
 				text-align: left;
 			}
@@ -254,11 +259,34 @@
 		.block.green{
 			background: $green;
 			color: $white;
+			position:relative;
+			@include clearfix;
+
 			.quiz__sheet--title{
 				color: $white;	
 				font-family: $heading-font-bold;
 				text-transform: uppercase;
 			}
+			img{
+				width: 100%;
+			}
+			.block-inner{
+				margin-top: -20px;
+				width: 100%;
+				.other-matches{
+					font-family: $heading-font-bold;
+					text-transform: uppercase;
+					@include font-size(12);
+					display: inline-block;
+				}
+				@include media($mobile) {
+					margin-top: 20px;
+				}
+				
+			}
+			
+			
+			
 			.quiz__sheet--subtitle {
 				color: $white;
 				text-align: left;
@@ -270,9 +298,39 @@
 					height: auto;
 				}
 			}
+			&:after{
+				width: 0; 
+				height: 0; 
+				border-left: 20px solid transparent;
+				border-right: 20px solid transparent;
+				border-top: 20px solid $green;
+				position: relative;
+				margin: 0 auto;
+				top: 35px;
+			}
+			@include media($desktop) {
+				img{
+					width: 40%;
+				}
+				.block-inner{
+					width: 55%;
+					float:right;
+				}
+			} 
+
+			@include media($tablet) {
+				img{
+					width: 40%;
+				}
+				.block-inner{
+					width: 55%;
+					float:right;
+
+				}
+			}
 		}
 		button.quiz__nav--email {
-			margin: 20px auto;
+			margin: 20px auto 0;
 			padding: $small-spacing 3em;
 			font-size: 12px;
 			border: 1px solid $orange;
