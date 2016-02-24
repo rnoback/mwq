@@ -38,17 +38,28 @@ div.container {
 .fill-height-vcenter-inner {
     display: table-cell;
     vertical-align: middle;
-    text-align: center;
     padding: 80px 20px 55px;
     @include media($desktop) {
 		padding: 80px 0 55px;  
 	}
 }
 
-
-
 .container_inner{
 	max-width: 600px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.blockfooter{
+	font-family: $heading-font;
+	text-transform: uppercase;
+	color: $white;
+	font-size: 10px;
+	a{
+		color: $white;
+		font-family: $heading-font-bold;
+		&:hover{
+			color: $orange;
+		}
+	}
 }

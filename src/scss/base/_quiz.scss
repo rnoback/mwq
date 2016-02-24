@@ -53,7 +53,7 @@
 			bottom: -10px;
 		}
 		p {
-			@include font-size(13);
+			@include font-size(14);
 			&:first-child{
 				padding-top: 40px;
 			}
@@ -84,11 +84,12 @@
 		button.quiz__nav--start {
 			margin: 0 auto 20px;
 			padding: $small-spacing 3em;
-			font-size: 12px;
+			@include font-size(12);
 		}
 		button.quiz__nav--prev{
 			float: left;
 			margin-bottom: 20px;
+			padding: $small-spacing 1.6em;
 			span{
 				padding-right: 2px;
 			}
@@ -102,6 +103,7 @@
 			display:none;
 			float: right;
 			margin-bottom: 20px;
+			padding: $small-spacing 1.6em;
 			span{
 				padding-left: 2px;
 			}
@@ -237,6 +239,7 @@
 	.block.mint{
 		background: $light-green;
 	}
+	
 
 	.quiz__result{
 		background: transparent;
@@ -327,6 +330,22 @@
 					float:right;
 
 				}
+			}
+		}
+
+
+		#email-form{
+			.email-txt{
+
+				border-radius: 1.8em;
+				padding: 15px 20px;
+				font-family: $heading-font-bold;
+				text-transform: uppercase;
+				@include font-size(12);
+				border-color: $black;
+				@include placeholder {
+    				color: $dark-gray;
+  				}
 			}
 		}
 		button.quiz__nav--email {

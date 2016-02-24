@@ -53,11 +53,11 @@
                 var target = $(evt.target);
                 if(extraInfoOpen){
                     target.parent().parent().parent().removeClass('extra-info');
-                    target.html('Lees meer');
+                    target.html('Lees meer <i class="fa fa-angle-right">&nbsp;</i>');
                     extraInfoOpen = false;
                 }else{
                     target.parent().parent().parent().addClass('extra-info');
-                    target.html('Lees minder');
+                    target.html('<i class="fa fa-angle-left">&nbsp;</i> Lees minder');
                     extraInfoOpen = true;
                 }
 

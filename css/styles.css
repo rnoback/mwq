@@ -401,7 +401,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
   -webkit-font-smoothing: antialiased;
   font-weight: normal;
   line-height: 2;
-  padding: 0.75em 1.6em;
+  padding: 0.75em 2.2em;
   text-decoration: none;
   -webkit-transition: background-color 150ms ease;
   transition: background-color 150ms ease;
@@ -626,7 +626,6 @@ div.container {
 .fill-height-vcenter-inner {
   display: table-cell;
   vertical-align: middle;
-  text-align: center;
   padding: 80px 20px 55px; }
   @media screen and (min-width: 43.75em) {
     .fill-height-vcenter-inner {
@@ -637,6 +636,17 @@ div.container {
   margin-left: auto;
   margin-right: auto; }
 
+.blockfooter {
+  font-family: "textA", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 10px; }
+  .blockfooter a {
+    color: #fff;
+    font-family: "textABold", Helvetica, Arial, sans-serif; }
+    .blockfooter a:hover {
+      color: #f6901e; }
+
 header .header__bar {
   z-index: 99;
   position: fixed;
@@ -646,7 +656,8 @@ header .header__bar {
   height: 60px;
   padding: 10px 24px; }
   header .header__bar .header__bar__logo {
-    float: left; }
+    float: left;
+    width: 100px; }
     header .header__bar .header__bar__logo svg {
       width: auto;
       height: 40px; }
@@ -922,8 +933,8 @@ footer {
       display: block;
       bottom: -10px; }
     .quiz .block p {
-      font-size: 13px;
-      font-size: 0.8125rem; }
+      font-size: 14px;
+      font-size: 0.875rem; }
       .quiz .block p:first-child {
         padding-top: 40px; }
       @media screen and (min-width: 43.75em) {
@@ -943,10 +954,12 @@ footer {
     .quiz .block button.quiz__nav--start {
       margin: 0 auto 20px;
       padding: 0.75em 3em;
-      font-size: 12px; }
+      font-size: 12px;
+      font-size: 0.75rem; }
     .quiz .block button.quiz__nav--prev {
       float: left;
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      padding: 0.75em 1.6em; }
       .quiz .block button.quiz__nav--prev span {
         padding-right: 2px; }
       .quiz .block button.quiz__nav--prev i {
@@ -956,7 +969,8 @@ footer {
     .quiz .block button.quiz__nav--next {
       display: none;
       float: right;
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      padding: 0.75em 1.6em; }
       .quiz .block button.quiz__nav--next span {
         padding-left: 2px; }
       .quiz .block button.quiz__nav--next i {
@@ -1174,6 +1188,22 @@ footer {
         .quiz .quiz__result .block.green .block-inner {
           width: 55%;
           float: right; } }
+    .quiz .quiz__result #email-form .email-txt {
+      border-radius: 1.8em;
+      padding: 15px 20px;
+      font-family: "textABold", Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-size: 0.75rem;
+      border-color: #000; }
+      .quiz .quiz__result #email-form .email-txt::-webkit-input-placeholder {
+        color: #414141; }
+      .quiz .quiz__result #email-form .email-txt::-moz-placeholder {
+        color: #414141; }
+      .quiz .quiz__result #email-form .email-txt:-moz-placeholder {
+        color: #414141; }
+      .quiz .quiz__result #email-form .email-txt:-ms-input-placeholder {
+        color: #414141; }
     .quiz .quiz__result button.quiz__nav--email {
       margin: 20px auto 0;
       padding: 0.75em 3em;
@@ -1182,172 +1212,3 @@ footer {
 
 .quiz.nobg {
   background: transparent; }
-
-body {
-  background: #fff; }
-
-img {
-  max-width: 100%;
-  height: auto; }
-
-div.container {
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto; }
-  div.container::after {
-    clear: both;
-    content: "";
-    display: table; }
-
-@media screen and (min-width: 43.75em) {
-  .section-a {
-    float: left;
-    display: block;
-    margin-right: 1.22699%;
-    width: 66.25767%; }
-    .section-a:last-child {
-      margin-right: 0; } }
-
-@media screen and (min-width: 28.125em) and (max-width: 43.75em) {
-  .section-a {
-    float: left;
-    display: block;
-    margin-right: 2.32558%;
-    width: 100%;
-    margin-right: 0; }
-    .section-a:last-child {
-      margin-right: 0; } }
-
-@media screen and (max-width: 28.0625em) {
-  .section-a {
-    float: left;
-    display: block;
-    margin-right: 4.7619%;
-    width: 100%;
-    margin-right: 0; }
-    .section-a:last-child {
-      margin-right: 0; } }
-
-@media screen and (min-width: 43.75em) {
-  .section-b {
-    float: left;
-    display: block;
-    margin-right: 1.22699%;
-    width: 32.51534%;
-    margin-right: 0; }
-    .section-b:last-child {
-      margin-right: 0; } }
-
-@media screen and (min-width: 28.125em) and (max-width: 43.75em) {
-  .section-b {
-    float: left;
-    display: block;
-    margin-right: 2.32558%;
-    width: 61.62791%;
-    margin-left: 38.37209%;
-    margin-right: 0; }
-    .section-b:last-child {
-      margin-right: 0; } }
-
-@media screen and (max-width: 28.0625em) {
-  .section-b {
-    float: left;
-    display: block;
-    margin-right: 4.7619%;
-    width: 100%;
-    margin-right: 0; }
-    .section-b:last-child {
-      margin-right: 0; } }
-
-.section-c {
-  padding-top: 80px; }
-
-@media screen and (min-width: 43.75em) {
-  .section-c .card {
-    float: left;
-    display: block;
-    margin-right: 1.22699%;
-    width: 32.51534%; }
-    .section-c .card:last-child {
-      margin-right: 0; }
-    .section-c .card:nth-child(3n) {
-      margin-right: 0; }
-    .section-c .card:nth-child(3n+1) {
-      clear: left; } }
-
-@media screen and (min-width: 28.125em) and (max-width: 43.75em) {
-  .section-c .card {
-    float: left;
-    display: block;
-    margin-right: 2.32558%;
-    width: 48.83721%; }
-    .section-c .card:last-child {
-      margin-right: 0; }
-    .section-c .card:nth-child(2n) {
-      margin-right: 0; }
-    .section-c .card:nth-child(2n+1) {
-      clear: left; } }
-
-@media screen and (max-width: 28.0625em) {
-  .section-c .card {
-    float: left;
-    display: block;
-    margin-right: 4.7619%;
-    width: 47.61905%; }
-    .section-c .card:last-child {
-      margin-right: 0; }
-    .section-c .card:nth-child(2n) {
-      margin-right: 0; }
-    .section-c .card:nth-child(2n+1) {
-      clear: left; } }
-
-.device-background {
-  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png"), -webkit-linear-gradient(-280deg, #0A120D, #162C4C), no-repeat;
-  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png"), -webkit-linear-gradient(80deg, #0A120D, #162C4C), no-repeat;
-  background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png"), linear-gradient(10deg, #0A120D, #162C4C), no-repeat;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 20em;
-  width: 100%; }
-  .device-background .device-text {
-    padding: 2em; }
-    @media screen and (min-width: 53.75em) {
-      .device-background .device-text {
-        float: left;
-        max-width: 50%;
-        padding: 4em; } }
-    .device-background .device-text h4 {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-      color: white;
-      font-size: 1.5em;
-      margin: 0 0 0.5em 0;
-      padding-bottom: 0.5em; }
-    .device-background .device-text p {
-      color: white;
-      line-height: 1.5em;
-      margin-bottom: 1.5em; }
-  .device-background .device {
-    display: none;
-    position: relative; }
-    @media screen and (min-width: 53.75em) {
-      .device-background .device {
-        -webkit-transform: perspective(800px) translateX(0px) translateY(-100px) translateZ(50px) rotateX(0deg) rotateY(-20deg) rotateZ(0deg);
-        transform: perspective(800px) translateX(0px) translateY(-100px) translateZ(50px) rotateX(0deg) rotateY(-20deg) rotateZ(0deg);
-        background: #1a1a1a;
-        border-radius: 2em;
-        box-shadow: 1px 0px #343434, 4px 0px #060606, 7px 0px #010101, 10px 0px #010101, 13px 0px #010101;
-        display: block;
-        float: right;
-        margin-bottom: -12em;
-        margin-right: 5em;
-        padding: 5em 0;
-        width: 14.8em;
-        z-index: 99999; }
-        .device-background .device .screen {
-          height: 25em;
-          width: 14em;
-          background-image: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/cosmin_capitanu_screen.jpg");
-          background-size: cover;
-          border-radius: 0.2em;
-          box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.5);
-          margin: auto; } }
