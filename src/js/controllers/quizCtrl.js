@@ -7,34 +7,27 @@
         ['$scope', '$filter', 'globalService', 'answersService', '$firebaseArray',
         function($scope, $filter, $globalService, $answersService, $firebaseArray) {
 
-
+            
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
             // FIREBASE TEST
             var ref = new Firebase('https://mwq.firebaseio.com/');
-
             $scope.messages = $firebaseArray(ref);
-
-
             console.log($scope.messages);
-            //save to firbase
-           // $scope.messages.$add({ q1: "testen"});
+            // save to firbase
+            // $scope.messages.$add({ q1: "testen"});
 
 
-
-
-
-          
-
-           var a = 'A';
-           for(var key in $answersService.AQ1){
-              //alert(i); // alerts key
-              //alert(foo[i]); //alerts key's value
+            // answers to text principal
+            var a = 'A';
+            for(var key in $answersService.Q1){
                 if(key === a)              
-                console.log('val ' + $answersService.AQ1[a]);
+                console.log('val ' + $answersService.Q1[a]);
             }
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
             //QUIZ CALCULATION
-
-
             // Answer event
             $('.q__item').on('click', function(evt){
                 evt.preventDefault();
@@ -50,8 +43,10 @@
                 item.addClass('active');
                 $scope.slideOutNext();
 
-                console.log("answer "+answer);
-                console.log("question "+question);
+                //console.log("answer "+answer);
+                //console.log("question "+question);
+
+                $answersService.storeAnwser(question, answer);
             });
 
 
@@ -117,6 +112,8 @@
                 
                 if($scope.count < $scope.maxPages){
                     $scope.count++;
+                    $answersService.currentQuestion = $scope.count;
+                    console.log($answersService.currentQuestion);
                 }
                 //Make next page visible
                 
@@ -127,6 +124,25 @@
                 $(window).scrollTop(0);
                 // Dot paging
                 $scope.setupDotPaging($scope.maxPages, $scope.count);
+
+
+                console.log("klassiek " +$answersService.classical.length);
+                console.log("easy_jazz " +$answersService.easy_jazz.length);
+                console.log("easy_listening " +$answersService.easy_listening.length);
+                console.log("soul " +$answersService.soul.length);
+                console.log("lounge " +$answersService.lounge.length);
+                console.log("latin " +$answersService.latin.length);
+                console.log("urban " +$answersService.urban.length);
+                console.log("nederpop " +$answersService.nederpop.length);
+                console.log("pop_ballads " +$answersService.pop_ballads.length);
+                console.log("singer_songwriter " +$answersService.singer_songwriter.length);
+                console.log("pop_classic " +$answersService.pop_classic.length);
+                console.log("rock_classic " +$answersService.rock_classic.length);
+                console.log("alternative " +$answersService.alternative.length);
+                console.log("disco " +$answersService.disco.length);
+                console.log("club_dance " +$answersService.club_dance.length);
+                console.log("kids_hits " +$answersService.kids_hits.length);
+
             }
 
             $scope.prevPage = function (){
@@ -134,6 +150,8 @@
                 $($scope.arrPages[$scope.count]).addClass("hide");
                 if($scope.count > 0){
                     $scope.count--;
+                    $answersService.currentQuestion = $scope.count;
+                    console.log($answersService.currentQuestion);
                 }
                 //Make previous page visible
                 $($scope.arrPages[$scope.count]).removeClass("hide");

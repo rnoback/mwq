@@ -21,6 +21,90 @@
         this.club_dance = [];
         this.kids_hits = [];
 
+
+        this.currentQuestion = 0;
+
+
+
+
+        this.storeAnwser = function(selQuestion, selAnwer){
+            if(selQuestion && selAnwer){
+                var currentAnswer = selAnwer.toUpperCase();
+                console.log("Current Question " + selQuestion);
+                console.log("currentAnswer " + currentAnswer);
+
+                switch (selQuestion) {
+                    case 0:
+                        break;
+
+                    case 1: // question 1
+                        if(currentAnswer === "A"){ // answer A
+                            this.classical.push('1A');
+                            this.easy_jazz.push('1A');
+                            this.easy_listening.push('1A');
+                            this.soul.push('1A');
+                            this.lounge.push('1A');
+                            this.latin.push('1A');
+                            this.urban.push('1A');
+                            this.nederpop.push('1A');
+                            this.pop_ballads.push('1A');
+                            this.singer_songwriter.push('1A');
+                            this.pop_classic.push('1A');
+                            this.rock_classic.push('1A');
+                            this.alternative.push('1A');
+                            this.disco.push('1A');
+                            this.club_dance.push('1A');
+                            this.kids_hits.push('1A');
+
+                            // Set text for answer
+                        }else if(currentAnswer === "B"){ // answer B
+                           
+                            this.easy_listening.push('1B');
+                            this.soul.push('1B');
+                            this.latin.push('1B');
+                            this.nederpop.push('1B');
+                            this.pop_ballads.push('1B');
+                            this.singer_songwriter.push('1B');
+                            this.pop_classic.push('1B');
+                            this.rock_classic.push('1B');
+                            this.disco.push('1B');
+                            this.kids_hits.push('1B');
+                        } else if(currentAnswer === "C"){ // answer C
+
+                            this.easy_jazz.push('1C');
+                            this.easy_listening.push('1C');
+                            this.soul.push('1C');
+                            this.lounge.push('1C');
+                            this.latin.push('1C');
+                            this.urban.push('1C');
+                            this.nederpop.push('1C');
+                            this.pop_ballads.push('1C');
+                            this.singer_songwriter.push('1C');
+                            this.pop_classic.push('1C');
+                            this.rock_classic.push('1C');
+                            this.alternative.push('1C');
+                            this.disco.push('1C');
+                            this.club_dance.push('1C');
+
+                        }
+
+                        break;
+                    case 2: // question 2
+                        if(currentAnswer === "A"){ // answer A
+
+                            this.nederpop.push('2A');
+                            this.singer_songwriter.push('2A');
+                            this.disco.push('2A');
+                            this.club_dance.push('2A');
+                            this.kids_hits.push('2A');
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
         /*
         // copycat ;)
         this.Q2 = {
