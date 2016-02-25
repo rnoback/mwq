@@ -9,7 +9,7 @@
 		text-align: left;
 		position:relative;
 		.block__text{
-			//margin: 20px 0 0;
+			margin: 10px 0;
 			@include font-size(14);
 			text-align: left;
 			@include media($tablet) {
@@ -35,12 +35,7 @@
 
 			font-weight: normal;
 			margin:0;
-			@include media($tablet) {
-				padding: 0 35px 0;
-			}
-			@include media($desktop) {
-				padding: 0 120px 0;
-			}
+			
 			span.mint{
 				color: $green;
 			}
@@ -51,6 +46,7 @@
 			margin: 0 auto;
 			display: block;
 			bottom: -10px;
+			z-index: 1;
 		}
 		p {
 			@include font-size(14);
@@ -265,6 +261,7 @@
 			position:relative;
 			@include clearfix;
 
+
 			.quiz__sheet--title{
 				color: $white;	
 				font-family: $heading-font-bold;
@@ -335,17 +332,93 @@
 
 
 		#email-form{
+			@include clearfix;
+			margin: 30px 0;
 			.email-txt{
 
 				border-radius: 1.8em;
-				padding: 15px 20px;
+				padding: 13px 20px;
 				font-family: $heading-font-bold;
 				text-transform: uppercase;
 				@include font-size(12);
 				border-color: $black;
+				width: 100%;
+				float: left;
+				
 				@include placeholder {
     				color: $dark-gray;
   				}
+  				@include media($tablet) {
+  					width: 65%;
+  					margin: 0 0 10px 0;
+  				}
+  				@include media($desktop) {
+  					width: 71%;
+  					
+  				}
+			}
+			.send-form{
+				//float: right;
+				
+				width: auto;
+				margin: 0 0 10px 0;
+				padding: $small-spacing 2.2em;
+				float: right;
+				@include media($tablet) {
+					padding: $small-spacing 1.8em;
+				}
+				@include media($desktop) {
+					width: 25%;
+					padding: $small-spacing 1.2em;
+  				}
+
+			}
+
+		}
+		.extra-info-wrap{
+			width: 70%;
+			float: left;
+			
+			@include media($mobile) {
+				float: none;
+				width: 100%;
+			}
+
+		}
+		.social-wrap{
+			text-align: center;
+			width: 25%;
+			float: right;
+			.quiz__sheet--subtitle{
+				text-align: center;
+				@include media($mobile) {
+					text-align: left;
+				}
+			}
+
+			@include media($mobile) {
+				float:none;
+				width: auto;
+				text-align: left;
+				margin-top: 20px;
+			}
+			.icon-social{
+
+				margin: 2px 7px 0 7px;
+				@include media($mobile) {
+					margin: 0;
+				}
+				svg{
+					width:25px;
+					height:25px;
+				}
+				&:hover{
+					svg{
+						path{
+							fill: $action-color;
+						}
+					}
+				}
 			}
 		}
 		button.quiz__nav--email {
@@ -356,6 +429,7 @@
 		}
 	}
 }
+
 
 .quiz.nobg{
 	background: transparent;

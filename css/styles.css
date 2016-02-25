@@ -640,7 +640,8 @@ div.container {
   font-family: "textA", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   color: #fff;
-  font-size: 10px; }
+  font-size: 10px;
+  margin-top: 10px; }
   .blockfooter a {
     color: #fff;
     font-family: "textABold", Helvetica, Arial, sans-serif; }
@@ -896,6 +897,7 @@ footer {
       content: "";
       display: table; }
     .quiz .block .block__text {
+      margin: 10px 0;
       font-size: 14px;
       font-size: 0.875rem;
       text-align: left; }
@@ -918,12 +920,6 @@ footer {
       color: #2B3A49;
       font-weight: normal;
       margin: 0; }
-      @media screen and (min-width: 28.125em) and (max-width: 43.75em) {
-        .quiz .block .quiz__sheet--subtitle {
-          padding: 0 35px 0; } }
-      @media screen and (min-width: 43.75em) {
-        .quiz .block .quiz__sheet--subtitle {
-          padding: 0 120px 0; } }
       .quiz .block .quiz__sheet--subtitle span.mint {
         color: #3db791; }
     .quiz .block .main-quiz-vis {
@@ -931,7 +927,8 @@ footer {
       width: 92%;
       margin: 0 auto;
       display: block;
-      bottom: -10px; }
+      bottom: -10px;
+      z-index: 1; }
     .quiz .block p {
       font-size: 14px;
       font-size: 0.875rem; }
@@ -1188,22 +1185,81 @@ footer {
         .quiz .quiz__result .block.green .block-inner {
           width: 55%;
           float: right; } }
-    .quiz .quiz__result #email-form .email-txt {
-      border-radius: 1.8em;
-      padding: 15px 20px;
-      font-family: "textABold", Helvetica, Arial, sans-serif;
-      text-transform: uppercase;
-      font-size: 12px;
-      font-size: 0.75rem;
-      border-color: #000; }
-      .quiz .quiz__result #email-form .email-txt::-webkit-input-placeholder {
-        color: #414141; }
-      .quiz .quiz__result #email-form .email-txt::-moz-placeholder {
-        color: #414141; }
-      .quiz .quiz__result #email-form .email-txt:-moz-placeholder {
-        color: #414141; }
-      .quiz .quiz__result #email-form .email-txt:-ms-input-placeholder {
-        color: #414141; }
+    .quiz .quiz__result #email-form {
+      margin: 30px 0; }
+      .quiz .quiz__result #email-form::after {
+        clear: both;
+        content: "";
+        display: table; }
+      .quiz .quiz__result #email-form .email-txt {
+        border-radius: 1.8em;
+        padding: 13px 20px;
+        font-family: "textABold", Helvetica, Arial, sans-serif;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-size: 0.75rem;
+        border-color: #000;
+        width: 100%;
+        float: left; }
+        .quiz .quiz__result #email-form .email-txt::-webkit-input-placeholder {
+          color: #414141; }
+        .quiz .quiz__result #email-form .email-txt::-moz-placeholder {
+          color: #414141; }
+        .quiz .quiz__result #email-form .email-txt:-moz-placeholder {
+          color: #414141; }
+        .quiz .quiz__result #email-form .email-txt:-ms-input-placeholder {
+          color: #414141; }
+        @media screen and (min-width: 28.125em) and (max-width: 43.75em) {
+          .quiz .quiz__result #email-form .email-txt {
+            width: 65%;
+            margin: 0 0 10px 0; } }
+        @media screen and (min-width: 43.75em) {
+          .quiz .quiz__result #email-form .email-txt {
+            width: 71%; } }
+      .quiz .quiz__result #email-form .send-form {
+        width: auto;
+        margin: 0 0 10px 0;
+        padding: 0.75em 2.2em;
+        float: right; }
+        @media screen and (min-width: 28.125em) and (max-width: 43.75em) {
+          .quiz .quiz__result #email-form .send-form {
+            padding: 0.75em 1.8em; } }
+        @media screen and (min-width: 43.75em) {
+          .quiz .quiz__result #email-form .send-form {
+            width: 25%;
+            padding: 0.75em 1.2em; } }
+    .quiz .quiz__result .extra-info-wrap {
+      width: 70%;
+      float: left; }
+      @media screen and (max-width: 28.0625em) {
+        .quiz .quiz__result .extra-info-wrap {
+          float: none;
+          width: 100%; } }
+    .quiz .quiz__result .social-wrap {
+      text-align: center;
+      width: 25%;
+      float: right; }
+      .quiz .quiz__result .social-wrap .quiz__sheet--subtitle {
+        text-align: center; }
+        @media screen and (max-width: 28.0625em) {
+          .quiz .quiz__result .social-wrap .quiz__sheet--subtitle {
+            text-align: left; } }
+      @media screen and (max-width: 28.0625em) {
+        .quiz .quiz__result .social-wrap {
+          float: none;
+          width: auto;
+          text-align: left;
+          margin-top: 20px; } }
+      .quiz .quiz__result .social-wrap .icon-social {
+        margin: 2px 7px 0 7px; }
+        @media screen and (max-width: 28.0625em) {
+          .quiz .quiz__result .social-wrap .icon-social {
+            margin: 0; } }
+        .quiz .quiz__result .social-wrap .icon-social svg {
+          width: 25px;
+          height: 25px; }
+        .quiz .quiz__result .social-wrap .icon-social:hover svg path {
+          fill: #f6901e; }
     .quiz .quiz__result button.quiz__nav--email {
       margin: 20px auto 0;
       padding: 0.75em 3em;

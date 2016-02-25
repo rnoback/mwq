@@ -113,7 +113,6 @@
                 if($scope.count < $scope.maxPages){
                     $scope.count++;
                     $answersService.currentQuestion = $scope.count;
-                    console.log($answersService.currentQuestion);
                 }
                 //Make next page visible
                 
@@ -151,7 +150,6 @@
                 if($scope.count > 0){
                     $scope.count--;
                     $answersService.currentQuestion = $scope.count;
-                    console.log($answersService.currentQuestion);
                 }
                 //Make previous page visible
                 $($scope.arrPages[$scope.count]).removeClass("hide");
