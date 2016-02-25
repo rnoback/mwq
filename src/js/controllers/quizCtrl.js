@@ -4,10 +4,36 @@
     var mwqApp = angular.module('mwqApp');
     
     mwqApp.controller('quizController', 
-        ['$scope', '$filter', 'globalService',
-        function($scope, $filter, $globalService) {
+        ['$scope', '$filter', 'globalService', 'answersService', '$firebaseArray',
+        function($scope, $filter, $globalService, $answersService, $firebaseArray) {
+
+
+            // FIREBASE TEST
+            var ref = new Firebase('https://mwq.firebaseio.com/');
+
+            $scope.messages = $firebaseArray(ref);
+
+
+            console.log($scope.messages);
+            //save to firbase
+           // $scope.messages.$add({ q1: "testen"});
+
+
+
+
+
+          
+
+           var a = 'A';
+           for(var key in $answersService.AQ1){
+              //alert(i); // alerts key
+              //alert(foo[i]); //alerts key's value
+                if(key === a)              
+                console.log('val ' + $answersService.AQ1[a]);
+            }
 
             //QUIZ CALCULATION
+
 
             // Answer event
             $('.q__item').on('click', function(evt){

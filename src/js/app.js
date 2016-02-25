@@ -3,8 +3,7 @@
 
 // Module
 var mwqApp  = angular.module('mwqApp',
-    ['ngRoute', 'ngResource']);
-
+    ['ngRoute', 'ngResource', 'firebase']);
 
 //Routes
 mwqApp.config(function ($routeProvider) {
@@ -33,9 +32,9 @@ mwqApp.config(function ($routeProvider) {
 });
 
 
-
- mwqApp.controller('mainCtrl', ['$scope', function($scope) {
+mwqApp.controller('mainCtrl', ['$scope', function($scope) {
 	    			    	
+
 
     $scope.mobNavVisible = false;
 

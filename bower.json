@@ -21,6 +21,8 @@
     "lodash": "~4.0.1",
     "normalize-css": "normalize.css#~3.0.3",
     "gsap": "^1.18.2",
-    "flexslider": "^2.6.0"
+    "flexslider": "^2.6.0",
+    "firebase": "^2.4.1",
+    "angularfire": "^1.1.4"
   }
 }
