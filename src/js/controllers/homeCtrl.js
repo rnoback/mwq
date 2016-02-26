@@ -10,9 +10,11 @@
             //var box = $('.test-sheet');
            //TweenMax.to($('.slide'), 2, {x: -700, ease:Expo.easeInOut});
 
+            // set naviagiotn button active
+            $('.btn-home').addClass('active');
+
            var extraInfoOpen = false;
            
-
            // should be in a service 
            var pageContainer = $('.pages');
 

@@ -196,14 +196,23 @@
 
 		a.q__item{
 			.q__item--text{
+
 				font-family: $heading-font;
 				text-transform: uppercase;
 				text-align: left;
 				font-size: 12px;
 				padding: 10px;
 				color: $dark-blue;
-				span{
+				@include clearfix;
+				.label{
 					font-family: $heading-font-bold;
+					float: left;
+					width: 7%;
+				}
+				.value{
+					float: left;
+
+					width: 93%;
 				}
 			}
 			margin-bottom: 10px;
@@ -256,6 +265,7 @@
 			}
 		}
 		.block.green{
+			padding: 20px 20px 0 20px;
 			background: $green;
 			color: $white;
 			position:relative;
@@ -306,7 +316,7 @@
 				border-top: 20px solid $green;
 				position: relative;
 				margin: 0 auto;
-				top: 35px;
+				top: 15px;
 			}
 			@include media($desktop) {
 				img{
@@ -415,7 +425,6 @@
 				&:hover{
 					svg{
 						path{
-							fill: $action-color;
 						}
 					}
 				}

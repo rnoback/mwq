@@ -12,7 +12,7 @@
             // FIREBASE TEST
             var ref = new Firebase('https://mwq.firebaseio.com/');
             $scope.messages = $firebaseArray(ref);
-            console.log($scope.messages);
+            //console.log($scope.messages);
             // save to firbase
             // $scope.messages.$add({ q1: "testen"});
 
@@ -20,8 +20,9 @@
             // answers to text principal
             var a = 'A';
             for(var key in $answersService.Q1){
-                if(key === a)              
-                console.log('val ' + $answersService.Q1[a]);
+                if(key === a)  {            
+                    //console.log('val ' + $answersService.Q1[a]);
+                }
             }
             //////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -32,21 +33,20 @@
             $('.q__item').on('click', function(evt){
                 evt.preventDefault();
                 
-                var target = $( evt.target );
-                var item = target.parent();
-                var container = target.parent().parent();
+                var target = $( evt.currentTarget );
+                var container = target.parent();
                
                 container.find('.q__item').removeClass('active');
 
-                var answer = item.data('answer');
-                var question = container.data('question'); 
-                item.addClass('active');
+                var answer = target.data('answer');
+                var question = container.data('question');
+                target.addClass('active');
                 $scope.slideOutNext();
 
                 //console.log("answer "+answer);
                 //console.log("question "+question);
 
-                $answersService.storeAnwser(question, answer);
+                $answersService.addAnwser(question, answer);
             });
 
 
@@ -82,6 +82,9 @@
 
             $scope.setupDotPaging($scope.maxPages, $scope.count);
 
+            // set naviagiotn button active
+            $('.btn-quiz').addClass('active');
+
             $scope.slideInNext = function (){
 
                 TweenMax.fromTo( $($scope.arrPages[$scope.count]), $scope.speed, 
@@ -110,14 +113,28 @@
                 $($scope.arrPages[$scope.count]).addClass("hide");
                 $($scope.arrPages[$scope.count]).find('.quiz__nav--next').show();
                 
+
+
                 if($scope.count < $scope.maxPages){
                     $scope.count++;
                     $answersService.currentQuestion = $scope.count;
                 }
                 //Make next page visible
-                
                 $($scope.arrPages[$scope.count]).removeClass("hide");
-               
+
+                // Last qustion done, do the calculation
+                if($scope.count === ($scope.maxPages -8)) {
+                    console.log("CALC IT");
+                    for(var key in $answersService.answersObject){
+
+                        console.log('key ' + key +  ' - val ' + $answersService.answersObject[key]);
+
+                        $answersService.fillMusicArrays(key, $answersService.answersObject[key]);
+                    
+                    }
+
+                    $answersService.getAllArrayLengths();
+                }
                 
                 $scope.slideInNext();
                 $(window).scrollTop(0);
@@ -125,6 +142,9 @@
                 $scope.setupDotPaging($scope.maxPages, $scope.count);
 
 
+               
+
+                /*
                 console.log("klassiek " +$answersService.classical.length);
                 console.log("easy_jazz " +$answersService.easy_jazz.length);
                 console.log("easy_listening " +$answersService.easy_listening.length);
@@ -140,7 +160,7 @@
                 console.log("alternative " +$answersService.alternative.length);
                 console.log("disco " +$answersService.disco.length);
                 console.log("club_dance " +$answersService.club_dance.length);
-                console.log("kids_hits " +$answersService.kids_hits.length);
+                console.log("kids_hits " +$answersService.kids_hits.length);*/
 
             }
 

@@ -597,14 +597,20 @@ a > svg, a > span {
 .wrapper {
   height: inherit; }
 
-body #background-container {
-  position: fixed;
-  width: 100%;
-  height: inherit;
-  top: 0;
-  bottom: 0;
+body {
   background-size: cover !important;
   background-attachment: fixed; }
+  body .html-mobile-background {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* To compensate for mobile browser address bar space */
+    background: url("../images/bg/bg1.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-size: 100% 100%; }
 
 div.container {
   position: relative;
@@ -647,6 +653,11 @@ div.container {
     font-family: "textABold", Helvetica, Arial, sans-serif; }
     .blockfooter a:hover {
       color: #f6901e; }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10+ CSS styles go here */
+  .html-mobile-background {
+    display: none; } }
 
 header .header__bar {
   z-index: 99;
@@ -733,7 +744,7 @@ header .header__bar {
     height: 60px;
     width: 100%;
     background: #3db791;
-    margin-top: 1px; }
+    border-top: 1px solid #414141; }
     #main-nav-mobile li a {
       font-family: "textABold", Helvetica, Arial, sans-serif;
       text-transform: uppercase;
@@ -1073,8 +1084,17 @@ footer {
       font-size: 12px;
       padding: 10px;
       color: #2B3A49; }
-      .quiz .block.qtype2 a.q__item .q__item--text span {
-        font-family: "textABold", Helvetica, Arial, sans-serif; }
+      .quiz .block.qtype2 a.q__item .q__item--text::after {
+        clear: both;
+        content: "";
+        display: table; }
+      .quiz .block.qtype2 a.q__item .q__item--text .label {
+        font-family: "textABold", Helvetica, Arial, sans-serif;
+        float: left;
+        width: 7%; }
+      .quiz .block.qtype2 a.q__item .q__item--text .value {
+        float: left;
+        width: 93%; }
     @media screen and (min-width: 43.75em) {
       .quiz .block.qtype2 a.q__item {
         float: left;
@@ -1131,6 +1151,7 @@ footer {
       .quiz .quiz__result .block .quiz__sheet--subtitle.orange {
         color: #f6901e; }
     .quiz .quiz__result .block.green {
+      padding: 20px 20px 0 20px;
       background: #3db791;
       color: #fff;
       position: relative; }
@@ -1172,7 +1193,7 @@ footer {
         border-top: 20px solid #3db791;
         position: relative;
         margin: 0 auto;
-        top: 35px; }
+        top: 15px; }
       @media screen and (min-width: 43.75em) {
         .quiz .quiz__result .block.green img {
           width: 40%; }
@@ -1258,8 +1279,6 @@ footer {
         .quiz .quiz__result .social-wrap .icon-social svg {
           width: 25px;
           height: 25px; }
-        .quiz .quiz__result .social-wrap .icon-social:hover svg path {
-          fill: #f6901e; }
     .quiz .quiz__result button.quiz__nav--email {
       margin: 20px auto 0;
       padding: 0.75em 3em;

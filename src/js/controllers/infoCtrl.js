@@ -7,6 +7,9 @@
         ['$scope', '$filter', 'globalService', 'carouselService',
         function($scope, $filter, $globalService, $carouselService) {
 
+             // set naviagiotn button active
+            $('.btn-info').addClass('active');
+
             //var box = $('.test-sheet');
            //TweenMax.to($('.slide'), 2, {x: -700, ease:Expo.easeInOut});
 

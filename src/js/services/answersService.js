@@ -22,23 +22,57 @@
         this.kids_hits = [];
 
 
+        this.answersObject = {};
         this.currentQuestion = 0;
 
 
+        this.addAnwser = function(selQuestion, selAnwer){
+            this.answersObject[selQuestion] = selAnwer;
+        }
+        this.removeAnwser = function(selQuestion){
+            delete this.answersObject[selQuestion];
+        }
 
+        this.getAllArrayLengths = function (){
 
-        this.storeAnwser = function(selQuestion, selAnwer){
+            console.log("#########################################################");
+            console.log("klassiek " +self.classical.length);
+            console.log("easy_jazz " +self.easy_jazz.length);
+            console.log("easy_listening " +self.easy_listening.length);
+            console.log("soul " +self.soul.length);
+            console.log("lounge " +self.lounge.length);
+            console.log("latin " +self.latin.length);
+            console.log("urban " +self.urban.length);
+            console.log("nederpop " +self.nederpop.length);
+            console.log("pop_ballads " +self.pop_ballads.length);
+            console.log("singer_songwriter " +self.singer_songwriter.length);
+            console.log("pop_classic " +self.pop_classic.length);
+            console.log("rock_classic " +self.rock_classic.length);
+            console.log("alternative " +self.alternative.length);
+            console.log("disco " +self.disco.length);
+            console.log("club_dance " +self.club_dance.length);
+            console.log("kids_hits " +self.kids_hits.length);
+        }
+
+        this.fillMusicArrays = function(selQuestion, selAnwer){
+
+            console.log("selQuestion " + selQuestion);
+            console.log("selAnwer " + selAnwer);
+
             if(selQuestion && selAnwer){
                 var currentAnswer = selAnwer.toUpperCase();
-                console.log("Current Question " + selQuestion);
-                console.log("currentAnswer " + currentAnswer);
+                console.log("currentAnswer  " + currentAnswer);
 
                 switch (selQuestion) {
                     case 0:
                         break;
 
                     case 1: // question 1
+                        console.log("currentAnswer INSIDE  " + currentAnswer);
                         if(currentAnswer === "A"){ // answer A
+
+
+
                             this.classical.push('1A');
                             this.easy_jazz.push('1A');
                             this.easy_listening.push('1A');
@@ -56,8 +90,8 @@
                             this.club_dance.push('1A');
                             this.kids_hits.push('1A');
 
-                            // Set text for answer
                         }else if(currentAnswer === "B"){ // answer B
+                            
                            
                             this.easy_listening.push('1B');
                             this.soul.push('1B');
@@ -86,6 +120,98 @@
                             this.disco.push('1C');
                             this.club_dance.push('1C');
 
+                        } else if(currentAnswer === "D"){ // answer D
+
+                            this.classical.push('1D');
+                            this.easy_jazz.push('1D');
+                            this.easy_listening.push('1D');
+                            this.soul.push('1D');
+                            this.lounge.push('1D');
+                           
+                            this.pop_ballads.push('1D');
+                            this.singer_songwriter.push('1D');
+                            this.pop_classic.push('1D');
+                            
+                        } else if(currentAnswer === "E"){ // answer E
+                            this.easy_jazz.push('1E');
+                            this.easy_listening.push('1E');
+                            this.soul.push('1E');
+                            this.lounge.push('1E');
+                            
+                            this.pop_ballads.push('1E');
+                            this.singer_songwriter.push('1E');
+                            this.pop_classic.push('1E');
+                            this.rock_classic.push('1E');
+                            
+
+                        } else if(currentAnswer === "F"){ // answer F
+                            
+                            this.easy_jazz.push('1F');
+                            this.easy_listening.push('1F');
+                            this.soul.push('1F');
+                            this.lounge.push('1F');
+                            this.latin.push('1F');
+                            this.urban.push('1F');
+                            this.nederpop.push('1F');
+                            this.pop_ballads.push('1F');
+                            this.singer_songwriter.push('1F');
+                            this.pop_classic.push('1F');
+                            this.rock_classic.push('1F');
+                            this.alternative.push('1F');
+                            this.disco.push('1F');
+                            this.club_dance.push('1F');
+                            
+
+                        } else if(currentAnswer === "G"){ // answer G
+                            this.classical.push('1G');
+                            this.easy_jazz.push('1G');
+                            this.easy_listening.push('1G');
+                            this.soul.push('1G');
+                            this.lounge.push('1G');
+                            this.latin.push('1G');
+
+                            this.nederpop.push('1G');
+                            this.pop_ballads.push('1G');
+                            this.singer_songwriter.push('1G');
+                            this.pop_classic.push('1G');
+                            this.rock_classic.push('1G');
+
+                        } else if(currentAnswer === "H"){ // answer H
+                            this.classical.push('1H');
+                            this.easy_jazz.push('1H');
+                            this.easy_listening.push('1H');
+                            this.soul.push('1H');
+                            this.lounge.push('1H');
+                           
+                            this.nederpop.push('1H');
+                            this.pop_ballads.push('1H');
+                            this.singer_songwriter.push('1H');
+                            this.pop_classic.push('1H');
+                            
+                            this.kids_hits.push('1H');
+
+                        }else if(currentAnswer === "I"){ // answer I
+                            this.classical.push('1I');
+                            this.easy_jazz.push('1I');
+                            this.easy_listening.push('1I');
+                            this.soul.push('1I');
+                            this.lounge.push('1I');
+                            
+                            this.pop_ballads.push('1I');
+                            this.singer_songwriter.push('1I');
+
+                        }else if(currentAnswer === "J"){ // answer J
+                            this.classical.push('1J');
+                            this.easy_jazz.push('1J');
+                            this.easy_listening.push('1J');
+                            this.soul.push('1J');
+                            this.lounge.push('1J');
+                            this.latin.push('1J');
+                            
+                            this.pop_ballads.push('1J');
+                            this.singer_songwriter.push('1J');
+                            this.pop_classic.push('1J');
+                            
                         }
 
                         break;
@@ -97,12 +223,506 @@
                             this.disco.push('2A');
                             this.club_dance.push('2A');
                             this.kids_hits.push('2A');
+
+                        } else if(currentAnswer === "B"){ // answer B
+
+                            this.easy_jazz.push('2B');
+                            this.easy_listening.push('2B');
+                            this.soul.push('2B');
+                            this.lounge.push('2B');
+                            this.latin.push('2B');
+                            this.urban.push('2B');
+                            this.nederpop.push('2B');
+                            this.pop_ballads.push('2B');
+                            this.singer_songwriter.push('2B');
+
+                            this.alternative.push('2B');
+                            this.disco.push('2B');
+                            this.club_dance.push('2B');
+                            
+
+                        }else if(currentAnswer === "C"){ // answer C
+                            this.classical.push('2C');
+                            this.easy_jazz.push('2C');
+                            this.easy_listening.push('2C');
+                            this.soul.push('2C');
+                            this.lounge.push('2C');
+                            this.latin.push('2C');
+                            this.urban.push('2C');
+                            this.nederpop.push('2C');
+                            this.pop_ballads.push('2C');
+                            this.singer_songwriter.push('2C');
+                            this.pop_classic.push('2C');
+                            this.rock_classic.push('2C');
+                            this.alternative.push('2C');
+                            this.disco.push('2C');
+                            this.club_dance.push('2C');
+
+                        }else if(currentAnswer === "D"){ // answer D
+
+                            this.classical.push('2D');
+                            this.easy_jazz.push('2D');
+                            this.easy_listening.push('2D');
+                            this.soul.push('2D');
+                            this.lounge.push('2D');
+                            this.latin.push('2D');
+                           
+                            this.pop_ballads.push('2D');
+                            this.singer_songwriter.push('2D');
+                            this.pop_classic.push('2D');
+                            this.rock_classic.push('2D');
+                            
+                            this.disco.push('2D');
+                            
+                        }else if(currentAnswer === "E"){ // answer E
+
+                            this.classical.push('2E');
+                            this.easy_jazz.push('2E');
+                            this.easy_listening.push('2E');
+                            this.soul.push('2E');
+                            this.lounge.push('2E');
+                            this.latin.push('2E');
+                           
+                            this.nederpop.push('2E');
+                            this.pop_ballads.push('2E');
+                            this.singer_songwriter.push('2E');
+                            this.pop_classic.push('2E');
+                                
+                            this.disco.push('2E');
+
                         }
                         break;
+                    case 3:
+                        if(currentAnswer === "A"){ // answer A
+                            this.classical.push('3A');
+                            this.easy_jazz.push('3A');
+                            this.easy_listening.push('3A');
+                            this.soul.push('3A');
+                            this.lounge.push('3A');
+                            
+                            this.pop_ballads.push('3A');
+                            this.singer_songwriter.push('3A');
+                            this.pop_classic.push('3A');
+                            
+                            this.kids_hits.push('3A');
+
+                        }else if(currentAnswer === "B"){ // answer B
+                            this.classical.push('3B');
+                            this.easy_jazz.push('3B');
+                            this.easy_listening.push('3B');
+                            this.soul.push('3B');
+                            this.lounge.push('3B');
+                            this.latin.push('3B');
+                           
+                            this.nederpop.push('3B');
+                            this.pop_ballads.push('3B');
+                            this.singer_songwriter.push('3B');
+                            this.pop_classic.push('3B');
+                            this.rock_classic.push('3B');
+                           
+                            this.club_dance.push('3B');
+                            this.kids_hits.push('3B');
+
+                        } else if(currentAnswer === "C"){ // answer C
+                            
+                            this.soul.push('3C');
+                            
+                            this.latin.push('3C');
+                            this.urban.push('3C');
+                            this.nederpop.push('3C');
+                            this.pop_ballads.push('3C');
+                            this.singer_songwriter.push('3C');
+                            this.pop_classic.push('3C');
+                            this.rock_classic.push('3C');
+                            
+                            this.disco.push('3C');
+                            this.club_dance.push('3C');
+                            
+
+                        } else if(currentAnswer === "D"){ // answer D
+                            this.classical.push('3D');
+                            this.easy_jazz.push('3D');
+                            this.easy_listening.push('3D');
+                            this.soul.push('3D');
+                            this.lounge.push('3D');
+                            
+                            this.pop_ballads.push('3D');
+                            this.singer_songwriter.push('3D');
+
+                        } else if(currentAnswer === "E"){ // answer E
+                            this.classical.push('3E');
+                            this.easy_jazz.push('3E');
+                            this.easy_listening.push('3E');
+                            this.soul.push('3E');
+                            this.lounge.push('3E');
+                            this.latin.push('3E');
+                            this.urban.push('3E');
+                            this.nederpop.push('3E');
+                            this.pop_ballads.push('3E');
+                            this.singer_songwriter.push('3E');
+                            this.pop_classic.push('3E');
+                            this.rock_classic.push('3E');
+                            this.alternative.push('3E');
+                            this.disco.push('3E');
+                            this.club_dance.push('3E');
+                            this.kids_hits.push('3E');
+                        }
+                        break;
+                    case 4:
+                        if(currentAnswer === "A"){ // answer A
+                            this.classical.push('4A');
+                            this.easy_jazz.push('4A');
+                            this.easy_listening.push('4A');
+                            this.soul.push('4A');
+                            this.lounge.push('4A');
+                            this.latin.push('4A');
+                            
+                            this.nederpop.push('4A');
+                            this.pop_ballads.push('4A');
+                            this.singer_songwriter.push('4A');
+                            this.pop_classic.push('4A');
+                            this.rock_classic.push('4A');
+
+                        } else if(currentAnswer === "B"){ // answer B
+                            this.classical.push('4B');
+                            this.easy_jazz.push('4B');
+                            this.easy_listening.push('4B');
+                            this.soul.push('4B');
+                            this.lounge.push('4B');
+                            
+                            this.singer_songwriter.push('4B');
+
+                        }else if(currentAnswer === "C"){ // answer C
+                            
+                            this.easy_listening.push('4C');
+                            this.soul.push('4C');
+                            
+                            this.nederpop.push('4C');
+                            this.pop_ballads.push('4C');
+                            this.singer_songwriter.push('4C');
+                            this.pop_classic.push('4C');
+                            
+                            this.kids_hits.push('4C');
+
+                        }else if(currentAnswer === "D"){ // answer D
+                           
+                            this.soul.push('4D');
+                            this.lounge.push('4D');
+                            this.latin.push('4D');
+                            this.urban.push('4D');
+                            
+                            this.rock_classic.push('4D');
+                            this.alternative.push('4D');
+                            this.disco.push('4D');
+
+                        }else if(currentAnswer === "E"){ // answer E
+                            this.classical.push('4E');
+                            this.easy_jazz.push('4E');
+                            this.easy_listening.push('4E');
+                            this.soul.push('4E');
+                            this.lounge.push('4E');
+                            this.latin.push('4E');
+                            this.urban.push('4E');
+                           
+                            this.singer_songwriter.push('4E');
+
+                        }else if(currentAnswer === "F"){ // answer F
+                            this.classical.push('4F');
+                            this.easy_jazz.push('4F');
+                            this.easy_listening.push('4F');
+                            this.soul.push('4F');
+                            this.lounge.push('4F');
+                            this.latin.push('4F');
+                           
+                            this.disco.push('4F');
+                            this.club_dance.push('4F');
+                           
+                        }
+                        break;
+                    case 5:
+                        if(currentAnswer === "A"){ // answer A
+                            this.classical.push('5A');
+                            this.easy_jazz.push('5A');
+                            this.easy_listening.push('5A');
+                            this.soul.push('5A');
+                            this.lounge.push('5A');
+                            this.latin.push('5A');
+                            this.urban.push('5A');
+                            this.nederpop.push('5A');
+                            this.pop_ballads.push('5A');
+                            this.singer_songwriter.push('5A');
+                            this.pop_classic.push('5A');
+                            this.rock_classic.push('5A');
+                            this.alternative.push('5A');
+                            this.disco.push('5A');
+                            this.club_dance.push('5A');
+                            this.kids_hits.push('5A');
+
+                        }else if(currentAnswer === "B"){ // answer B
+                            this.classical.push('5B');
+                            this.easy_jazz.push('5B');
+                            this.easy_listening.push('5B');
+                            this.soul.push('5B');
+                            this.lounge.push('5B');
+                            this.latin.push('5B');
+                            this.urban.push('5B');
+                            this.nederpop.push('5B');
+                            this.pop_ballads.push('5B');
+                            this.singer_songwriter.push('5B');
+                            this.pop_classic.push('5B');
+                            this.rock_classic.push('5B');
+                            this.alternative.push('5B');
+                            this.disco.push('5B');
+                            this.club_dance.push('5B');
+                            this.kids_hits.push('5B');
+
+                        }else if(currentAnswer === "C"){ // answer C
+                            this.classical.push('5C');
+                            this.easy_jazz.push('5C');
+                            this.easy_listening.push('5C');
+                            this.soul.push('5C');
+                            this.lounge.push('5C');
+                            this.latin.push('5C');
+                            this.urban.push('5C');
+                            this.nederpop.push('5C');
+                            this.pop_ballads.push('5C');
+                            this.singer_songwriter.push('5C');
+                            this.pop_classic.push('5C');
+                            this.rock_classic.push('5C');
+                            this.alternative.push('5C');
+                            this.disco.push('5C');
+                            this.club_dance.push('5C');
+                            this.kids_hits.push('5C');
+
+                        }
+                        break;
+                    case 6:
+                        if(currentAnswer === "A"){ // answer A
+                            
+                            this.easy_listening.push('6A');
+                            
+                            this.nederpop.push('6A');
+                            this.pop_ballads.push('6A');
+
+                            this.pop_classic.push('6A');
+                            
+                            this.kids_hits.push('6A');
+
+                        }else if(currentAnswer === "B"){ // answer B
+                            
+                            this.easy_listening.push('6B');
+                            this.soul.push('6B');
+                            this.lounge.push('6B');
+                            this.latin.push('6B');
+                            
+                            this.nederpop.push('6B');
+                            this.pop_ballads.push('6B');
+                            this.singer_songwriter.push('6B');
+                            this.pop_classic.push('6B');
+                            this.rock_classic.push('6B');
+                            this.alternative.push('6B');
+                            
+                            this.kids_hits.push('6B');
+
+                        }else if(currentAnswer === "C"){ // answer C
+                            this.classical.push('6C');
+                            this.easy_jazz.push('6C');
+                            this.easy_listening.push('6C');
+
+                        }else if(currentAnswer === "D"){ // answer D
+                           
+                            this.easy_jazz.push('6D');
+                            this.easy_listening.push('6D');
+                            this.soul.push('6D');
+                            this.lounge.push('6D');
+                            this.latin.push('6D');
+                            
+                            this.pop_ballads.push('6D');
+                            this.singer_songwriter.push('6D');
+                            this.pop_classic.push('6D');
+                            
+                            this.disco.push('6D');
+
+                        }else if(currentAnswer === "E"){ // answer E
+                            
+                            this.urban.push('6E');
+                            
+                            this.rock_classic.push('6E');
+                            this.alternative.push('6E');
+
+                        }else if(currentAnswer === "F"){ // answer F
+
+                            this.easy_jazz.push('6F');
+                            this.easy_listening.push('6F');
+                            this.soul.push('6F');
+                            this.lounge.push('6F');
+                            this.latin.push('6F');
+                           
+                        }
+
+                        break;
+                    case 7:
+                        if(currentAnswer === "A"){ // answer A
+                            this.classical.push('7A');
+                            this.easy_jazz.push('7A');
+                            this.easy_listening.push('7A');
+                            this.soul.push('7A');
+                            this.lounge.push('7A');
+                            this.latin.push('7A');
+                            this.urban.push('7A');
+                            
+                            this.pop_ballads.push('7A');
+                            this.singer_songwriter.push('7A');
+                            this.pop_classic.push('7A');
+                            this.rock_classic.push('7A');
+                            this.alternative.push('7A');
+                            this.disco.push('7A');
+                            this.club_dance.push('7A');
+
+                        }else if(currentAnswer === "B"){ // answer B
+                            this.classical.push('7B');
+                            this.easy_jazz.push('7B');
+                            this.easy_listening.push('7B');
+                            
+                            this.disco.push('7B');
+                            this.club_dance.push('7B');
+                            
+                        }else if(currentAnswer === "C"){ // answer C
+
+                            this.easy_jazz.push('7C');
+                            this.easy_listening.push('7C');
+                            this.soul.push('7C');
+                            this.lounge.push('7C');
+                            this.latin.push('7C');
+                            this.urban.push('7C');
+                            this.nederpop.push('7C');
+                            this.pop_ballads.push('7C');
+                            this.singer_songwriter.push('7C');
+                            this.pop_classic.push('7C');
+                            this.rock_classic.push('7C');
+                            this.alternative.push('7C');
+                            this.disco.push('7C');
+                            this.club_dance.push('7C');
+                            this.kids_hits.push('7C');
+
+                        }else if (currentAnswer === "D"){ // answer D
+                            
+                            this.urban.push('7D');
+                            this.nederpop.push('7D');
+                            this.pop_ballads.push('7D');
+                            
+                            this.pop_classic.push('7D');
+                            this.rock_classic.push('7D');
+                            this.alternative.push('7D');
+                            this.disco.push('7D');
+                            this.club_dance.push('7D');
+                            this.kids_hits.push('7D');
+
+                        }else if(currentAnswer === "E"){ // answer E
+                            this.classical.push('7E');
+                            this.easy_jazz.push('7E');
+                            this.easy_listening.push('7E');
+                            this.soul.push('7E');
+                            this.lounge.push('7E');
+                            this.latin.push('7E');
+                            this.urban.push('7E');
+                            this.nederpop.push('7E');
+                            this.pop_ballads.push('7E');
+                            this.singer_songwriter.push('7E');
+                            this.pop_classic.push('7E');
+                            
+                            this.alternative.push('7E');
+                            this.disco.push('7E');
+                            this.club_dance.push('7E');
+                            this.kids_hits.push('7E');
+
+                        }else if(currentAnswer === "F"){ // answer F
+                            this.classical.push('7F');
+                            
+                            this.latin.push('7F');
+                            this.urban.push('7F');
+                            this.nederpop.push('7F');
+                            this.pop_ballads.push('7F');
+                            this.singer_songwriter.push('7F');
+                            this.pop_classic.push('7F');
+                            this.rock_classic.push('7F');
+                            this.alternative.push('7F');
+                            this.disco.push('7F');
+                            this.club_dance.push('7F');
+                            this.kids_hits.push('7F');
+
+                        }
+                        break;
+                    case 8:
+                        if(currentAnswer === "A"){ // answer A
+                            this.classical.push('8A');
+                            this.easy_jazz.push('8A');
+                            this.easy_listening.push('8A');
+                            this.soul.push('8A');
+                            this.lounge.push('8A');
+                            this.latin.push('8A');
+                            
+                            this.pop_ballads.push('8A');
+                            this.singer_songwriter.push('8A');
+                            this.pop_classic.push('8A');
+                            this.rock_classic.push('8A');
+
+                        }else if(currentAnswer === "B"){ // answer B
+                            this.classical.push('8B');
+                            this.easy_jazz.push('8B');
+                            this.easy_listening.push('8B');
+                            this.soul.push('8B');
+                            this.lounge.push('8B');
+                            this.latin.push('8B');
+                            this.urban.push('8B');
+                            this.nederpop.push('8B');
+                            this.pop_ballads.push('8B');
+                            this.singer_songwriter.push('8B');
+                            this.pop_classic.push('8B');
+                            this.rock_classic.push('8B');
+                            this.alternative.push('8B');
+                            this.disco.push('8B');
+                            this.club_dance.push('8B');
+                            this.kids_hits.push('8B');
+
+                        }else if(currentAnswer === "C"){ // answer C
+                            this.classical.push('8C');
+                            this.easy_jazz.push('8C');
+                            this.easy_listening.push('8C');
+                            this.soul.push('8C');
+                            this.lounge.push('8C');
+                            this.latin.push('8C');
+                            this.urban.push('8C');
+                            this.nederpop.push('8C');
+                            this.pop_ballads.push('8C');
+                            this.singer_songwriter.push('8C');
+                            this.pop_classic.push('8C');
+                            this.rock_classic.push('8C');
+                            this.alternative.push('8C');
+                            this.disco.push('8C');
+                            this.club_dance.push('8C');
+                            this.kids_hits.push('8C');
+
+                        }else if(currentAnswer === "A"){ // answer A
+                            this.classical.push('1A');
+                            this.easy_jazz.push('1A');
+                            this.easy_listening.push('1A');
+                            this.soul.push('1A');
+                            this.lounge.push('1A');
+                           
+                            this.pop_ballads.push('1A');
+                            this.singer_songwriter.push('1A');
+                            this.pop_classic.push('1A');
+
+                        }
+                        break;
+
                     default:
                         break;
                 }
             }
+
+            
         }
 
         /*
