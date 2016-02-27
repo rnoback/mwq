@@ -4,22 +4,24 @@
     angular.module('mwqApp').service('answersService', ['$filter', function($filter){
         var self = this;
 
-        this.classical = [];
-        this.easy_jazz = [];
-        this.easy_listening = [];
-        this.soul = [];
-        this.lounge = [];
-        this.latin = [];
-        this.urban = [];
-        this.nederpop = [];
-        this.pop_ballads = [];
-        this.singer_songwriter = [];
-        this.pop_classic = [];
-        this.rock_classic = [];
-        this.alternative = [];
-        this.disco = [];
-        this.club_dance = [];
-        this.kids_hits = [];
+        this.clearMusicArray = function(){
+            self.classical = [];
+            self.easy_jazz = [];
+            self.easy_listening = [];
+            self.soul = [];
+            self.lounge = [];
+            self.latin = [];
+            self.urban = [];
+            self.nederpop = [];
+            self.pop_ballads = [];
+            self.singer_songwriter = [];
+            self.pop_classic = [];
+            self.rock_classic = [];
+            self.alternative = [];
+            self.disco = [];
+            self.club_dance = [];
+            self.kids_hits = [];
+        }
 
 
         this.answersObject = {};
@@ -56,22 +58,17 @@
 
         this.fillMusicArrays = function(selQuestion, selAnwer){
 
-            console.log("selQuestion " + selQuestion);
-            console.log("selAnwer " + selAnwer);
+            //console.log("selQuestion " + selQuestion);
+            //console.log("selAnwer " + selAnwer);
 
+            selQuestion = parseInt(selQuestion);
             if(selQuestion && selAnwer){
                 var currentAnswer = selAnwer.toUpperCase();
-                console.log("currentAnswer  " + currentAnswer);
-
                 switch (selQuestion) {
                     case 0:
                         break;
-
-                    case 1: // question 1
-                        console.log("currentAnswer INSIDE  " + currentAnswer);
-                        if(currentAnswer === "A"){ // answer A
-
-
+                    case 1:
+                        if(currentAnswer === "A") {
 
                             this.classical.push('1A');
                             this.easy_jazz.push('1A');
@@ -90,9 +87,8 @@
                             this.club_dance.push('1A');
                             this.kids_hits.push('1A');
 
-                        }else if(currentAnswer === "B"){ // answer B
+                        }else if(currentAnswer === "B") {
                             
-                           
                             this.easy_listening.push('1B');
                             this.soul.push('1B');
                             this.latin.push('1B');
@@ -103,7 +99,8 @@
                             this.rock_classic.push('1B');
                             this.disco.push('1B');
                             this.kids_hits.push('1B');
-                        } else if(currentAnswer === "C"){ // answer C
+
+                        } else if(currentAnswer === "C") { 
 
                             this.easy_jazz.push('1C');
                             this.easy_listening.push('1C');
@@ -120,19 +117,18 @@
                             this.disco.push('1C');
                             this.club_dance.push('1C');
 
-                        } else if(currentAnswer === "D"){ // answer D
+                        } else if(currentAnswer === "D") {
 
                             this.classical.push('1D');
                             this.easy_jazz.push('1D');
                             this.easy_listening.push('1D');
                             this.soul.push('1D');
                             this.lounge.push('1D');
-                           
                             this.pop_ballads.push('1D');
                             this.singer_songwriter.push('1D');
                             this.pop_classic.push('1D');
                             
-                        } else if(currentAnswer === "E"){ // answer E
+                        } else if(currentAnswer === "E") { 
                             this.easy_jazz.push('1E');
                             this.easy_listening.push('1E');
                             this.soul.push('1E');
@@ -144,7 +140,7 @@
                             this.rock_classic.push('1E');
                             
 
-                        } else if(currentAnswer === "F"){ // answer F
+                        } else if(currentAnswer === "F") {
                             
                             this.easy_jazz.push('1F');
                             this.easy_listening.push('1F');
@@ -162,7 +158,7 @@
                             this.club_dance.push('1F');
                             
 
-                        } else if(currentAnswer === "G"){ // answer G
+                        } else if(currentAnswer === "G") {
                             this.classical.push('1G');
                             this.easy_jazz.push('1G');
                             this.easy_listening.push('1G');
@@ -176,7 +172,7 @@
                             this.pop_classic.push('1G');
                             this.rock_classic.push('1G');
 
-                        } else if(currentAnswer === "H"){ // answer H
+                        } else if(currentAnswer === "H") {
                             this.classical.push('1H');
                             this.easy_jazz.push('1H');
                             this.easy_listening.push('1H');
@@ -190,7 +186,7 @@
                             
                             this.kids_hits.push('1H');
 
-                        }else if(currentAnswer === "I"){ // answer I
+                        }else if(currentAnswer === "I") {
                             this.classical.push('1I');
                             this.easy_jazz.push('1I');
                             this.easy_listening.push('1I');
@@ -200,7 +196,7 @@
                             this.pop_ballads.push('1I');
                             this.singer_songwriter.push('1I');
 
-                        }else if(currentAnswer === "J"){ // answer J
+                        }else if(currentAnswer === "J") {
                             this.classical.push('1J');
                             this.easy_jazz.push('1J');
                             this.easy_listening.push('1J');
@@ -216,7 +212,7 @@
 
                         break;
                     case 2: // question 2
-                        if(currentAnswer === "A"){ // answer A
+                        if(currentAnswer === "A") {
 
                             this.nederpop.push('2A');
                             this.singer_songwriter.push('2A');
@@ -224,7 +220,7 @@
                             this.club_dance.push('2A');
                             this.kids_hits.push('2A');
 
-                        } else if(currentAnswer === "B"){ // answer B
+                        } else if(currentAnswer === "B") {
 
                             this.easy_jazz.push('2B');
                             this.easy_listening.push('2B');
@@ -241,7 +237,7 @@
                             this.club_dance.push('2B');
                             
 
-                        }else if(currentAnswer === "C"){ // answer C
+                        }else if(currentAnswer === "C") {
                             this.classical.push('2C');
                             this.easy_jazz.push('2C');
                             this.easy_listening.push('2C');
@@ -258,7 +254,7 @@
                             this.disco.push('2C');
                             this.club_dance.push('2C');
 
-                        }else if(currentAnswer === "D"){ // answer D
+                        }else if(currentAnswer === "D") {
 
                             this.classical.push('2D');
                             this.easy_jazz.push('2D');
@@ -274,7 +270,7 @@
                             
                             this.disco.push('2D');
                             
-                        }else if(currentAnswer === "E"){ // answer E
+                        }else if(currentAnswer === "E") {
 
                             this.classical.push('2E');
                             this.easy_jazz.push('2E');
@@ -293,7 +289,7 @@
                         }
                         break;
                     case 3:
-                        if(currentAnswer === "A"){ // answer A
+                        if(currentAnswer === "A") {
                             this.classical.push('3A');
                             this.easy_jazz.push('3A');
                             this.easy_listening.push('3A');
@@ -306,7 +302,7 @@
                             
                             this.kids_hits.push('3A');
 
-                        }else if(currentAnswer === "B"){ // answer B
+                        }else if(currentAnswer === "B") {
                             this.classical.push('3B');
                             this.easy_jazz.push('3B');
                             this.easy_listening.push('3B');
@@ -323,7 +319,7 @@
                             this.club_dance.push('3B');
                             this.kids_hits.push('3B');
 
-                        } else if(currentAnswer === "C"){ // answer C
+                        } else if(currentAnswer === "C") {
                             
                             this.soul.push('3C');
                             
@@ -339,7 +335,7 @@
                             this.club_dance.push('3C');
                             
 
-                        } else if(currentAnswer === "D"){ // answer D
+                        } else if(currentAnswer === "D") {
                             this.classical.push('3D');
                             this.easy_jazz.push('3D');
                             this.easy_listening.push('3D');
@@ -349,7 +345,7 @@
                             this.pop_ballads.push('3D');
                             this.singer_songwriter.push('3D');
 
-                        } else if(currentAnswer === "E"){ // answer E
+                        } else if(currentAnswer === "E") {
                             this.classical.push('3E');
                             this.easy_jazz.push('3E');
                             this.easy_listening.push('3E');
@@ -369,7 +365,7 @@
                         }
                         break;
                     case 4:
-                        if(currentAnswer === "A"){ // answer A
+                        if(currentAnswer === "A") {
                             this.classical.push('4A');
                             this.easy_jazz.push('4A');
                             this.easy_listening.push('4A');
@@ -383,7 +379,7 @@
                             this.pop_classic.push('4A');
                             this.rock_classic.push('4A');
 
-                        } else if(currentAnswer === "B"){ // answer B
+                        } else if(currentAnswer === "B") {
                             this.classical.push('4B');
                             this.easy_jazz.push('4B');
                             this.easy_listening.push('4B');
@@ -392,7 +388,7 @@
                             
                             this.singer_songwriter.push('4B');
 
-                        }else if(currentAnswer === "C"){ // answer C
+                        }else if(currentAnswer === "C") {
                             
                             this.easy_listening.push('4C');
                             this.soul.push('4C');
@@ -404,7 +400,7 @@
                             
                             this.kids_hits.push('4C');
 
-                        }else if(currentAnswer === "D"){ // answer D
+                        }else if(currentAnswer === "D") {
                            
                             this.soul.push('4D');
                             this.lounge.push('4D');
@@ -415,7 +411,7 @@
                             this.alternative.push('4D');
                             this.disco.push('4D');
 
-                        }else if(currentAnswer === "E"){ // answer E
+                        }else if(currentAnswer === "E") {
                             this.classical.push('4E');
                             this.easy_jazz.push('4E');
                             this.easy_listening.push('4E');
@@ -426,7 +422,7 @@
                            
                             this.singer_songwriter.push('4E');
 
-                        }else if(currentAnswer === "F"){ // answer F
+                        }else if(currentAnswer === "F") {
                             this.classical.push('4F');
                             this.easy_jazz.push('4F');
                             this.easy_listening.push('4F');
@@ -440,7 +436,7 @@
                         }
                         break;
                     case 5:
-                        if(currentAnswer === "A"){ // answer A
+                        if(currentAnswer === "A") {
                             this.classical.push('5A');
                             this.easy_jazz.push('5A');
                             this.easy_listening.push('5A');
@@ -458,7 +454,7 @@
                             this.club_dance.push('5A');
                             this.kids_hits.push('5A');
 
-                        }else if(currentAnswer === "B"){ // answer B
+                        }else if(currentAnswer === "B") {
                             this.classical.push('5B');
                             this.easy_jazz.push('5B');
                             this.easy_listening.push('5B');
@@ -476,7 +472,7 @@
                             this.club_dance.push('5B');
                             this.kids_hits.push('5B');
 
-                        }else if(currentAnswer === "C"){ // answer C
+                        }else if(currentAnswer === "C") {
                             this.classical.push('5C');
                             this.easy_jazz.push('5C');
                             this.easy_listening.push('5C');
@@ -497,7 +493,7 @@
                         }
                         break;
                     case 6:
-                        if(currentAnswer === "A"){ // answer A
+                        if(currentAnswer === "A") {
                             
                             this.easy_listening.push('6A');
                             
@@ -508,7 +504,7 @@
                             
                             this.kids_hits.push('6A');
 
-                        }else if(currentAnswer === "B"){ // answer B
+                        }else if(currentAnswer === "B") {
                             
                             this.easy_listening.push('6B');
                             this.soul.push('6B');
@@ -524,12 +520,12 @@
                             
                             this.kids_hits.push('6B');
 
-                        }else if(currentAnswer === "C"){ // answer C
+                        }else if(currentAnswer === "C") {
                             this.classical.push('6C');
                             this.easy_jazz.push('6C');
                             this.easy_listening.push('6C');
 
-                        }else if(currentAnswer === "D"){ // answer D
+                        }else if(currentAnswer === "D") {
                            
                             this.easy_jazz.push('6D');
                             this.easy_listening.push('6D');
@@ -543,14 +539,14 @@
                             
                             this.disco.push('6D');
 
-                        }else if(currentAnswer === "E"){ // answer E
+                        }else if(currentAnswer === "E") {
                             
                             this.urban.push('6E');
                             
                             this.rock_classic.push('6E');
                             this.alternative.push('6E');
 
-                        }else if(currentAnswer === "F"){ // answer F
+                        }else if(currentAnswer === "F") {
 
                             this.easy_jazz.push('6F');
                             this.easy_listening.push('6F');
@@ -562,7 +558,7 @@
 
                         break;
                     case 7:
-                        if(currentAnswer === "A"){ // answer A
+                        if(currentAnswer === "A") {
                             this.classical.push('7A');
                             this.easy_jazz.push('7A');
                             this.easy_listening.push('7A');
@@ -579,7 +575,7 @@
                             this.disco.push('7A');
                             this.club_dance.push('7A');
 
-                        }else if(currentAnswer === "B"){ // answer B
+                        }else if(currentAnswer === "B") {
                             this.classical.push('7B');
                             this.easy_jazz.push('7B');
                             this.easy_listening.push('7B');
@@ -587,7 +583,7 @@
                             this.disco.push('7B');
                             this.club_dance.push('7B');
                             
-                        }else if(currentAnswer === "C"){ // answer C
+                        }else if(currentAnswer === "C") {
 
                             this.easy_jazz.push('7C');
                             this.easy_listening.push('7C');
@@ -605,7 +601,7 @@
                             this.club_dance.push('7C');
                             this.kids_hits.push('7C');
 
-                        }else if (currentAnswer === "D"){ // answer D
+                        }else if (currentAnswer === "D") {
                             
                             this.urban.push('7D');
                             this.nederpop.push('7D');
@@ -618,7 +614,7 @@
                             this.club_dance.push('7D');
                             this.kids_hits.push('7D');
 
-                        }else if(currentAnswer === "E"){ // answer E
+                        }else if(currentAnswer === "E") {
                             this.classical.push('7E');
                             this.easy_jazz.push('7E');
                             this.easy_listening.push('7E');
@@ -636,7 +632,7 @@
                             this.club_dance.push('7E');
                             this.kids_hits.push('7E');
 
-                        }else if(currentAnswer === "F"){ // answer F
+                        }else if(currentAnswer === "F") {
                             this.classical.push('7F');
                             
                             this.latin.push('7F');
@@ -654,7 +650,7 @@
                         }
                         break;
                     case 8:
-                        if(currentAnswer === "A"){ // answer A
+                        if(currentAnswer === "A") {
                             this.classical.push('8A');
                             this.easy_jazz.push('8A');
                             this.easy_listening.push('8A');
@@ -667,7 +663,7 @@
                             this.pop_classic.push('8A');
                             this.rock_classic.push('8A');
 
-                        }else if(currentAnswer === "B"){ // answer B
+                        }else if(currentAnswer === "B") {
                             this.classical.push('8B');
                             this.easy_jazz.push('8B');
                             this.easy_listening.push('8B');
@@ -685,7 +681,7 @@
                             this.club_dance.push('8B');
                             this.kids_hits.push('8B');
 
-                        }else if(currentAnswer === "C"){ // answer C
+                        }else if(currentAnswer === "C") {
                             this.classical.push('8C');
                             this.easy_jazz.push('8C');
                             this.easy_listening.push('8C');
@@ -703,7 +699,7 @@
                             this.club_dance.push('8C');
                             this.kids_hits.push('8C');
 
-                        }else if(currentAnswer === "A"){ // answer A
+                        }else if(currentAnswer === "A") {
                             this.classical.push('1A');
                             this.easy_jazz.push('1A');
                             this.easy_listening.push('1A');

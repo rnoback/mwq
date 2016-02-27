@@ -26,6 +26,8 @@
             }
             //////////////////////////////////////////////////////////////////////////////////////////////////////
 
+            // Always start test with empty array's
+            $answersService.clearMusicArray();
 
 
             //QUIZ CALCULATION
@@ -123,11 +125,11 @@
                 $($scope.arrPages[$scope.count]).removeClass("hide");
 
                 // Last qustion done, do the calculation
-                if($scope.count === ($scope.maxPages -8)) {
-                    console.log("CALC IT");
+                if($scope.count === ($scope.maxPages -1)) {
+                    //console.log("CALC IT");
                     for(var key in $answersService.answersObject){
 
-                        console.log('key ' + key +  ' - val ' + $answersService.answersObject[key]);
+                       // console.log('key ' + key +  ' - val ' + $answersService.answersObject[key]);
 
                         $answersService.fillMusicArrays(key, $answersService.answersObject[key]);
                     
