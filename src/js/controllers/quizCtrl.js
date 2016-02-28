@@ -27,7 +27,7 @@
             //////////////////////////////////////////////////////////////////////////////////////////////////////
 
             // Always start test with empty array's
-            $answersService.clearMusicArray();
+            $answersService.clearMusicData();
 
 
             //QUIZ CALCULATION

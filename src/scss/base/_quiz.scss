@@ -263,6 +263,18 @@
 			.quiz__sheet--subtitle.orange{
 				color: $orange;
 			}
+
+			.answer-output-text{
+				h2{
+					color: $green;
+					text-transform: uppercase;
+					@include font-size(18);
+					margin:0;
+				}
+				p{
+					margin:0;
+				}
+			}
 		}
 		.block.green{
 			padding: 20px 20px 0 20px;

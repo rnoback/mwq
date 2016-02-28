@@ -4,7 +4,11 @@
     angular.module('mwqApp').service('answersService', ['$filter', function($filter){
         var self = this;
 
-        this.clearMusicArray = function(){
+        this.storyStringBuild = "";
+
+        this.clearMusicData = function(){
+            self.storyStringBuild = "";
+
             self.classical = [];
             self.easy_jazz = [];
             self.easy_listening = [];
@@ -38,7 +42,7 @@
         this.getAllArrayLengths = function (){
 
             console.log("#########################################################");
-            console.log("klassiek " +self.classical.length);
+            console.log("klassiek " +self.classical.length );
             console.log("easy_jazz " +self.easy_jazz.length);
             console.log("easy_listening " +self.easy_listening.length);
             console.log("soul " +self.soul.length);
@@ -54,6 +58,8 @@
             console.log("disco " +self.disco.length);
             console.log("club_dance " +self.club_dance.length);
             console.log("kids_hits " +self.kids_hits.length);
+
+            //console.log("STRING: " +self.storyStringBuild);
         }
 
         this.fillMusicArrays = function(selQuestion, selAnwer){
@@ -99,6 +105,7 @@
                             this.rock_classic.push('1B');
                             this.disco.push('1B');
                             this.kids_hits.push('1B');
+
 
                         } else if(currentAnswer === "C") { 
 
@@ -210,7 +217,12 @@
                             
                         }
 
+                        self.storyStringBuild = "<h2>" + self.Q1_headers[currentAnswer] + "</h2>";
+                        self.storyStringBuild += "<p>" + self.Q1[currentAnswer] + "</p>";
+
                         break;
+
+
                     case 2: // question 2
                         if(currentAnswer === "A") {
 
@@ -287,7 +299,10 @@
                             this.disco.push('2E');
 
                         }
+                        self.storyStringBuild += "<p>" + self.Q2[currentAnswer] + "</p>";
                         break;
+
+                        
                     case 3:
                         if(currentAnswer === "A") {
                             this.classical.push('3A');
@@ -363,6 +378,7 @@
                             this.club_dance.push('3E');
                             this.kids_hits.push('3E');
                         }
+                        self.storyStringBuild += "<p>" + self.Q3[currentAnswer] + "</p>";
                         break;
                     case 4:
                         if(currentAnswer === "A") {
@@ -434,6 +450,7 @@
                             this.club_dance.push('4F');
                            
                         }
+                        self.storyStringBuild += "<p>" + self.Q4[currentAnswer] + "</p>";
                         break;
                     case 5:
                         if(currentAnswer === "A") {
@@ -491,6 +508,7 @@
                             this.kids_hits.push('5C');
 
                         }
+                        self.storyStringBuild += "<p>" + self.Q5[currentAnswer] + "</p>";
                         break;
                     case 6:
                         if(currentAnswer === "A") {
@@ -555,7 +573,7 @@
                             this.latin.push('6F');
                            
                         }
-
+                        self.storyStringBuild += "<p>" + self.Q6[currentAnswer] + "</p>";
                         break;
                     case 7:
                         if(currentAnswer === "A") {
@@ -648,6 +666,7 @@
                             this.kids_hits.push('7F');
 
                         }
+                        self.storyStringBuild += "<p>" + self.Q7[currentAnswer] + "</p>";
                         break;
                     case 8:
                         if(currentAnswer === "A") {
@@ -711,6 +730,8 @@
                             this.pop_classic.push('1A');
 
                         }
+                        self.storyStringBuild += "<p>" + self.Q8[currentAnswer] + "</p>";
+                        $('.answer-output-text').html(self.storyStringBuild);
                         break;
 
                     default:
