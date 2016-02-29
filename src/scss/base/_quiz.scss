@@ -274,6 +274,7 @@
 				p{
 					margin:0;
 				}
+
 			}
 		}
 		.block.green{
@@ -282,7 +283,8 @@
 			color: $white;
 			position:relative;
 			@include clearfix;
-
+			
+			
 
 			.quiz__sheet--title{
 				color: $white;	
@@ -306,7 +308,6 @@
 				}
 				
 			}
-			
 			
 			
 			.quiz__sheet--subtitle {

@@ -5,9 +5,11 @@
         var self = this;
 
         this.storyStringBuild = "";
+        this.storyStringBuildEmail = "";
 
         this.clearMusicData = function(){
             self.storyStringBuild = "";
+            self.storyStringBuildEmail = "";
 
             self.classical = [];
             self.easy_jazz = [];
@@ -219,9 +221,9 @@
 
                         self.storyStringBuild = "<h2>" + self.Q1_headers[currentAnswer] + "</h2>";
                         self.storyStringBuild += "<p>" + self.Q1[currentAnswer] + "</p>";
-
+                        self.storyStringBuildEmail = self.Q1_headers[currentAnswer].toUpperCase();
+                        self.storyStringBuildEmail += "%0A" + self.Q1[currentAnswer];
                         break;
-
 
                     case 2: // question 2
                         if(currentAnswer === "A") {
@@ -300,6 +302,7 @@
 
                         }
                         self.storyStringBuild += "<p>" + self.Q2[currentAnswer] + "</p>";
+                        self.storyStringBuildEmail += "%0A" + self.Q2[currentAnswer];
                         break;
 
                         
@@ -379,6 +382,7 @@
                             this.kids_hits.push('3E');
                         }
                         self.storyStringBuild += "<p>" + self.Q3[currentAnswer] + "</p>";
+                        self.storyStringBuildEmail += "%0A"+self.Q3[currentAnswer];
                         break;
                     case 4:
                         if(currentAnswer === "A") {
@@ -451,6 +455,7 @@
                            
                         }
                         self.storyStringBuild += "<p>" + self.Q4[currentAnswer] + "</p>";
+                        self.storyStringBuildEmail += "%0A" + self.Q4[currentAnswer];
                         break;
                     case 5:
                         if(currentAnswer === "A") {
@@ -509,6 +514,7 @@
 
                         }
                         self.storyStringBuild += "<p>" + self.Q5[currentAnswer] + "</p>";
+                        self.storyStringBuildEmail += "%0A" + self.Q5[currentAnswer];
                         break;
                     case 6:
                         if(currentAnswer === "A") {
@@ -574,6 +580,7 @@
                            
                         }
                         self.storyStringBuild += "<p>" + self.Q6[currentAnswer] + "</p>";
+                        //self.storyStringBuildEmail += "%0A" + self.Q6[currentAnswer];
                         break;
                     case 7:
                         if(currentAnswer === "A") {
@@ -667,6 +674,7 @@
 
                         }
                         self.storyStringBuild += "<p>" + self.Q7[currentAnswer] + "</p>";
+                        //self.storyStringBuildEmail += "%0A" + self.Q7[currentAnswer];
                         break;
                     case 8:
                         if(currentAnswer === "A") {
@@ -731,7 +739,17 @@
 
                         }
                         self.storyStringBuild += "<p>" + self.Q8[currentAnswer] + "</p>";
+                        //self.storyStringBuildEmail += "%0A" + self.Q8[currentAnswer];
                         $('.answer-output-text').html(self.storyStringBuild);
+
+                        this.doMailto = function() {
+                            var sMailto= "mailto:info@muziekwerkt.nl?SUBJECT=Muziek Advies&BODY="+  self.storyStringBuildEmail;
+                            document.location.href = sMailto;
+                        }
+
+                        //$(window).storyStringBuild = self.storyStringBuild;
+                        $('.btn-email-advies').attr("href", self.sMailto() );
+
                         break;
 
                     default:
