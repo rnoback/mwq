@@ -11,12 +11,9 @@
             //////////////////////////////////////////////////////////////////////////////////////////////////////
             // FIREBASE TEST
 
-            
 
             $('.send-newsletter-form').on('click', function() {
                 var emailName = $('.email-newsletter-txt').val();
-
-
             });
 
             //var ref = new Firebase('https://mwq.firebaseio.com/');
@@ -24,7 +21,6 @@
             //console.log($scope.messages);
             // save to firbase
             // $scope.messages.$add({ q1: "testen"});
-
 
             // answers to text principal
             var a = 'A';
@@ -143,12 +139,16 @@
                         $answersService.fillMusicArrays(key, $answersService.answersObject[key]);
                     
                     }
+
                     // Save to firebase
                     var ref = new Firebase('https://mwq.firebaseio.com/');
                     $scope.messages = $firebaseArray(ref);
+                    var date = new Date();
+                    $answersService.answersObject['date'] = date.toString();
                     $scope.messages.$add($answersService.answersObject);
-                    ref.onDisconnect().update({ endedAt: Firebase.ServerValue.TIMESTAMP });
-                    ref.update({ startedAt: Firebase.ServerValue.TIMESTAMP });
+                    
+                    //ref.onDisconnect().update({ endedAt: Firebase.ServerValue.TIMESTAMP });
+                    //ref.update({ startedAt: Firebase.ServerValue.TIMESTAMP });
 
                     $answersService.getAllArrayLengths();
                 }

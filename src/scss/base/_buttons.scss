@@ -1,7 +1,7 @@
 #{$all-buttons} {
   appearance: none;
   background-color: $action-color;
-  border: 0;
+  border: 1px solid $orange;
   border-radius: $base-border-radius-btn;
   color: #fff;
   cursor: pointer;
@@ -21,9 +21,10 @@
 
   &:hover,
   &:focus {
-    background-color: shade($action-color, 20%);
-    color: #fff;
-    outline:0;
+    background: $white;
+    border: 1px solid $dark-gray;
+    color:$dark-gray;
+    outline: none; 
   }
 
   &:disabled {

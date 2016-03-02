@@ -283,8 +283,6 @@
 			color: $white;
 			position:relative;
 			@include clearfix;
-			
-			
 
 			.quiz__sheet--title{
 				color: $white;	
@@ -295,6 +293,7 @@
 				width: 100%;
 			}
 			.block-inner{
+				@include clearfix;
 				margin-top: -20px;
 				width: 100%;
 				.other-matches{
@@ -438,6 +437,7 @@
 				&:hover{
 					svg{
 						path{
+							fill:$orange;
 						}
 					}
 				}
@@ -445,9 +445,7 @@
 		}
 		button.quiz__nav--email {
 			margin: 20px auto 0;
-			padding: $small-spacing 3em;
-			font-size: 12px;
-			border: 1px solid $orange;
+			display: block;
 		}
 	}
 }
