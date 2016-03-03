@@ -25,10 +25,11 @@
             self.disco = [];
             self.club_dance = [];
             self.kids_hits = [];
+
         }
 
-
         this.answersObject = {};
+        this.answersLengthObject = {};
         this.currentQuestion = 0;
 
 
@@ -39,27 +40,36 @@
             delete this.answersObject[selQuestion];
         }
 
+        // A. nl 8, 16
+        // B. pop 6, 9, 10, 11, 14, 15
+        // C. klassiek 1
+        // D. jazzy R&B 2
+        // E. Rock 7, 12, 13
+        // F. Soul, jazz 3, 4, 5
+
         this.getAllArrayLengths = function (){
 
             console.log("#########################################################");
-            console.log("klassiek " +self.classical.length );
-            console.log("easy_jazz " +self.easy_jazz.length);
-            console.log("easy_listening " +self.easy_listening.length);
-            console.log("soul " +self.soul.length);
-            console.log("lounge " +self.lounge.length);
-            console.log("latin " +self.latin.length);
-            console.log("urban " +self.urban.length);
-            console.log("nederpop " +self.nederpop.length);
-            console.log("pop_ballads " +self.pop_ballads.length);
-            console.log("singer_songwriter " +self.singer_songwriter.length);
-            console.log("pop_classic " +self.pop_classic.length);
-            console.log("rock_classic " +self.rock_classic.length);
-            console.log("alternative " +self.alternative.length);
-            console.log("disco " +self.disco.length);
-            console.log("club_dance " +self.club_dance.length);
-            console.log("kids_hits " +self.kids_hits.length);
-
+            console.log("1 klassiek " +self.classical.length );
+            console.log("2 easy_jazz " +self.easy_jazz.length);
+            console.log("3 easy_listening " +self.easy_listening.length);
+            console.log("4 soul " +self.soul.length);
+            console.log("5 lounge " +self.lounge.length);
+            console.log("6 latin " +self.latin.length);
+            console.log("7 urban " +self.urban.length);
+            console.log("8 nederpop " +self.nederpop.length);
+            console.log("9 pop_ballads " +self.pop_ballads.length);
+            console.log("10 singer_songwriter " +self.singer_songwriter.length);
+            console.log("11 pop_classic " +self.pop_classic.length);
+            console.log("12 rock_classic " +self.rock_classic.length);
+            console.log("13 alternative " +self.alternative.length);
+            console.log("14 disco " +self.disco.length);
+            console.log("15 club_dance " +self.club_dance.length);
+            console.log("16 kids_hits " +self.kids_hits.length);
+ 
             //console.log("STRING: " +self.storyStringBuild);
+
+            
         }
 
         this.fillMusicArrays = function(selQuestion, selAnwer){

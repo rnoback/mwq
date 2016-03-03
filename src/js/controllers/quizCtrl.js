@@ -137,16 +137,17 @@
                        // console.log('key ' + key +  ' - val ' + $answersService.answersObject[key]);
 
                         $answersService.fillMusicArrays(key, $answersService.answersObject[key]);
+                        
                     
                     }
 
                     // Save to firebase
-                    var ref = new Firebase('https://mwq.firebaseio.com/');
+                    /*var ref = new Firebase('https://mwq.firebaseio.com/');
                     $scope.messages = $firebaseArray(ref);
                     var date = new Date();
                     $answersService.answersObject['date'] = date.toString();
                     $scope.messages.$add($answersService.answersObject);
-                    
+                    */
                     //ref.onDisconnect().update({ endedAt: Firebase.ServerValue.TIMESTAMP });
                     //ref.update({ startedAt: Firebase.ServerValue.TIMESTAMP });
 
