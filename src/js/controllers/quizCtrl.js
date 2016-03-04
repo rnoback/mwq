@@ -158,9 +158,33 @@
                 $(window).scrollTop(0);
                 // Dot paging
                 $scope.setupDotPaging($scope.maxPages, $scope.count);
+                $.ajaxChimp.translations.nl = {
+                    submit: 'Versturen...',
+                    0: 'We hebben een bevestigings e-mail gestuurd',
+                    1: 'Vul een e-mailadres in',
+                    2: 'Er moet een @ in het e-mailadres voorkomen',
+                    3: 'Vul een geldig e-mailadres in',
+                    4: 'Vul een geldig e-mailadres in',
+                    5: 'Vul een geldig e-mailadres in'
+                }
 
-
-               
+                $('#mc-form').ajaxChimp({
+                    url: 'http://noback.us12.list-manage.com/subscribe/post?u=062b62a9e4f2e04c56f42e5b7&amp;id=10087da533',
+                    callback: callbackFunction,
+                    language: 'nl'
+                });
+                
+               /* $('#newsletter-subscribe-form').ajaxChimp({
+                    url: '//noback.us12.list-manage.com/subscribe/post?u=062b62a9e4f2e04c56f42e5b7&amp;id=10087da533',
+                    callback: callbackFunction
+                });
+                 */               
+                function callbackFunction (resp) {
+                    if (resp.result === 'success') {
+                        // Do stuff
+                        console.log("CAllBACK FROM CHIMP");
+                    }
+                }
 
                 /*
                 console.log("klassiek " +$answersService.classical.length);

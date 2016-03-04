@@ -294,7 +294,6 @@
 			}
 			.block-inner{
 				@include clearfix;
-				margin-top: -20px;
 				width: 100%;
 				.other-matches{
 					font-family: $heading-font-bold;
@@ -313,12 +312,11 @@
 				color: $white;
 				text-align: left;
 			}
-			.icon-mic{
-				margin-left: 10px;
-				svg{
-					width: 20px;
-					height: auto;
-				}
+			.result-music-icon{
+				margin: -20px 0 0 10px;
+				max-width: 30px;
+				max-height: 30px;
+				
 			}
 			&:after{
 				width: 0; 
@@ -353,7 +351,7 @@
 		}
 
 
-		#email-form{
+		.newsletter-subscribe-form{
 			@include clearfix;
 			margin: 30px 0;
 			.email-txt{
@@ -394,6 +392,17 @@
 					padding: $small-spacing 1.2em;
   				}
 
+			}
+			label{
+				clear: both;
+				font-style: italic;
+				font-size: 0.9em;
+				margin-left: 10px;
+				color: $green;
+				
+				&.error{
+					color: red;
+				}
 			}
 
 		}
@@ -445,6 +454,9 @@
 		}
 		button.quiz__nav--email {
 			margin: 20px auto 0;
+			@include media($tablet){
+				margin: 32px auto 0;
+			}
 			display: block;
 		}
 	}

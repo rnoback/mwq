@@ -89,9 +89,21 @@
  
             //console.log("STRING: " +self.storyStringBuild);
 
-            
         }
 
+        this.setupResultPage = function(){
+
+             // Set variable in result page
+            $('.answer-output-text').html(self.storyStringBuild);
+            $('.quiz-end-result-title').html(self.endResultTitle);
+            $('.quiz-end-result-text').html(self.endResultText);
+            $('.other-matches').html(self.endResultAdvise);
+            
+            var str = self.endResultTitle.replace(/\s+/g, '-').toLowerCase();
+            $('.result-image').attr('src', 'images/result/'+str + '.jpg');
+            $('.result-music-icon').attr('src', 'images/result/'+str + '.svg');
+            
+        }
         this.fillMusicArrays = function(selQuestion, selAnwer){
 
             //console.log("selQuestion " + selQuestion);
@@ -769,14 +781,8 @@
                         }
                         self.storyStringBuild += "<p>" + self.Q8[currentAnswer] + "</p>";
                         
-                        // Set variable in result page
-                        $('.answer-output-text').html(self.storyStringBuild);
-                        $('.quiz-end-result-title').html(self.endResultTitle);
-                        $('.quiz-end-result-text').html(self.endResultText);
-                        $('.other-matches').html(self.endResultAdvise);
+                        self.setupResultPage();
 
-                        var str = self.endResultTitle.replace(/\s+/g, '-').toLowerCase();
-                        $('.result-image').attr('src', 'images/result/'+str + '.jpg');
                         
                         break;
 
