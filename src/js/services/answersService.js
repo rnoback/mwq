@@ -6,6 +6,26 @@
 
         this.storyStringBuild = "";
 
+        this.resultAnswersObject = {
+            'A':'Nederlandstalig',
+            'B':'Pop',
+            'C':'Klassiek',
+            'D':'Jazzy R&B',
+            'E':'Rock',
+            'F':'Soul Jazz'
+        }
+
+        this.resultAdviseObject = {
+            'A': 'Soul Jazz / Pop', // NL
+            'B': 'Nederlandstalig /Jazzy R&B / Rock', //Pop
+            'C': 'Soul Jazz', //Klassiek
+            'D': 'Soul Jazz / Pop', //Jazzy R&B
+            'E': 'Pop', //ROCK
+            'F': 'Pop / Jazzy R&B / Klassiek' //SOUL JAZZ
+        }
+
+
+
         this.clearMusicData = function(){
             self.storyStringBuild = "";
 
@@ -583,7 +603,14 @@
                             this.latin.push('6F');
                            
                         }
+
+                        self.endResultTitle = self.resultAnswersObject[currentAnswer];
+                        self.endResultText = self.Q6[currentAnswer];
+
                         self.storyStringBuild += "<p>" + self.Q6[currentAnswer] + "</p>";
+
+                        self.endResultAdvise = self.resultAdviseObject[currentAnswer];
+                        
                         break;
                     case 7:
                         if(currentAnswer === "A") {
@@ -741,7 +768,16 @@
 
                         }
                         self.storyStringBuild += "<p>" + self.Q8[currentAnswer] + "</p>";
+                        
+                        // Set variable in result page
                         $('.answer-output-text').html(self.storyStringBuild);
+                        $('.quiz-end-result-title').html(self.endResultTitle);
+                        $('.quiz-end-result-text').html(self.endResultText);
+                        $('.other-matches').html(self.endResultAdvise);
+
+                        var str = self.endResultTitle.replace(/\s+/g, '-').toLowerCase();
+                        $('.result-image').attr('src', 'images/result/'+str + '.jpg');
+                        
                         break;
 
                     default:
