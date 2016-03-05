@@ -7,14 +7,15 @@
         ['$scope', '$filter', 'globalService', 'carouselService',
         function($scope, $filter, $globalService, $carouselService) {
 
-             // set naviagiotn button active
+            // Set navigation button active
+            $(".nav-btn").removeClass('active');
             $('.btn-info').addClass('active');
+            $(window).scrollTop(0);
 
             //var box = $('.test-sheet');
            //TweenMax.to($('.slide'), 2, {x: -700, ease:Expo.easeInOut});
 
            var extraInfoOpen = false;
-           
 
            // should be in a service 
            var pageContainer = $('.pages');

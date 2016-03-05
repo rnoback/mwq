@@ -12,9 +12,9 @@
             // FIREBASE TEST
 
 
-            $('.send-newsletter-form').on('click', function() {
-                var emailName = $('.email-newsletter-txt').val();
-            });
+           // $('.send-newsletter-form').on('click', function() {
+           //     var emailName = $('.email-newsletter-txt').val();
+           // });
 
             //var ref = new Firebase('https://mwq.firebaseio.com/');
             //$scope.messages = $firebaseArray(ref);
@@ -49,9 +49,6 @@
                 var question = container.data('question');
                 target.addClass('active');
                 $scope.slideOutNext();
-
-                //console.log("answer "+answer);
-                //console.log("question "+question);
 
                 $answersService.addAnwser(question, answer);
             });
@@ -89,16 +86,17 @@
 
             $scope.setupDotPaging($scope.maxPages, $scope.count);
 
-            // set naviagiotn button active
+            // Set navigation button active
+            $(".nav-btn").removeClass('active');
             $('.btn-quiz').addClass('active');
+            $(window).scrollTop(0);
+
 
             $scope.slideInNext = function (){
-
                 TweenMax.fromTo( $($scope.arrPages[$scope.count]), $scope.speed, 
                     {x:$globalService.viewportWidth, opacity:0}, {x: 0, opacity:1, ease:Expo.easeInOut});
             }
             $scope.slideInPrev = function (){
-
                 TweenMax.fromTo( $($scope.arrPages[$scope.count]), $scope.speed, 
                     {x:-$scope.pageWidth, opacity:0}, {x: 0, opacity:1, ease:Expo.easeInOut});
             }
@@ -119,7 +117,6 @@
 
                 $($scope.arrPages[$scope.count]).addClass("hide");
                 $($scope.arrPages[$scope.count]).find('.quiz__nav--next').show();
-                
 
 
                 if($scope.count < $scope.maxPages){
@@ -140,6 +137,9 @@
                         
                     
                     }
+
+                    
+
 
                     // Save to firebase
                     /*var ref = new Firebase('https://mwq.firebaseio.com/');
@@ -243,17 +243,14 @@
 
             //Events
              $('.quiz__nav--start').on('click', function(evt){
-                
                 $scope.slideOutNext();
             });
 
             $('.quiz__nav--next').on('click', function(evt){
-                
                 $scope.slideOutNext();
             });
 
             $('.quiz__nav--prev').on('click', function(evt){
-                
                 $scope.slideOutPrev();
             });
 

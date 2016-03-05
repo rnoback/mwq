@@ -64,17 +64,12 @@
 		
 		button.pill-btn {
 			display: block;
-			border: 1px solid $white;
 			span.txt-extra{
 				@include media($mobile) {
 					display:none;
 				}
 			}
-			&:hover {
-				background: $white;
-				border: 1px solid $dark-gray;
-				color:$dark-gray;
-			}
+			
 		}
 
 		button.quiz__nav--start {
@@ -452,8 +447,10 @@
 				}
 			}
 		}
-		button.quiz__nav--email {
+		a.quiz__nav--email {
 			margin: 20px auto 0;
+			max-width: 174px;
+			clear:both;
 			@include media($tablet){
 				margin: 32px auto 0;
 			}

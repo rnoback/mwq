@@ -102,6 +102,10 @@
             var str = self.endResultTitle.replace(/\s+/g, '-').toLowerCase();
             $('.result-image').attr('src', 'images/result/'+str + '.jpg');
             $('.result-music-icon').attr('src', 'images/result/'+str + '.svg');
+
+            // Setup email client button with content
+            $('.btn-email-advies').attr('href','mailto:?SUBJECT=Muziek Advies: '
+                +self.endResultTitle.toUpperCase()+'&BODY='+self.endResultText+'')
             
         }
         this.fillMusicArrays = function(selQuestion, selAnwer){
@@ -902,11 +906,6 @@
             C: 'Jouw zaak zonder muziek is als Parijs zonder Eifeltoren. Dat kan dus niet. Gelukkig is dit niet aan dovemansoren gericht en ben jij het hier roerend mee eens. Maar welke muziek past het beste bij jouw zaak?',
             D: 'Aha, dus muziek is overbodig in jouw zaak! Als je het niet nodig vindt dat klanten langer blijven, meer kopen, consumeren, ontspannen en/of privacy wordt geboden, je personeel gestimuleerd wordt of het gevoel krijgt dat de tijd sneller gaat, dan kun je inderdaad overwegen om geen muziek te gebruiken. Niet meer zo overtuigd? Lees dan toch maar dit muziekadvies.'
         }
-
-
-        this.getAnswerText = function(question){
-
-        } 
 
 
     }]);

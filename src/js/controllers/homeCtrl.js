@@ -10,8 +10,10 @@
             //var box = $('.test-sheet');
            //TweenMax.to($('.slide'), 2, {x: -700, ease:Expo.easeInOut});
 
-            // set naviagiotn button active
+            // Set navigation button active
+            $(".nav-btn").removeClass('active');
             $('.btn-home').addClass('active');
+            $(window).scrollTop(0);
 
            var extraInfoOpen = false;
            

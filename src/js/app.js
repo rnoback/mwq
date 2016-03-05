@@ -34,8 +34,6 @@ mwqApp.config(function ($routeProvider) {
 
 mwqApp.controller('mainCtrl', ['$scope', function($scope) {
 	    			    	
-
-
     $scope.mobNavVisible = false;
 
     // hamburger toggle
@@ -64,9 +62,6 @@ mwqApp.controller('mainCtrl', ['$scope', function($scope) {
         $scope.mobNavVisible = false;
         $( "#nav-toggle" ).removeClass( "active" );
     });
-
-	
-
     
 	//theWindow.resize(resizeBg).trigger("resize");
      
