@@ -134,15 +134,14 @@
                        // console.log('key ' + key +  ' - val ' + $answersService.answersObject[key]);
 
                         $answersService.fillMusicArrays(key, $answersService.answersObject[key]);
-                        
                     
                     }
 
                 
-
                     // Save to firebase
                     var ref = new Firebase('https://mwq.firebaseio.com/');
                     $scope.messages = $firebaseArray(ref);
+                    $answersService.answersObject['result'] = $answersService.endResultTitle;
                     var date = new Date();
                     $answersService.answersObject['date'] = date.toString();
                     $scope.messages.$add($answersService.answersObject);
@@ -168,7 +167,8 @@
                 }
 
                 $('#mc-form').ajaxChimp({
-                    url: 'http://noback.us12.list-manage.com/subscribe/post?u=062b62a9e4f2e04c56f42e5b7&amp;id=10087da533',
+                    //url: 'http://noback.us12.list-manage.com/subscribe/post?u=062b62a9e4f2e04c56f42e5b7&amp;id=10087da533',
+                    url: 'http://muziekwerkt.us3.list-manage.com/subscribe/post?u=e3b91fe259d4a20c8d371d63e&amp;id=f85710555e',
                     callback: callbackFunction,
                     language: 'nl'
                 });

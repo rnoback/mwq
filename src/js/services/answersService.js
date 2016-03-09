@@ -69,7 +69,8 @@
 
         this.getAllArrayLengths = function (){
 
-            console.log("#########################################################");
+           /* 
+           console.log("#########################################################");
             console.log("1 klassiek " +self.classical.length );
             console.log("2 easy_jazz " +self.easy_jazz.length);
             console.log("3 easy_listening " +self.easy_listening.length);
@@ -88,7 +89,8 @@
             console.log("16 kids_hits " +self.kids_hits.length);
  
             //console.log("STRING: " +self.storyStringBuild);
-
+            
+            */
         }
 
         this.setupResultPage = function(){
