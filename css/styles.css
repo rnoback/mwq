@@ -1135,6 +1135,38 @@ footer {
       background: #f6901e; }
       .quiz .block.qtype2 a.q__item:hover .q__item--text, .quiz .block.qtype2 a.q__item.active .q__item--text {
         color: #fff; }
+  .quiz .block.q2h a.q__item {
+    min-height: auto; }
+    @media screen and (min-width: 28.125em) and (max-width: 43.75em) {
+      .quiz .block.q2h a.q__item {
+        min-height: 56px; } }
+    @media screen and (min-width: 43.75em) {
+      .quiz .block.q2h a.q__item {
+        min-height: auto; } }
+  .quiz .block.q3h a.q__item {
+    min-height: auto; }
+    @media screen and (min-width: 28.125em) and (max-width: 43.75em) {
+      .quiz .block.q3h a.q__item {
+        min-height: 130px; } }
+    @media screen and (min-width: 43.75em) {
+      .quiz .block.q3h a.q__item {
+        min-height: 92px; } }
+  .quiz .block.q5h a.q__item {
+    min-height: auto; }
+    @media screen and (min-width: 28.125em) and (max-width: 43.75em) {
+      .quiz .block.q5h a.q__item {
+        min-height: 92px; } }
+    @media screen and (min-width: 43.75em) {
+      .quiz .block.q5h a.q__item {
+        min-height: 75px; } }
+  .quiz .block.q8h a.q__item {
+    min-height: auto; }
+    @media screen and (min-width: 28.125em) and (max-width: 43.75em) {
+      .quiz .block.q8h a.q__item {
+        min-height: 74px; } }
+    @media screen and (min-width: 43.75em) {
+      .quiz .block.q8h a.q__item {
+        min-height: 56px; } }
   .quiz .block.mint {
     background: #D2EADD; }
   .quiz .quiz__result {
