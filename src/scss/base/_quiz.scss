@@ -188,29 +188,26 @@
 		}
 	}
 	.block.qtype2 {
-		display: flex;
-		flex-wrap: wrap;
+		@include display(flex);
+		@include flex-wrap(wrap);
+		//flex-wrap: wrap;
+		width: 100%;
 		a.q__item{
-			display: flex; 
+			@include display(flex);
 			.q__item--text{
-
-				
 				font-family: $heading-font;
 				text-transform: uppercase;
 				text-align: left;
 				font-size: 12px;
 				padding: 10px;
-				color: $dark-blue;
+				color: $dark-blue;				
+				@include display(flex);
+				@include flex-direction(column);
 				@include clearfix;
-				
-				display: flex;
-				flex-direction: column;
-
 				.label{
 					font-family: $heading-font-bold;
 					float: left;
 					width: 7%;
-					min-width: 13px;
 				}
 				.value{
 					float: left;
