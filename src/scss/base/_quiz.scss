@@ -188,14 +188,13 @@
 		}
 	}
 	.block.qtype2 {
-		//display: table;
-		.row{
-
-		}
+		display: flex;
+		flex-wrap: wrap;
 		a.q__item{
-
+			display: flex; 
 			.q__item--text{
 
+				
 				font-family: $heading-font;
 				text-transform: uppercase;
 				text-align: left;
@@ -203,15 +202,19 @@
 				padding: 10px;
 				color: $dark-blue;
 				@include clearfix;
+				
+				display: flex;
+				flex-direction: column;
+
 				.label{
 					font-family: $heading-font-bold;
 					float: left;
 					width: 7%;
+					min-width: 13px;
 				}
 				.value{
 					float: left;
-
-					width: 93%;
+					width: 90%;
 				}
 			}
 			margin-bottom: 10px;
@@ -240,6 +243,7 @@
 			}	
 		}
 	}
+	/*
 	.block.q2h{
 		a.q__item{
 			min-height: auto;
@@ -285,6 +289,7 @@
 			}
 		}	
 	}
+	*/
 
 	.block.mint{
 		background: $light-green;
