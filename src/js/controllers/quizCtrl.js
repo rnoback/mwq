@@ -33,43 +33,62 @@
 
             //$answersService.storyStringBuild;
             $scope.formData = {};
+            $scope.errMessage = "";
 
             $scope.processForm = function(){
 
-                console.log("EMAIL " + $scope.formData.email);
+                //console.log("EMAIL " + $globalService.isValidEmailAddress($scope.formData.email));
+
+                //console.log("$scope.formData.email PPP " + $scope.formData.email);
+
+               // console.log("$answersService.storyStringBuildSend " + $answersService.storyStringBuildSend);
+                var resultText = $answersService.buildResultToSend();
+               
+
+                $('#label-submit-result').html("");
+                $('#label-submit-result').removeClass('error');
 
                 if($scope.formData.email){
 
-                    $scope.formData['result'] = $('.answer-output-text').text().toString();
+                    if( $globalService.isValidEmailAddress($scope.formData.email) ){
+
+                        $scope.formData['result'] = resultText;
+                        $scope.formData['subject'] = "Muziek Advies: " + $answersService.endResultTitle;
                     
-                    console.log("formData " + $.param($scope.formData));
-                    //console.log("storyStringBuild " + $answersService.storyStringBuild);
 
-                
+                        $http({
+                            method  : 'POST',
+                            url     : 'php/submit_form.php',
+                            data    : $.param($scope.formData),  // pass in data as strings
+                            headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+                        })
+                        .success(function(data) {
+                            console.log("Response " + data.succes);
 
-                    // JS validation goes here
+                            if (!data.success) {
+                              // if not successful, bind errors to error variables
+                              $scope.errorName = data.errors.email;
 
-                    $http({
-                        method  : 'POST',
-                        url     : 'php/submit_form.php',
-                        data    : $.param($scope.formData),  // pass in data as strings
-                        headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
-                    })
-                    .success(function(data) {
-                        console.log("Response " + data);
+                              console.log(data.errors);
+                              $('#label-submit-result').addClass('error');
+                              scope.errMessage = "Sorry, er is iets fout gegaan. probeer het opnieuw";
+                            } else {
+                              // if successful, bind success message to message
+                              $scope.message = data.message;
+                              $('#label-submit-result').removeClass('error');
+                              scope.errMessage = "Het resultaat is verstuurd.";
+                            }
+                        });
+                    }else{
+                        $scope.errMessage = "Vul een geldig e-mailadres in";
+                         $('#label-submit-result').addClass('error');
+                    }
+                }else{
+                    $scope.errMessage = "Vul een e-mailadres in";
+                    $('#label-submit-result').addClass('error');
 
-                        if (!data.success) {
-                          // if not successful, bind errors to error variables
-                          $scope.errorName = data.errors.name;
-
-                          console.log(data.errors);
-                        } else {
-                          // if successful, bind success message to message
-                          $scope.message = data.message;
-                        }
-                    });
                 }
-            
+                $('#label-submit-result').html($scope.errMessage);
             }
 
             //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -172,10 +191,10 @@
                 // Last qustion done, do the calculation
                 if($scope.count === ($scope.maxPages -1)) {
                     //console.log("CALC IT");
+                    var editKey;
                     for(var key in $answersService.answersObject){
 
-                       // console.log('key ' + key +  ' - val ' + $answersService.answersObject[key]);
-
+                       //console.log('key ' + key +  ' - val ' + $answersService.answersObject[key]);
                         $answersService.fillMusicArrays(key, $answersService.answersObject[key]);
                     
                     }

@@ -1339,6 +1339,10 @@ footer {
           color: red; }
     .quiz .quiz__result .result-form {
       margin: 30px 0 0; }
+      .quiz .quiz__result .result-form label {
+        color: #fff; }
+        .quiz .quiz__result .result-form label.error {
+          color: red; }
     .quiz .quiz__result .extra-info-wrap {
       width: 70%;
       float: left; }
