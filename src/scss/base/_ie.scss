@@ -1,12 +1,14 @@
 @media screen\0 { 
 	.quiz {
 		.block.qtype2 {
-		display:block;
-
-		.q__item--text{
 			display:block;
+
+			.q__item--text{
+				display:block;
+			}
 		}
-	
+
+
 		.q2h{
 			a.q__item{
 				min-height: auto;

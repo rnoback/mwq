@@ -97,6 +97,9 @@
 
              // Set variable in result page
             $('.answer-output-text').html(self.storyStringBuild);
+
+            console.log("storyStringBuild " + self.storyStringBuild);
+
             $('.quiz-end-result-title').html(self.endResultTitle);
             $('.quiz-end-result-text').html(self.endResultText);
             $('.other-matches').html(self.endResultAdvise);
@@ -106,9 +109,9 @@
             $('.result-music-icon').attr('src', 'images/result/'+str + '.svg');
 
             // Setup email client button with content
-            $('.btn-email-advies').attr('href','mailto:?SUBJECT=Muziek Advies: '
+            /*$('.btn-email-advies').attr('href','mailto:?SUBJECT=Muziek Advies: '
                 +self.endResultTitle.toUpperCase()+'&BODY='+self.endResultText+'')
-            
+            */
         }
         this.fillMusicArrays = function(selQuestion, selAnwer){
 

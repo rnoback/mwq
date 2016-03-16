@@ -1285,13 +1285,13 @@ footer {
         .quiz .quiz__result .block.green .block-inner {
           width: 55%;
           float: right; } }
-    .quiz .quiz__result .newsletter-subscribe-form {
+    .quiz .quiz__result .newsletter-subscribe-form, .quiz .quiz__result .result-form {
       margin: 30px 0; }
-      .quiz .quiz__result .newsletter-subscribe-form::after {
+      .quiz .quiz__result .newsletter-subscribe-form::after, .quiz .quiz__result .result-form::after {
         clear: both;
         content: "";
         display: table; }
-      .quiz .quiz__result .newsletter-subscribe-form .email-txt {
+      .quiz .quiz__result .newsletter-subscribe-form .email-txt, .quiz .quiz__result .newsletter-subscribe-form .result-txt, .quiz .quiz__result .result-form .email-txt, .quiz .quiz__result .result-form .result-txt {
         border-radius: 1.8em;
         padding: 13px 20px;
         font-family: "textABold", Helvetica, Arial, sans-serif;
@@ -1300,42 +1300,45 @@ footer {
         font-size: 0.75rem;
         border-color: #000;
         width: 100%;
-        float: left; }
-        .quiz .quiz__result .newsletter-subscribe-form .email-txt::-webkit-input-placeholder {
+        float: left;
+        color: #000; }
+        .quiz .quiz__result .newsletter-subscribe-form .email-txt::-webkit-input-placeholder, .quiz .quiz__result .newsletter-subscribe-form .result-txt::-webkit-input-placeholder, .quiz .quiz__result .result-form .email-txt::-webkit-input-placeholder, .quiz .quiz__result .result-form .result-txt::-webkit-input-placeholder {
           color: #414141; }
-        .quiz .quiz__result .newsletter-subscribe-form .email-txt::-moz-placeholder {
+        .quiz .quiz__result .newsletter-subscribe-form .email-txt::-moz-placeholder, .quiz .quiz__result .newsletter-subscribe-form .result-txt::-moz-placeholder, .quiz .quiz__result .result-form .email-txt::-moz-placeholder, .quiz .quiz__result .result-form .result-txt::-moz-placeholder {
           color: #414141; }
-        .quiz .quiz__result .newsletter-subscribe-form .email-txt:-moz-placeholder {
+        .quiz .quiz__result .newsletter-subscribe-form .email-txt:-moz-placeholder, .quiz .quiz__result .newsletter-subscribe-form .result-txt:-moz-placeholder, .quiz .quiz__result .result-form .email-txt:-moz-placeholder, .quiz .quiz__result .result-form .result-txt:-moz-placeholder {
           color: #414141; }
-        .quiz .quiz__result .newsletter-subscribe-form .email-txt:-ms-input-placeholder {
+        .quiz .quiz__result .newsletter-subscribe-form .email-txt:-ms-input-placeholder, .quiz .quiz__result .newsletter-subscribe-form .result-txt:-ms-input-placeholder, .quiz .quiz__result .result-form .email-txt:-ms-input-placeholder, .quiz .quiz__result .result-form .result-txt:-ms-input-placeholder {
           color: #414141; }
         @media screen and (min-width: 28.125em) and (max-width: 43.75em) {
-          .quiz .quiz__result .newsletter-subscribe-form .email-txt {
+          .quiz .quiz__result .newsletter-subscribe-form .email-txt, .quiz .quiz__result .newsletter-subscribe-form .result-txt, .quiz .quiz__result .result-form .email-txt, .quiz .quiz__result .result-form .result-txt {
             width: 65%;
             margin: 0 0 10px 0; } }
         @media screen and (min-width: 43.75em) {
-          .quiz .quiz__result .newsletter-subscribe-form .email-txt {
+          .quiz .quiz__result .newsletter-subscribe-form .email-txt, .quiz .quiz__result .newsletter-subscribe-form .result-txt, .quiz .quiz__result .result-form .email-txt, .quiz .quiz__result .result-form .result-txt {
             width: 71%; } }
-      .quiz .quiz__result .newsletter-subscribe-form .send-form {
+      .quiz .quiz__result .newsletter-subscribe-form .send-form, .quiz .quiz__result .result-form .send-form {
         width: auto;
         margin: 0 0 10px 0;
         padding: 0.75em 2.2em;
         float: right; }
         @media screen and (min-width: 28.125em) and (max-width: 43.75em) {
-          .quiz .quiz__result .newsletter-subscribe-form .send-form {
+          .quiz .quiz__result .newsletter-subscribe-form .send-form, .quiz .quiz__result .result-form .send-form {
             padding: 0.75em 1.8em; } }
         @media screen and (min-width: 43.75em) {
-          .quiz .quiz__result .newsletter-subscribe-form .send-form {
+          .quiz .quiz__result .newsletter-subscribe-form .send-form, .quiz .quiz__result .result-form .send-form {
             width: 25%;
             padding: 0.75em 1.2em; } }
-      .quiz .quiz__result .newsletter-subscribe-form label {
+      .quiz .quiz__result .newsletter-subscribe-form label, .quiz .quiz__result .result-form label {
         clear: both;
         font-style: italic;
         font-size: 0.9em;
         margin-left: 10px;
         color: #3db791; }
-        .quiz .quiz__result .newsletter-subscribe-form label.error {
+        .quiz .quiz__result .newsletter-subscribe-form label.error, .quiz .quiz__result .result-form label.error {
           color: red; }
+    .quiz .quiz__result .result-form {
+      margin: 30px 0 0; }
     .quiz .quiz__result .extra-info-wrap {
       width: 70%;
       float: left; }
@@ -1385,5 +1388,5 @@ footer {
     display: block; }
     .quiz .block.qtype2 .q__item--text {
       display: block; }
-  .block.q2h a.q__item {
+  .quiz .q2h a.q__item {
     min-height: auto; } }

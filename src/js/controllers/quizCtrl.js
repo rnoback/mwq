@@ -4,8 +4,8 @@
     var mwqApp = angular.module('mwqApp');
     
     mwqApp.controller('quizController', 
-        ['$scope', '$filter', 'globalService', 'answersService', '$firebaseArray',
-        function($scope, $filter, $globalService, $answersService, $firebaseArray) {
+        ['$scope', '$filter', '$http', 'globalService', 'answersService', '$firebaseArray',
+        function($scope, $filter, $http, $globalService, $answersService, $firebaseArray) {
 
             
             //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -23,12 +23,55 @@
             // $scope.messages.$add({ q1: "testen"});
 
             // answers to text principal
-            var a = 'A';
+            /*var a = 'A';
             for(var key in $answersService.Q1){
                 if(key === a)  {            
                     //console.log('val ' + $answersService.Q1[a]);
                 }
+            }*/
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            //$answersService.storyStringBuild;
+            $scope.formData = {};
+
+            $scope.processForm = function(){
+
+                console.log("EMAIL " + $scope.formData.email);
+
+                if($scope.formData.email){
+
+                    $scope.formData['result'] = $('.answer-output-text').text().toString();
+                    
+                    console.log("formData " + $.param($scope.formData));
+                    //console.log("storyStringBuild " + $answersService.storyStringBuild);
+
+                
+
+                    // JS validation goes here
+
+                    $http({
+                        method  : 'POST',
+                        url     : 'php/submit_form.php',
+                        data    : $.param($scope.formData),  // pass in data as strings
+                        headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+                    })
+                    .success(function(data) {
+                        console.log("Response " + data);
+
+                        if (!data.success) {
+                          // if not successful, bind errors to error variables
+                          $scope.errorName = data.errors.name;
+
+                          console.log(data.errors);
+                        } else {
+                          // if successful, bind success message to message
+                          $scope.message = data.message;
+                        }
+                    });
+                }
+            
             }
+
             //////////////////////////////////////////////////////////////////////////////////////////////////////
 
             // Always start test with empty array's

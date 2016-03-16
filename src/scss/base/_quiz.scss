@@ -396,10 +396,11 @@
 		}
 
 
-		.newsletter-subscribe-form{
+		.newsletter-subscribe-form, .result-form {
 			@include clearfix;
 			margin: 30px 0;
-			.email-txt{
+
+			.email-txt, .result-txt {
 
 				border-radius: 1.8em;
 				padding: 13px 20px;
@@ -409,6 +410,7 @@
 				border-color: $black;
 				width: 100%;
 				float: left;
+				color: $black;
 				
 				@include placeholder {
     				color: $dark-gray;
@@ -422,6 +424,7 @@
   					
   				}
 			}
+			
 			.send-form{
 				//float: right;
 				
@@ -451,6 +454,9 @@
 			}
 
 		}
+		.result-form{
+				margin: 30px 0 0;
+			}
 		.extra-info-wrap{
 			width: 70%;
 			float: left;
