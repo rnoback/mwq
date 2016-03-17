@@ -54,7 +54,6 @@
 
                         $scope.formData['result'] = resultText;
                         $scope.formData['subject'] = "Muziek Advies: " + $answersService.endResultTitle;
-                    
 
                         $http({
                             method  : 'POST',

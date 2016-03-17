@@ -602,6 +602,44 @@ a > svg, a > span {
 .wrapper {
   height: inherit; }
 
+.result-advise-list li {
+  display: table;
+  font-family: "textA", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 1em;
+  height: 25px; }
+  .result-advise-list li span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1em;
+    padding-right: 10px; }
+  .result-advise-list li span.icon {
+    display: table-cell;
+    vertical-align: middle;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    display: inline-block; }
+  .result-advise-list li span.icon-pop {
+    background-image: url(../images/result/pop.svg); }
+  .result-advise-list li span.icon-klassiek {
+    background-image: url(../images/result/klassiek.svg); }
+  .result-advise-list li span.icon-jazzrnb {
+    background-image: url(../images/result/jazzy-r&b.svg); }
+  .result-advise-list li span.icon-nl {
+    background-image: url(../images/result/nederlandstalig.svg); }
+  .result-advise-list li span.icon-rock {
+    background-image: url(../images/result/rock.svg); }
+  .result-advise-list li span.icon-souljazz {
+    background-image: url(../images/result/soul-jazz.svg); }
+  .result-advise-list li span.icon-pop {
+    background-image: url(../images/result/pop.svg); }
+
+.result-advise-list li:first-child {
+  margin-top: 0; }
+
 body {
   background-size: cover !important;
   background-attachment: fixed; }

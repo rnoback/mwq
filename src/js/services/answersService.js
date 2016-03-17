@@ -32,8 +32,8 @@
             'B': 'Nederlandstalig /Jazzy R&B / Rock', //Pop
             'C': 'Soul Jazz', //Klassiek
             'D': 'Soul Jazz / Pop', //Jazzy R&B
-            'E': 'Pop', //ROCK
-            'F': 'Pop / Jazzy R&B / Klassiek' //SOUL JAZZ
+            'E': '<li><span>Pop</span> <span class="icon icon-pop"></span></li>', //ROCK
+            'F': '<li><span>Pop</span> <span class="icon icon-pop"></span></li><li><span>Jazzy R&amp;B</span> <span class="icon icon-jazzrnb"></span></li><li><span>Klassiek</span> <span class="icon icon-klassiek"></span></li>' //SOUL JAZZ
         }
 
 
@@ -105,16 +105,6 @@
             */
         }
 
-        this.buildResultToSend = function(){
-            self.storyStringBuildSend = self.storyStringBuild_q8;
-            self.storyStringBuildSend += " " + self.storyStringBuild_q1;
-            self.storyStringBuildSend += " " + self.storyStringBuild_q3;
-            self.storyStringBuildSend += " " + self.storyStringBuild_q5;
-            self.storyStringBuildSend += " " + self.storyStringBuild_q4;
-            self.storyStringBuildSend += " " + self.storyStringBuild_q2;
-            self.storyStringBuildSend += " " + self.storyStringBuild_q7;
-            return self.storyStringBuildSend;
-        }
         this.setupResultPage = function(){
 
             // Set variable in result page
@@ -134,7 +124,7 @@
 
             $('.quiz-end-result-title').html(self.endResultTitle);
             $('.quiz-end-result-text').html(self.endResultText);
-            $('.other-matches').html(self.endResultAdvise);
+            $('.result-advise-list').html(self.endResultAdvise);
             
             var str = self.endResultTitle.replace(/\s+/g, '-').toLowerCase();
             $('.result-image').attr('src', 'images/result/'+str + '.jpg');
@@ -151,9 +141,6 @@
 
             //console.log("selQuestion " + selQuestion);
             //console.log("selAnwer " + selAnwer);
-
-            
-
 
             selQuestion = parseInt(selQuestion);
             if(selQuestion && selAnwer){
@@ -666,11 +653,8 @@
 
                         self.endResultTitle = self.resultAnswersObject[currentAnswer];
                         self.endResultText = self.Q6[currentAnswer];
-
                         self.storyStringBuild_q6 = self.Q6[currentAnswer];
-
                         self.endResultAdvise = self.resultAdviseObject[currentAnswer];
-                        
                         
                         break;
 
