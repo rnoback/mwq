@@ -59,8 +59,8 @@
                         $http({
                             method  : 'POST',
                             url     : 'php/submit_form.php',
-                            data    : $.param($scope.formData),  // pass in data as strings
-                            headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+                            data    : $.param($scope.formData), 
+                            headers : { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' } 
                         })
                         .success(function(data) {
                             console.log("Response " + data.succes);
