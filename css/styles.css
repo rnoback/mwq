@@ -602,44 +602,6 @@ a > svg, a > span {
 .wrapper {
   height: inherit; }
 
-.result-advise-list li {
-  display: table;
-  font-family: "textA", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  color: #fff;
-  margin-top: 1em;
-  height: 25px; }
-  .result-advise-list li span {
-    display: inline-block;
-    vertical-align: middle;
-    line-height: 1em;
-    padding-right: 10px; }
-  .result-advise-list li span.icon {
-    display: table-cell;
-    vertical-align: middle;
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 25px;
-    height: 25px;
-    display: inline-block; }
-  .result-advise-list li span.icon-pop {
-    background-image: url(../images/result/pop.svg); }
-  .result-advise-list li span.icon-klassiek {
-    background-image: url(../images/result/klassiek.svg); }
-  .result-advise-list li span.icon-jazzrnb {
-    background-image: url(../images/result/jazzy-r&b.svg); }
-  .result-advise-list li span.icon-nl {
-    background-image: url(../images/result/nederlandstalig.svg); }
-  .result-advise-list li span.icon-rock {
-    background-image: url(../images/result/rock.svg); }
-  .result-advise-list li span.icon-souljazz {
-    background-image: url(../images/result/soul-jazz.svg); }
-  .result-advise-list li span.icon-pop {
-    background-image: url(../images/result/pop.svg); }
-
-.result-advise-list li:first-child {
-  margin-top: 0; }
-
 body {
   background-size: cover !important;
   background-attachment: fixed; }
@@ -1074,10 +1036,10 @@ footer {
     padding: 0; }
     .quiz .block.start .quiz__start--title {
       font-family: "breeserif", Helvetica, Arial, sans-serif;
-      font-size: 24px;
-      font-size: 1.5rem;
+      font-size: 29px;
+      font-size: 1.8125rem;
       color: #3db791;
-      padding: 19px;
+      padding: 25px 19px;
       margin: 0;
       text-align: center;
       font-weight: normal; }
@@ -1295,6 +1257,40 @@ footer {
         @media screen and (max-width: 28.0625em) {
           .quiz .quiz__result .block.green .block-inner {
             margin-top: 20px; } }
+        .quiz .quiz__result .block.green .block-inner ul.result-advise-list li {
+          display: table;
+          font-family: "textA", Helvetica, Arial, sans-serif;
+          text-transform: uppercase;
+          color: #fff;
+          margin-top: 1em;
+          height: 25px; }
+          .quiz .quiz__result .block.green .block-inner ul.result-advise-list li span {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1em;
+            padding-right: 10px; }
+          .quiz .quiz__result .block.green .block-inner ul.result-advise-list li span.icon {
+            display: table-cell;
+            vertical-align: middle;
+            background-position: center center;
+            background-repeat: no-repeat;
+            width: 25px;
+            height: 25px;
+            display: inline-block; }
+          .quiz .quiz__result .block.green .block-inner ul.result-advise-list li span.icon-pop {
+            background-image: url(../images/result/pop.svg); }
+          .quiz .quiz__result .block.green .block-inner ul.result-advise-list li span.icon-klassiek {
+            background-image: url(../images/result/klassiek.svg); }
+          .quiz .quiz__result .block.green .block-inner ul.result-advise-list li span.icon-jazzrnb {
+            background-image: url(../images/result/jazzy-r&b.svg); }
+          .quiz .quiz__result .block.green .block-inner ul.result-advise-list li span.icon-nl {
+            background-image: url(../images/result/nederlandstalig.svg); }
+          .quiz .quiz__result .block.green .block-inner ul.result-advise-list li span.icon-rock {
+            background-image: url(../images/result/rock.svg); }
+          .quiz .quiz__result .block.green .block-inner ul.result-advise-list li span.icon-souljazz {
+            background-image: url(../images/result/soul-jazz.svg); }
+          .quiz .quiz__result .block.green .block-inner ul.result-advise-list li span.icon-pop {
+            background-image: url(../images/result/pop.svg); }
       .quiz .quiz__result .block.green .quiz__sheet--subtitle {
         color: #fff;
         text-align: left; }
@@ -1350,7 +1346,7 @@ footer {
           color: #414141; }
         @media screen and (min-width: 28.125em) and (max-width: 43.75em) {
           .quiz .quiz__result .newsletter-subscribe-form .email-txt, .quiz .quiz__result .newsletter-subscribe-form .result-txt, .quiz .quiz__result .result-form .email-txt, .quiz .quiz__result .result-form .result-txt {
-            width: 65%;
+            width: 100%;
             margin: 0 0 10px 0; } }
         @media screen and (min-width: 43.75em) {
           .quiz .quiz__result .newsletter-subscribe-form .email-txt, .quiz .quiz__result .newsletter-subscribe-form .result-txt, .quiz .quiz__result .result-form .email-txt, .quiz .quiz__result .result-form .result-txt {
@@ -1365,7 +1361,7 @@ footer {
             padding: 0.75em 1.8em; } }
         @media screen and (min-width: 43.75em) {
           .quiz .quiz__result .newsletter-subscribe-form .send-form, .quiz .quiz__result .result-form .send-form {
-            width: 25%;
+            width: 27%;
             padding: 0.75em 1.2em; } }
       .quiz .quiz__result .newsletter-subscribe-form label, .quiz .quiz__result .result-form label {
         clear: both;
@@ -1376,7 +1372,7 @@ footer {
         .quiz .quiz__result .newsletter-subscribe-form label.error, .quiz .quiz__result .result-form label.error {
           color: red; }
     .quiz .quiz__result .result-form {
-      margin: 30px 0 0; }
+      margin: 20px 0 0; }
       .quiz .quiz__result .result-form label {
         color: #fff; }
         .quiz .quiz__result .result-form label.error {

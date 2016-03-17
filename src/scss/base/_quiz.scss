@@ -110,9 +110,9 @@
 		padding:0;
 		.quiz__start--title{
 			font-family: $base-font-family;
-			@include font-size(24);
+			@include font-size(29);
 			color: $green;
-			padding:19px;
+			padding: 25px 19px;
 			margin:0;
 			text-align: center;
 			font-weight: normal;
@@ -349,6 +349,55 @@
 				@include media($mobile) {
 					margin-top: 20px;
 				}
+
+				ul.result-advise-list{
+    
+			    li{
+			        display: table;
+			        font-family: $heading-font;
+			        text-transform: uppercase;
+			        color: $white;
+			        margin-top: 1em;
+			        height: 25px;
+			        span{
+			            display: inline-block;
+			            vertical-align: middle;
+			            line-height: 1em;
+			            padding-right: 10px;
+			        }
+			        span.icon{    
+			            display: table-cell;
+			            vertical-align: middle;
+			            background-position: center center;
+			            background-repeat: no-repeat;
+			            width: 25px;
+			            height: 25px;
+			            display: inline-block;
+			        }
+			        span.icon-pop{
+			            background-image: url(../images/result/pop.svg);
+			        }
+			        span.icon-klassiek{
+			            background-image: url(../images/result/klassiek.svg);
+			        }
+			        span.icon-jazzrnb{
+			            background-image: url(../images/result/jazzy-r&b.svg);
+			        }
+			        span.icon-nl{
+			            background-image: url(../images/result/nederlandstalig.svg);
+			        }
+			        span.icon-rock{
+			            background-image: url(../images/result/rock.svg);
+			        }
+			        span.icon-souljazz{
+			            background-image: url(../images/result/soul-jazz.svg);
+			        }
+			        span.icon-pop{
+			            background-image: url(../images/result/pop.svg);
+			        }
+			    }
+			    
+			}
 				
 			}
 			
@@ -393,6 +442,11 @@
 
 				}
 			}
+			.result-form{
+
+			}
+
+			
 		}
 
 
@@ -416,7 +470,7 @@
     				color: $dark-gray;
   				}
   				@include media($tablet) {
-  					width: 65%;
+  					width: 100%;
   					margin: 0 0 10px 0;
   				}
   				@include media($desktop) {
@@ -436,7 +490,7 @@
 					padding: $small-spacing 1.8em;
 				}
 				@include media($desktop) {
-					width: 25%;
+					width: 27%;
 					padding: $small-spacing 1.2em;
   				}
 
@@ -455,14 +509,14 @@
 
 		}
 		.result-form{
-				margin: 30px 0 0;
-				label{
-					color:$white;
-					&.error{
-						color: red;
-					}
+			margin: 20px 0 0;
+			label{
+				color:$white;
+				&.error{
+					color: red;
 				}
 			}
+		}
 		.extra-info-wrap{
 			width: 70%;
 			float: left;

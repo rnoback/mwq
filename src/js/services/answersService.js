@@ -28,10 +28,10 @@
         }
 
         this.resultAdviseObject = {
-            'A': 'Soul Jazz / Pop', // NL
-            'B': 'Nederlandstalig /Jazzy R&B / Rock', //Pop
-            'C': 'Soul Jazz', //Klassiek
-            'D': 'Soul Jazz / Pop', //Jazzy R&B
+            'A': '<li><span>Soul Jazz</span> <span class="icon icon-souljazz"></span></li> <li><span>Pop</span> <span class="icon icon-pop"></span></li>', // NL
+            'B': '<li><span>Nederlandstalig</span> <span class="icon icon-nl"></span></li> <li><span>Jazzy R&amp;B</span> <span class="icon icon-jazzrnb"></span></li> <li><span>Rock</span> <span class="icon icon-rock"></span></li>', //Pop
+            'C': '<li><span>Soul Jazz</span> <span class="icon icon-souljazz"></span></li>', //Klassiek
+            'D': '<li><span>Soul Jazz</span> <span class="icon icon-souljazz"></span></li> <li><span>Pop</span> <span class="icon icon-pop"></span></li>', //Jazzy R&B
             'E': '<li><span>Pop</span> <span class="icon icon-pop"></span></li>', //ROCK
             'F': '<li><span>Pop</span> <span class="icon icon-pop"></span></li><li><span>Jazzy R&amp;B</span> <span class="icon icon-jazzrnb"></span></li><li><span>Klassiek</span> <span class="icon icon-klassiek"></span></li>' //SOUL JAZZ
         }
@@ -104,6 +104,19 @@
             
             */
         }
+
+
+        this.buildResultToSend = function() {
+            self.storyStringBuildSend = self.storyStringBuild_q8;
+            self.storyStringBuildSend += " " + self.storyStringBuild_q1;
+            self.storyStringBuildSend += " " + self.storyStringBuild_q3;
+            self.storyStringBuildSend += " " + self.storyStringBuild_q5;
+            self.storyStringBuildSend += " " + self.storyStringBuild_q4;
+            self.storyStringBuildSend += " " + self.storyStringBuild_q2;
+            self.storyStringBuildSend += " " + self.storyStringBuild_q7;
+        }
+
+         
 
         this.setupResultPage = function(){
 
