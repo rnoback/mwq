@@ -107,6 +107,7 @@
 
 
         this.buildResultToSend = function() {
+            //self.storyStringBuildSend = self.storyStringBuild_title + " \n\r";
             self.storyStringBuildSend = self.storyStringBuild_q8;
             self.storyStringBuildSend += " " + self.storyStringBuild_q1;
             self.storyStringBuildSend += " " + self.storyStringBuild_q3;
@@ -114,9 +115,8 @@
             self.storyStringBuildSend += " " + self.storyStringBuild_q4;
             self.storyStringBuildSend += " " + self.storyStringBuild_q2;
             self.storyStringBuildSend += " " + self.storyStringBuild_q7;
+            return self.storyStringBuildSend;
         }
-
-         
 
         this.setupResultPage = function(){
 
@@ -142,11 +142,6 @@
             var str = self.endResultTitle.replace(/\s+/g, '-').toLowerCase();
             $('.result-image').attr('src', 'images/result/'+str + '.jpg');
             $('.result-music-icon').attr('src', 'images/result/'+str + '.svg');
-
-            // Setup email client button with content
-            /*$('.btn-email-advies').attr('href','mailto:?SUBJECT=Muziek Advies: '
-                +self.endResultTitle.toUpperCase()+'&BODY='+self.endResultText+'')
-            */
         }
 
        

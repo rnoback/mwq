@@ -35,17 +35,15 @@
             $scope.formData = {};
             $scope.errMessage = "";
 
-            $scope.processForm = function(){
-
-                //console.log("EMAIL " + $globalService.isValidEmailAddress($scope.formData.email));
-
-                //console.log("$scope.formData.email PPP " + $scope.formData.email);
-
-               // console.log("$answersService.storyStringBuildSend " + $answersService.storyStringBuildSend);
-                var resultText = $answersService.buildResultToSend();
-               
-
+            $('#result-email-form').on('keyup', function(){
                 $('#label-submit-result').html("");
+            });
+
+            $scope.processForm = function(){
+               $('#label-submit-result').html("");
+
+                var resultText = $answersService.buildResultToSend();
+
                 $('#label-submit-result').removeClass('error');
 
                 if($scope.formData.email){
@@ -62,20 +60,24 @@
                             headers : { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' } 
                         })
                         .success(function(data) {
-                            console.log("Response " + data.succes);
+                            console.log("Response " + data.success);
 
                             if (!data.success) {
                               // if not successful, bind errors to error variables
-                              $scope.errorName = data.errors.email;
+                              //$scope.errorName = data.errors.email;
 
                               console.log(data.errors);
                               $('#label-submit-result').addClass('error');
-                              scope.errMessage = "Sorry, er is iets fout gegaan. probeer het opnieuw";
+                              $scope.errMessage = "Sorry, er is iets fout gegaan. probeer het opnieuw";
                             } else {
                               // if successful, bind success message to message
-                              $scope.message = data.message;
-                              $('#label-submit-result').removeClass('error');
-                              scope.errMessage = "Het resultaat is verstuurd.";
+                              //$scope.message = data.message;
+                                
+                                $('#label-submit-result').removeClass('error');
+                                $scope.errMessage = "Het muziek advies is verstuurd naar: " + $scope.formData.email;
+                                $('#label-submit-result').html($scope.errMessage);
+                                $scope.formData.email = "";
+                                $scope.formData = {};
                             }
                         });
                     }else{
