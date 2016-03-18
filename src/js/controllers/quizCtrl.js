@@ -44,6 +44,8 @@
 
                 var resultText = $answersService.buildResultToSend();
 
+                console.log("resultText " + resultText);
+
                 $('#label-submit-result').removeClass('error');
 
                 if($scope.formData.email){

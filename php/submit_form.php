@@ -30,7 +30,8 @@
 
     $email_to = $_POST['email'];
     $email_subject = $_POST['subject'];
-    $email_message = htmlentities($_POST['result'], ENT_COMPAT, "UTF-8");     
+    //$email_message = htmlentities($_POST['result'], ENT_COMPAT, "UTF-8");
+    $email_message = $_POST['result'];     
     $email_from = "info@muziekwerkt.nl";
  
     // create email headers
@@ -44,8 +45,7 @@
     $headers .= "MIME-Version: 1.0\n";
     $headers .= "Content-Transfer-Encoding: 8bit\n";
     $headers .= "Content-type: text/html; charset=iso-8859-1\n";
-
-     
+ 
     @mail($email_to, $email_subject, $email_message, $headers);  
 
 ?>

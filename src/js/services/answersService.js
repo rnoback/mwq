@@ -107,8 +107,8 @@
 
 
         this.buildResultToSend = function() {
-            //self.storyStringBuildSend = self.storyStringBuild_title + " \n\r";
-            self.storyStringBuildSend = self.storyStringBuild_q8;
+            self.storyStringBuildSend = "<h3>"+self.storyStringBuild_title + "</h3>";
+            self.storyStringBuildSend += " " + self.storyStringBuild_q8;
             self.storyStringBuildSend += " " + self.storyStringBuild_q1;
             self.storyStringBuildSend += " " + self.storyStringBuild_q3;
             self.storyStringBuildSend += " " + self.storyStringBuild_q5;
