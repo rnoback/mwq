@@ -44,7 +44,7 @@
 
                 var resultText = $answersService.buildResultToSend();
 
-                console.log("resultText " + resultText);
+               // console.log("resultText " + resultText);
 
                 $('#label-submit-result').removeClass('error');
 
@@ -62,7 +62,7 @@
                             headers : { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' } 
                         })
                         .success(function(data) {
-                            console.log("Response " + data.success);
+                            //console.log("Response " + data.success);
 
                             if (!data.success) {
                               // if not successful, bind errors to error variables

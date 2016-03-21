@@ -107,14 +107,14 @@
 
 
         this.buildResultToSend = function() {
-            self.storyStringBuildSend = "<h3>"+self.storyStringBuild_title + "</h3>";
-            self.storyStringBuildSend += " " + self.storyStringBuild_q8;
-            self.storyStringBuildSend += " " + self.storyStringBuild_q1;
-            self.storyStringBuildSend += " " + self.storyStringBuild_q3;
+            self.storyStringBuildSend = self.storyStringBuild_title.toUpperCase() + "</h2>";
+            self.storyStringBuildSend += "<p><strong>" + self.storyStringBuild_q8 + "</strong></p>";
+            self.storyStringBuildSend += "<p>" + self.storyStringBuild_q1 + "</p>";
+            self.storyStringBuildSend += "<p>" + self.storyStringBuild_q3;
             self.storyStringBuildSend += " " + self.storyStringBuild_q5;
             self.storyStringBuildSend += " " + self.storyStringBuild_q4;
             self.storyStringBuildSend += " " + self.storyStringBuild_q2;
-            self.storyStringBuildSend += " " + self.storyStringBuild_q7;
+            self.storyStringBuildSend += " " + self.storyStringBuild_q7 + "</p>";
             return self.storyStringBuildSend;
         }
 
