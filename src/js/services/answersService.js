@@ -945,7 +945,7 @@
         this.Q8 = {
             A: 'Muziek kan het verschil maken, ook op de achtergrond. De sfeer en de beleving zijn namelijk niet hetzelfde zonder muziek. Het is wel belangrijk dat je kiest voor muziek die zich leent als achtergrondmuziek. Bekende popliedjes, dance en muziek waarbij de tekst erg belangrijk is, doen het minder goed als achtergrondmuziek. Mensen gaan zich dan te veel inspannen om de muziek te horen. Maar waar moet je dan wel voor kiezen?',
             B: 'Dat muziek de ultieme sfeermaker is, hoeven we jou niet te vertellen. De juiste muziek is sfeerbepalend en imagoversterkend. Maar wat is precies ‘de juiste muziek’ voor jouw zaak?',
-            C: 'Jouw zaak zonder muziek is als Parijs zonder Eifeltoren. Dat kan dus niet. Gelukkig is dit niet aan dovemansoren gericht en ben jij het hier roerend mee eens. Maar welke muziek past het beste bij jouw zaak?',
+            C: 'Jouw zaak zonder muziek is als Parijs zonder Eiffeltoren. Dat kan dus niet. Gelukkig is dit niet aan dovemansoren gericht en ben jij het hier roerend mee eens. Maar welke muziek past het beste bij jouw zaak?',
             D: 'Aha, dus muziek is overbodig in jouw zaak! Als je het niet nodig vindt dat klanten langer blijven, meer kopen, consumeren, ontspannen en/of privacy wordt geboden, je personeel gestimuleerd wordt of het gevoel krijgt dat de tijd sneller gaat, dan kun je inderdaad overwegen om geen muziek te gebruiken. Niet meer zo overtuigd? Lees dan toch maar dit muziekadvies.'
         }
 
