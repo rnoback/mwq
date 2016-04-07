@@ -15,8 +15,7 @@
         this.storyStringBuild_q7 = "";
         this.storyStringBuild_q8 = "";
 
-        this.storyStringBuildSend = "";
-        
+        this.storyStringBuildSend = "";     
 
         this.resultAnswersObject = {
             'A':'Nederlandstalig',
@@ -35,8 +34,6 @@
             'E': '<li><span>Pop</span> <span class="icon icon-pop"></span></li>', //ROCK
             'F': '<li><span>Pop</span> <span class="icon icon-pop"></span></li><li><span>Jazzy R&amp;B</span> <span class="icon icon-jazzrnb"></span></li><li><span>Klassiek</span> <span class="icon icon-klassiek"></span></li>' //SOUL JAZZ
         }
-
-
 
         this.clearMusicData = function(){
             self.storyStringBuild = "";
@@ -113,8 +110,8 @@
             self.storyStringBuildSend += "<p>" + self.storyStringBuild_q3;
             self.storyStringBuildSend += " " + self.storyStringBuild_q5;
             self.storyStringBuildSend += " " + self.storyStringBuild_q4;
-            self.storyStringBuildSend += " " + self.storyStringBuild_q2;
-            self.storyStringBuildSend += " " + self.storyStringBuild_q7 + "</p>";
+            self.storyStringBuildSend += " " + self.storyStringBuild_q2 + "</p>";
+            //self.storyStringBuildSend += " " + self.storyStringBuild_q7 + "</p>";
             return self.storyStringBuildSend;
         }
 
@@ -826,36 +823,14 @@
                         self.storyStringBuild_q8 = self.Q8[currentAnswer];
                         
                         self.setupResultPage();
-                        
-
-                        
+                                                
                         break;
                     
                     default:
                         break;
                 }
-            }
-
-
-            
+            }            
         }
-
-        /*
-        // copycat ;)
-        this.Q2 = {
-            A: 'Muziek',
-            B: 'kassa',
-            C: 'Horeca',
-            D: 'ontspant',
-            E: 'klanten',
-            F: 'harder',
-            G: 'productiviteit',
-            H: 'geruststellend',
-            I: 'privacy',
-            J: 'sfeer'
-        }
-
-        */
 
         // Koppen gebaseerd op antwoord vraag 1
         this.Q1_headers = {
@@ -920,7 +895,6 @@
             C: 'Waarschijnlijk is jouw persoonlijke muzieksmaak goed te horen in je zaak. Dat kán goed werken – mits de klant jou kent en je eigengereidheid waardeert. Doet hij dat niet, dan kan de muziek juist averechts werken. In dat geval raden we je aan de muziek toch meer af te stemmen op je doelgroep en/of je inrichting.'
         }
 
-
         // Tekst gebaseerd op antwoord vraag 6
         this.Q6 = {
             A: 'Voor jouw zaak adviseren we voorl muziek van eigen bodem. Nederlandse muziek is nog steeds mateloos populair en de verwachting is dat het genre alleen maar groter gaat worden. Genoeg uit te kiezen dus!',
@@ -948,7 +922,6 @@
             C: 'Jouw zaak zonder muziek is als Parijs zonder Eiffeltoren. Dat kan dus niet. Gelukkig is dit niet aan dovemansoren gericht en ben jij het hier roerend mee eens. Maar welke muziek past het beste bij jouw zaak?',
             D: 'Aha, dus muziek is overbodig in jouw zaak! Als je het niet nodig vindt dat klanten langer blijven, meer kopen, consumeren, ontspannen en/of privacy wordt geboden, je personeel gestimuleerd wordt of het gevoel krijgt dat de tijd sneller gaat, dan kun je inderdaad overwegen om geen muziek te gebruiken. Niet meer zo overtuigd? Lees dan toch maar dit muziekadvies.'
         }
-
 
     }]);
 }());
