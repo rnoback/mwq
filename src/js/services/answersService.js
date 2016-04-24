@@ -126,7 +126,7 @@
             self.storyStringBuild += " " + self.storyStringBuild_q5;
             self.storyStringBuild += " " + self.storyStringBuild_q4;
             self.storyStringBuild += " " + self.storyStringBuild_q2;
-            self.storyStringBuild += " " + self.storyStringBuild_q7;
+            //self.storyStringBuild += " " + self.storyStringBuild_q7;
 
             $('.answer-output-text').html(self.storyStringBuild);
 
