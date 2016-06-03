@@ -15,6 +15,11 @@
         this.storyStringBuild_q7 = "";
         this.storyStringBuild_q8 = "";
 
+        this.q7Title = "";
+
+        this.currentAnswerQ6 = ""; //Leading for end advise
+        this.currentAnswerQ7 = ""; // Need to be excluded in end advise
+
         this.storyStringBuildSend = "";     
 
         this.resultAnswersObject = {
@@ -26,6 +31,7 @@
             'F':'Soul Jazz'
         }
 
+/*
         this.resultAdviseObject = {
             'A': '<li><span>Soul Jazz</span> <span class="icon icon-souljazz"></span></li> <li><span>Pop</span> <span class="icon icon-pop"></span></li>', // NL
             'B': '<li><span>Nederlandstalig</span> <span class="icon icon-nl"></span></li> <li><span>Jazzy R&amp;B</span> <span class="icon icon-jazzrnb"></span></li> <li><span>Rock</span> <span class="icon icon-rock"></span></li>', //Pop
@@ -34,6 +40,87 @@
             'E': '<li><span>Pop</span> <span class="icon icon-pop"></span></li>', //ROCK
             'F': '<li><span>Pop</span> <span class="icon icon-pop"></span></li><li><span>Jazzy R&amp;B</span> <span class="icon icon-jazzrnb"></span></li><li><span>Klassiek</span> <span class="icon icon-klassiek"></span></li>' //SOUL JAZZ
         }
+
+*/
+        /*
+
+        this.resultAdviseObject = {
+            'A': self.excludeQ7, // NL
+            'B': self.excludeQ7, //Pop
+            'C': self.excludeQ7, //Klassiek
+            'D': self.excludeQ7, //Jazzy R&B
+            'E': self.excludeQ7, //ROCK
+            'F': self.excludeQ7 //SOUL JAZZ
+        }
+        */
+
+        this.resultAdviseObject = {
+            'A':'Nederlandstalig',
+            'B':'Pop',
+            'C':'Klassiek',
+            'D':'Jazzy R&B',
+            'E':'Rock',
+            'F':'Soul Jazz'
+        }
+
+        this.soulandjazzz = '<span>Soul Jazz</span> <span class="icon icon-souljazz"></span>';
+
+
+        this.calcEndAdvise = function(q6, q7){
+           
+            if(q6 === 'A'){
+                if(q7 === 'B'){
+                    return '<li><span>Soul Jazz</span> <span class="icon icon-souljazz"></span></li>';
+                }else if(q7 === 'F'){
+                     return '<li><span>Pop</span> <span class="icon icon-pop"></span></li>';
+                }else{
+                    return '<li><span>Soul Jazz</span> <span class="icon icon-souljazz"></span></li> <li><span>Pop</span> <span class="icon icon-pop"></span></li>';
+                }
+            }else if(q6 === 'B'){
+                if(q7 === 'A'){
+                    return '<li><span>Jazzy R&amp;B</span> <span class="icon icon-jazzrnb"></span></li> <li><span>Rock</span> <span class="icon icon-rock"></span></li>';
+                }else if(q7 === 'D'){
+                    return '<li><span>Nederlandstalig</span> <span class="icon icon-nl"></span></li> <li><span>Rock</span> <span class="icon icon-rock"></span></li>';
+                }else if(q7 === 'E'){
+                    return '<li><span>Nederlandstalig</span> <span class="icon icon-nl"></span></li> <li><span>Jazzy R&amp;B</span> <span class="icon icon-jazzrnb"></span></li>';
+                }else{
+                    return '<li><span>Nederlandstalig</span> <span class="icon icon-nl"></span></li> <li><span>Jazzy R&amp;B</span> <span class="icon icon-jazzrnb"></span></li> <li><span>Rock</span> <span class="icon icon-rock"></span></li>';
+                }
+            }else if(q6 === 'C'){
+                if(q7 === 'F'){
+                    return;
+                }else{
+                    return '<li><span>Soul Jazz</span> <span class="icon icon-souljazz"></span></li>';
+                }
+            }else if(q6 === 'D'){
+
+                if(q7 === 'B'){
+                    return '<li><span>Soul Jazz</span> <span class="icon icon-souljazz"></span></li>';
+                }else if(q7 === 'F'){
+                     return ' <li><span>Pop</span> <span class="icon icon-pop"></span></li>';
+                }else{
+                    return '<li><span>Soul Jazz</span> <span class="icon icon-souljazz"></span></li> <li><span>Pop</span> <span class="icon icon-pop"></span></li>';
+                }
+            }else if(q6 === 'E'){
+
+                if(q7 === 'B'){
+                    return;
+                }else{
+                    return '<li><span>Pop</span> <span class="icon icon-pop"></span></li>';
+                }
+            }else if(q6 === 'F'){
+                if(q7 === 'B'){
+                    return '<li><span>Jazzy R&amp;B</span> <span class="icon icon-jazzrnb"></span></li><li><span>Klassiek</span> <span class="icon icon-klassiek"></span></li>';
+                }else if(q7 === 'C'){
+                    return '<li><span>Pop</span> <span class="icon icon-pop"></span></li><li><span>Jazzy R&amp;B</span> <span class="icon icon-jazzrnb"></span></li>';
+                }else if(q7 === 'D'){
+                    return '<li><span>Pop</span> <span class="icon icon-pop"></span></li><li><span>Klassiek</span> <span class="icon icon-klassiek"></span></li>';
+                }else{
+                    return '<li><span>Pop</span> <span class="icon icon-pop"></span></li><li><span>Jazzy R&amp;B</span> <span class="icon icon-jazzrnb"></span></li><li><span>Klassiek</span> <span class="icon icon-klassiek"></span></li>';
+                }
+            }
+        }
+       
 
         this.clearMusicData = function(){
             self.storyStringBuild = "";
@@ -659,7 +746,9 @@
                         self.endResultTitle = self.resultAnswersObject[currentAnswer];
                         self.endResultText = self.Q6[currentAnswer];
                         self.storyStringBuild_q6 = self.Q6[currentAnswer];
-                        self.endResultAdvise = self.resultAdviseObject[currentAnswer];
+                        //self.endResultAdvise = self.resultAdviseObject[currentAnswer];
+
+                        self.currentAnswerQ6 = currentAnswer;
                         
                         break;
 
@@ -754,7 +843,11 @@
                             this.kids_hits.push('7F');
 
                         }
+                        
                         self.storyStringBuild_q7 = self.Q7[currentAnswer];
+
+                        self.currentAnswerQ7 = currentAnswer;
+                        self.endResultAdvise = self.calcEndAdvise(self.currentAnswerQ6, self.currentAnswerQ7);
                         break;
 
 
